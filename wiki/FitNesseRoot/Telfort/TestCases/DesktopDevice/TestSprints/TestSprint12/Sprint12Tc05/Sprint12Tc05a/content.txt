@@ -1,0 +1,92 @@
+!*> Local scenarios
+|scenario           |Click on Main button     |mainbutton     |
+|Click on the button|xpath=//a[@title="@mainbutton"]/parent::*|
+
+|scenario          |Check if text        |text        |is present within group        |group       |
+|is visible on page|xpath=//*[normalize-space(.)="@group"]/parent::*//*[normalize-space(.)="@text"]|
+
+|scenario           |Click on         |text         |within group         |group        |
+|Click on the button|xpath=//*[normalize-space(.)="@group"]/parent::*//*[text()="@text"]|
+
+|scenario                              |Controleer of de WIJZIG knop is disabled                                               |
+|Check if the following text is visible|xpath=//h1[text()="Instellingen"]/parent::*//*[@type='submit' and @disabled='disabled']|
+
+|scenario                                  |Controleer of de WIJZIG knop is enabled                                                |
+|note                                      |er is wel een 'submit'knop, maar deze is niet 'disabled'                               |
+|Check if the following text is visible    |xpath=//h1[text()="Instellingen"]/parent::*//*[@type='submit']                         |
+|Check if the following text is not visible|xpath=//h1[text()="Instellingen"]/parent::*//*[@type='submit' and @disabled='disabled']|
+
+|scenario           |Click on WIJZIG                                               |
+|Click on the button|xpath=//h1[text()="Instellingen"]/parent::*//*[@type='submit']|
+
+|script                                                                                                                     |
+|Note                                  |step 1                                                                              |
+|Open the Telfort website and agree with cookie message                                                                     |
+|Login Mijn Mobiel with username       |${accountSprint12Tc05_login}|and password|${accountSprint12Tc05_password}|          |
+|Note                                  |eerst tabblad "Thuis" selecteren                                                    |
+|Click on navigation tab               |Thuis                                                                               |
+|Note                                  |step 2                                                                              |
+|Click on                              |Instellingen                |in the navigation menu                                 |
+|Note                                  |step 3                                                                              |
+|Check if the title                    |Instellingen                |with heading|h1                             |is visible|
+|Note                                  |step 4                                                                              |
+|Check if the following text is visible|Voicemail & oproepen                                                                |
+|Note                                  |step 5                                                                              |
+|Check if the following text is visible|TV pincode                                                                          |
+|Note                                  |step 6                                                                              |
+|Check if the following text is visible|Privacy                                                                             |
+|Note                                  |step 8                                                                              |
+|Check if the following text is visible|Selecteer een onderwerp uit het menu hierboven                                      |
+
+|script                                                                                                                                                                                   |
+|Note                                  |step 9                                                                                                                                            |
+|Click on Main button                  |Voicemail & oproepen                                                                                                                              |
+|Note                                  |step 10                                                                                                                                           |
+|Check if the title                    |Voicemail en oproepen                                  |with heading           |h2                                                     |is visible|
+|Note                                  |step 11                                                                                                                                           |
+|Check if the following text is visible|Deze instellingen gelden voor onderstaande nummers:                                                                                               |
+|Note                                  |step 13                                                                                                                                           |
+|Check if the title                    |Blokkeren van nummers en gesprekken                    |with heading           |h3                                                     |is visible|
+|Note                                  |step 15                                                                                                                                           |
+|Check if text                         |Alle uitgaande gesprekken naar het buitenland blokkeren|is present within group|Blokkeren van nummers en gesprekken                               |
+|Check if text                         |AAN                                                    |is present within group|Alle uitgaande gesprekken naar het buitenland blokkeren           |
+|Check if text                         |UIT                                                    |is present within group|Alle uitgaande gesprekken naar het buitenland blokkeren|          |
+|Note                                  |first check if the button wijzigen is disabled                                                                                                    |
+|Controleer of de WIJZIG knop is disabled                                                                                                                                                 |
+|Click on                              |AAN                                                    |within group           |Alle uitgaande gesprekken naar het buitenland blokkeren           |
+|Note                                  |step 16                                                                                                                                           |
+|Controleer of de WIJZIG knop is enabled                                                                                                                                                  |
+|Click on WIJZIG                                                                                                                                                                          |
+|Controleer of de WIJZIG knop is disabled                                                                                                                                                 |
+
+|script                                                                                                                                                                          |
+|Note              |step 17                                                                                                                                                      |
+|Check if the title|Nummerweergave & nummervermelding                                 |with heading           |h3                           |is visible                          |
+|Note              |step 18                                                                                                                                                      |
+|Check if text     |Nummerweergave                                                    |is present within group|Nummerweergave & nummervermelding                                 |
+|Check if text     |AAN                                                               |is present within group|Nummerweergave                                                    |
+|Check if text     |UIT                                                               |is present within group|Nummerweergave                                                    |
+|Click on          |UIT                                                               |within group           |Nummerweergave                                                    |
+|Note              |step 19                                                                                                                                                      |
+|Check if text     |Nummervermelding (in telefoongids en bij nummerinformatiediensten)|is present within group|Nummerweergave & nummervermelding                                 |
+|Check if text     |AAN                                                               |is present within group|Nummervermelding (in telefoongids en bij nummerinformatiediensten)|
+|Check if text     |UIT                                                               |is present within group|Nummervermelding (in telefoongids en bij nummerinformatiediensten)|
+|Click on          |AAN                                                               |within group           |Nummervermelding (in telefoongids en bij nummerinformatiediensten)|
+|Note              |step 20                                                                                                                                                      |
+|Controleer of de WIJZIG knop is enabled                                                                                                                                         |
+|Click on WIJZIG                                                                                                                                                                 |
+|Controleer of de WIJZIG knop is disabled                                                                                                                                        |
+
+|storyboard                                                                              |
+|Note              |step 21                                                              |
+|Check if the title|Voicemail instellingen|with heading           |h3     |is visible    |
+|Note              |step 22                                                              |
+|Check if text     |Voicemail gebruik     |is present within group|Voicemail instellingen|
+|Check if text     |AAN                   |is present within group|Voicemail gebruik     |
+|Check if text     |UIT                   |is present within group|Voicemail gebruik     |
+|Click on          |UIT                   |within group           |Voicemail gebruik     |
+|Note              |step 25                                                              |
+|Controleer of de WIJZIG knop is enabled                                                 |
+|Click on WIJZIG                                                                         |
+|Controleer of de WIJZIG knop is disabled                                                |
+

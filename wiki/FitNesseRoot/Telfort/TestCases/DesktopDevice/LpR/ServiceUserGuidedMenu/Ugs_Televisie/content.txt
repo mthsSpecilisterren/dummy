@@ -1,0 +1,133 @@
+|storyboard                       |
+|telfort.general Open Telfort |
+|telfort.general Go to Service|
+
+|telfort.service Click trough guided menu and return title                                                                                                                      |
+|maxlvl|level1   |level2                |level3                    |level4                                            |level5|title?                                            |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Interactieve TV bestellen                         |      |Interactieve TV bestellen                         |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Extra zenderpakketten bestellen                   |      |Extra zenderpakketten bestellen                   |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |TV-verbindingsset bestellen                       |      |TV-verbindingsset bestellen                       |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Digitenne bestellen                               |      |Digitenne bestellen                               |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Bestelling annuleren                              |      |Bestelling Internet, TV en Bellen annuleren       |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Extra tv-ontvanger bestellen                      |      |Extra tv-ontvanger bestellen voor Interactieve TV |
+|4     |Televisie|Bestellen en ontvangen|Bestellen                 |Losse voetbalwedstrijd bestellen                  |      |Losse voetbalwedstrijd bestellen met Live Voetbal |
+|4     |Televisie|Bestellen en ontvangen|Overstappen               |Overstappen naar Telfort                          |      |Overstappen naar Telfort Internet, TV en Bellen   |
+|4     |Televisie|Bestellen en ontvangen|Overstappen               |Overstappen van Telfort internet naar glasvezel   |      |Overstappen van Telfort internet naar glasvezel   |
+|4     |Televisie|Bestellen en ontvangen|Overstappen               |Contractnummer vinden                             |      |Contractnummer vinden                             |
+|4     |Televisie|Bestellen en ontvangen|Levering                  |Levering van Internet, TV & Bellen                |      |Levering van Internet, TV & Bellen                |
+|4     |Televisie|Bestellen en ontvangen|Levering                  |Levering van Glasvezel                            |      |Levering van Glasvezel                            |
+|4     |Televisie|Bestellen en ontvangen|!-CombiVoordeel-!         |!-CombiVoordeel aanzetten-!                       |      |!-CombiVoordeel aanzetten-!                       |
+|4     |Televisie|Bestellen en ontvangen|!-CombiVoordeel-!         |!-Voorwaarden voor het krijgen van CombiVoordeel-!|      |!-Voorwaarden voor het krijgen van CombiVoordeel-!|
+|4     |Televisie|Bestellen en ontvangen|!-CombiVoordeel-!         |!-Status CombiVoordeel aanmelding-!               |      |!-Status CombiVoordeel aanmelding-!               |
+|3     |Televisie|Bestellen en ontvangen|Status bestelling bekijken|                                                  |      |Status bestelling bekijken                        |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                          |
+|maxlvl|level1   |level2     |level3                               |level4                                      |level5                                        |title?                                              |
+|5     |Televisie|Installeren|Hulp bij installeren                 |TV-verbindingsset                           |TV-verbindingsset installeren                 |TV-verbindingsset installeren                       |
+|5     |Televisie|Installeren|Hulp bij installeren                 |TV-verbindingsset                           |Tweede televisie aansluiten                   |Tweede televisie aansluiten met de TV-verbindingsset|
+|5     |Televisie|Installeren|Hulp bij installeren                 |TV-verbindingsset                           |Koppelen van de TV-verbindingsset adapters    |Koppelen van de TV-verbindingsset adapters          |
+|5     |Televisie|Installeren|Hulp bij installeren                 |TV-verbindingsset                           |Tips prestatieverbetering TV-verbindingsset   |Tips prestatieverbetering TV-verbindingsset         |
+|5     |Televisie|Installeren|Hulp bij installeren                 |TV-verbindingsset                           |Software TV-verbindingsset opnieuw installeren|Software TV-verbindingsset opnieuw installeren      |
+|4     |Televisie|Installeren|Hulp bij installeren                 |TV-ontvanger installeren                    |                                              |TV-ontvanger installeren                            |
+|4     |Televisie|Installeren|Hulp bij installeren                 |Interactieve TV activeren                   |                                              |Interactieve TV activeren                           |
+|4     |Televisie|Installeren|Hulp bij installeren                 |Installatie door een monteur                |                                              |Installatie door een monteur                        |
+|4     |Televisie|Installeren|Hulp bij installeren                 |Monteur bestellen                           |                                              |Monteur bestellen                                   |
+|4     |Televisie|Installeren|Hulp bij installeren                 |Abonnementsnummer opzoeken                  |                                              |Abonnementsnummer opzoeken                          |
+|4     |Televisie|Installeren|Analoge- en digitale tv via glasvezel|Losse DVB-c ontvanger aansluiten            |                                              |Losse DVB-c ontvanger aansluiten                    |
+|4     |Televisie|Installeren|Analoge- en digitale tv via glasvezel|TV met ingebouwde DVB-c ontvanger aansluiten|                                              |TV met ingebouwde DVB-c ontvanger aansluiten        |
+|4     |Televisie|Installeren|Analoge- en digitale tv via glasvezel|DVB-c ontvanger instellen                   |                                              |DVB-c ontvanger instellen                           |
+|4     |Televisie|Installeren|Analoge- en digitale tv via glasvezel|Overzicht van te gebruiken DVB-c ontvangers |                                              |Overzicht van te gebruiken DVB-c ontvangers         |
+|3     |Televisie|Installeren|Afstandsbediening instellen          |                                            |                                              |Afstandsbediening instellen                         |
+|3     |Televisie|Installeren|Installatie Garantie                 |                                            |                                              |Installatie Garantie                                |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                                  |
+|maxlvl|level1   |level2   |level3                             |level4                                        |level5                                                |title?                                                |
+|5     |Televisie|Gebruiken|TV apps en extra's                 |Begin Gemist                                  |Hoe werkt Begin Gemist                                |Hoe werkt Begin Gemist                                |
+|5     |Televisie|Gebruiken|TV apps en extra's                 |Begin Gemist                                  |Kosten Begin Gemist                                   |Kosten Begin Gemist                                   |
+|5     |Televisie|Gebruiken|TV apps en extra's                 |Begin Gemist                                  |Zenders Begin Gemist                                  |Zenders Begin Gemist                                  |
+|5     |Televisie|Gebruiken|TV apps en extra's                 |HBO GO                                        |Registreren voor HBO GO                               |Registreren voor HBO GO                               |
+|5     |Televisie|Gebruiken|TV apps en extra's                 |HBO GO                                        |HBO GO kijken via tv-ontvanger                        |HBO GO kijken via tv-ontvanger                        |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Online tv kijken                              |                                                      |Online tv kijken                                      |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Opnemen pakket                                |                                                      |Opnemen pakket                                        |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Serie opnemen                                 |                                                      |Serie opnemen                                         |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |FOX Sports NL activeren                       |                                                      |FOX Sports NL activeren                               |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Live tv pauzeren                              |                                                      |Live tv pauzeren                                      |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Losse voetbalwedstrijd bestellen              |                                                      |Losse voetbalwedstrijd bestellen met Live Voetbal     |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Programma Gemist                              |                                                      |Gemiste programma's terugkijken via Programma Gemist  |
+|4     |Televisie|Gebruiken|TV apps en extra's                 |Meer TV                                       |                                                      |Méér TV (apps bekijken op je TV)                      |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met Interactieve TV                           |Het beeld van mijn tv hapert / ik zie blokjes in beeld|Het beeld van mijn tv hapert / ik zie blokjes in beeld|
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met Interactieve TV                           |Het TV-menu is traag of functioneert niet             |Het TV-menu is traag of functioneert niet             |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met Interactieve TV                           |Ik zie geen beeld, mijn beeld is blauw of zwart       |Ik zie geen beeld, mijn beeld is blauw of zwart       |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met Interactieve TV                           |Afstandsbediening werkt niet                          |Afstandsbediening werkt niet                          |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met de TV verbindingsset                      |Mijn TV-verbindingsset werkt niet goed                |Mijn TV-verbindingsset werkt niet goed                |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met analoge tv                                |Ik heb geen of slecht beeld                           |Ik heb geen of slecht beeld                           |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Met de live tv app                            |Ik kan geen live tv kijken via de Telfort app         |Ik kan geen live tv kijken via de Telfort app         |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 3                                            |Foutcode 3                                            |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 5                                            |Foutcode 5                                            |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 11, 303 of 311                               |Foutcode 11, 303 of 311                               |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 12 (F12)                                     |Foutcode 12 (F12)                                     |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 14 of 36                                     |Foutcode 14 of 36                                     |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 31                                           |Foutcode 31                                           |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 33, 256 of 502                               |Foutcode 33, 256 of 502                               |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 300                                          |Foutcode 300                                          |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutcodes                                     |Foutcode 301, 302, 3023                               |Foutcode 301, 302, 3023                               |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutmeldingen                                 |Foutmelding: Cannot open URL of Invalid URL           |Foutmelding: Cannot open URL of Invalid URL           |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutmeldingen                                 |Foutmelding: Authenticatie mislukt                    |Foutmelding: Authenticatie mislukt                    |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutmeldingen                                 |Foutmelding: Waiting for network                      |Foutmelding: Waiting for network                      |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutmeldingen                                 |Foutmelding: Netwerk biedt niet de benodigde diensten |Foutmelding: Netwerk biedt niet de benodigde diensten |
+|5     |Televisie|Gebruiken|Hulp bij technische problemen      |Foutmeldingen                                 |Foutmelding: Loading…                                 |Foutmelding: Loading…                                 |
+|4     |Televisie|Gebruiken|Zenderoverzicht                    |Zenderoverzicht Interactieve TV               |                                                      |Zenderoverzicht Interactieve TV                       |
+|4     |Televisie|Gebruiken|Zenderoverzicht                    |Zenderoverzicht analoge en digitale (DVB-c) TV|                                                      |Zenderoverzicht analoge en digitale (DVB-c) TV        |
+|4     |Televisie|Gebruiken|De pincode van je tv-ontvanger     |Pincode activeren tv-ontvanger                |                                                      |Pincode activeren tv-ontvanger                        |
+|4     |Televisie|Gebruiken|De pincode van je tv-ontvanger     |Pincode of betaalcode wijzigen                |                                                      |Pincode of betaalcode wijzigen                        |
+|4     |Televisie|Gebruiken|De pincode van je tv-ontvanger     |Pincode uitschakelen                          |                                                      |Pincode uitschakelen                                  |
+|4     |Televisie|Gebruiken|De pincode van je tv-ontvanger     |Pincode of betaalcode kwijt                   |                                                      |Pincode of betaalcode kwijt                           |
+|4     |Televisie|Gebruiken|De pincode van je tv-ontvanger     |Betaalcode verkeerd ingevoerd                 |                                                      |Betaalcode verkeerd ingevoerd                         |
+|4     |Televisie|Gebruiken|Digitenne                          |Voordelen van Digitenne                       |                                                      |Voordelen van Digitenne                               |
+|4     |Televisie|Gebruiken|Digitenne                          |Kosten Digitenne                              |                                                      |Kosten Digitenne                                      |
+|4     |Televisie|Gebruiken|Digitenne                          |Contact met Digitenne                         |                                                      |Contact met Digitenne                                 |
+|4     |Televisie|Gebruiken|Mijn Telfort                       |Mogelijkheden van Mijn Telfort                |                                                      |Mogelijkheden van Mijn Telfort                        |
+|4     |Televisie|Gebruiken|Mijn Telfort                       |Hulp bij inloggen Mijn Telfort                |                                                      |Hulp bij inloggen Mijn Telfort                        |
+|4     |Televisie|Gebruiken|Kinderslot en zenders blokkeren    |Kinderslot instellen                          |                                                      |Kinderslot instellen                                  |
+|4     |Televisie|Gebruiken|Kinderslot en zenders blokkeren    |Zenders blokkeren                             |                                                      |Zenders blokkeren                                     |
+|3     |Televisie|Gebruiken|Specificaties van je tv-ontvanger  |                                              |                                                      |Specificaties van je tv-ontvanger                     |
+|3     |Televisie|Gebruiken|Digitale tv kijken op meerdere tv's|                                              |                                                      |Digitale tv kijken op meerdere tv's                   |
+|3     |Televisie|Gebruiken|Storingen en onderhoud             |                                              |                                                      |Storingen en onderhoudsmeldingen                      |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                   |
+|maxlvl|level1   |level2  |level3                                         |level4                          |level5                         |title?                                           |
+|4     |Televisie|Wijzigen|Persoonlijke gegevens wijzigen                 |E-mailadres wijzigen            |                               |E-mailadres wijzigen                             |
+|4     |Televisie|Wijzigen|Persoonlijke gegevens wijzigen                 |Rekeningnummer wijzigen         |                               |Rekeningnummer Internet, TV en Bellen wijzigen   |
+|4     |Televisie|Wijzigen|Persoonlijke gegevens wijzigen                 |Wachtwoord Mijn Telfort wijzigen|                               |Wachtwoord Mijn Telfort wijzigen                 |
+|5     |Televisie|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland      |Verhuizen Internet, TV & bellen|Verhuizen Internet, TV & bellen                  |
+|5     |Televisie|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland      |Verhuizen glasvezel abonnement |Verhuizen glasvezel abonnement                   |
+|4     |Televisie|Wijzigen|Verhuizen                                      |Verhuizen naar het buitenland   |                               |Verhuizen naar het buitenland                    |
+|4     |Televisie|Wijzigen|Verhuizen                                      |Kosteloos verhuizen             |                               |Kosteloos verhuizen                              |
+|4     |Televisie|Wijzigen|Mijn Telfort                                   |Hulp bij inloggen Mijn Telfort  |                               |Hulp bij inloggen Mijn Telfort                   |
+|4     |Televisie|Wijzigen|Mijn Telfort                                   |Wachtwoord Mijn Telfort wijzigen|                               |Wachtwoord Mijn Telfort wijzigen                 |
+|4     |Televisie|Wijzigen|Abonnement wijzigen                            |Interactieve TV bestellen       |                               |Interactieve TV bestellen                        |
+|4     |Televisie|Wijzigen|Abonnement wijzigen                            |Digitenne bestellen             |                               |Digitenne bestellen                              |
+|4     |Televisie|Wijzigen|Abonnement wijzigen                            |Extra zenderpakketten bestellen |                               |Extra zenderpakketten bestellen                  |
+|4     |Televisie|Wijzigen|Abonnement wijzigen                            |Extra tv-ontvanger bestellen    |                               |Extra tv-ontvanger bestellen voor Interactieve TV|
+|4     |Televisie|Wijzigen|Abonnement wijzigen                            |Bestelling annuleren            |                               |Bestelling Internet, TV en Bellen annuleren      |
+|3     |Televisie|Wijzigen|Overstappen van Telfort internet naar glasvezel|                                |                               |Overstappen van Telfort internet naar glasvezel  |
+|3     |Televisie|Wijzigen|Contract overnemen                             |                                |                               |Contract overnemen Internet, TV en Bellen        |
+
+|telfort.service Click trough guided menu and return title                                                                                                                       |
+|maxlvl|level1   |level2             |level3                          |level4                                     |level5|title?                                                 |
+|4     |Televisie|Betalen en facturen|Uitleg over je factuur          |Eerste factuur                             |      |Eerste factuur Internet, TV en Bellen                  |
+|4     |Televisie|Betalen en facturen|Uitleg over je factuur          |Maandelijkse factuur                       |      |Maandelijkse factuur Internet, TV en Bellen            |
+|4     |Televisie|Betalen en facturen|Uitleg over je factuur          |Factuur na wijziging                       |      |Factuur na wijziging Internet, TV en Bellen            |
+|4     |Televisie|Betalen en facturen|Uitleg over je factuur          |!-CombiVoordeel terugvinden op je factuur-!|      |!-CombiVoordeel terugvinden op je factuur-!            |
+|3     |Televisie|Betalen en facturen|Factuur bekijken in Mijn Telfort|                                           |      |Factuur Internet, TV en Bellen bekijken in Mijn Telfort|
+|3     |Televisie|Betalen en facturen|Verbruik videotheek bekijken    |                                           |      |Verbruik videotheek bekijken                           |
+|3     |Televisie|Betalen en facturen|Factuur hoger dan verwacht      |                                           |      |Factuur Internet, TV en Bellen hoger dan verwacht      |
+|3     |Televisie|Betalen en facturen|Factuur betalen                 |                                           |      |Openstaande factuur betalen                            |
+|3     |Televisie|Betalen en facturen|Automatische incasso mislukt    |                                           |      |Automatische incasso mislukt                           |
+
+|telfort.service Click trough guided menu and return title                                                                   |
+|maxlvl|level1   |level2  |level3                                  |level4|level5|title?                                     |
+|3     |Televisie|Opzeggen|Internet, TV & Bellen opzeggen          |      |      |Internet, TV & Bellen opzeggen             |
+|3     |Televisie|Opzeggen|!-Afmelden of stopzetten CombiVoordeel-!|      |      |!-Afmelden of stopzetten CombiVoordeel-!   |
+|3     |Televisie|Opzeggen|Opzegtermijn                            |      |      |Opzegtermijn Internet, TV en Bellen        |
+|3     |Televisie|Opzeggen|Bestelling annuleren                    |      |      |Bestelling Internet, TV en Bellen annuleren|

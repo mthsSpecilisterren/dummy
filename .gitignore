@@ -1,0 +1,15 @@
+hsac-fitnesse-fixtures.iml
+*.zip
+*.class
+*.jar
+target/
+.idea/
+wiki/FitNesseRoot/files/
+wiki/FitNesseRoot/RecentChanges
+wiki/FitNesseRoot/FitNesse
+wiki/FitNesseRoot/PageFooter
+wiki/FitNesseRoot/PageHeader
+wiki/FitNesseRoot/RecentChanges
+wiki/FitNesseRoot/TemplateLibrary
+wiki/fixtures/
+properties

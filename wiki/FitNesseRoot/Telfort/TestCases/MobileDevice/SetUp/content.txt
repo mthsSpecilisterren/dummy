@@ -1,0 +1,14 @@
+!***> Start Mobile
+|script          |selenium driver setup                                            |
+|start driver for|chrome mobile emulation|with profile|!{deviceName:Apple iPhone 6}|
+*!
+
+!***> Libraries
+|Library     |
+|telfort test|
+*!
+
+|script                             |
+|clear all cookies                  |
+|seconds before page load timeout|30|
+|seconds before timeout          |30|

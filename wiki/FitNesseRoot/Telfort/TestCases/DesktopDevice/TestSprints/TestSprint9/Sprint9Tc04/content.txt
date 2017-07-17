@@ -1,0 +1,42 @@
+!*> Local scenarios
+|scenario                |Check if button 'Wijzigen'          |is active         |
+|Check if visible on page|xpath=//button[not (@disabled)][contains(.,"Wijzigen")]|
+
+|scenario                |Check if there is a paragraph with the title|title|containing a link|link|
+|Check if visible on page|xpath=//*[.="@title"]/following::p/a[.="@link"]                          |
+
+*!
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc04_login}|and password|${accountSprint9Tc04_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+
+
+|script                                                                           |
+|Click on icon     |Blokkades                                                     |
+|Check if the title|Blokkades                          |with heading|h2|is visible|
+|Check if the title|Algemene blokkades                 |with heading|h3|is visible|
+|Check if the title|Blokkeer onderstaande instellingen:|with heading|h3|is visible|
+
+|script                                                       |
+|Set option|Bellen naar 0900-informatienummers   |to|Blokkeren|
+|Set option|Bellen naar 0900-entertainmentnummers|to|Blokkeren|
+|Set option|Bellen naar alle nummers             |to|Blokkeren|
+|Set option|Gebeld kunnen worden                 |to|Blokkeren|
+|Set option|Sms versturen                        |to|Blokkeren|
+|Set option|Sms ontvangen                        |to|Blokkeren|
+|Set option|Mobiel internet                      |to|Blokkeren|
+
+|script                                                                                                         |
+|Check if the title|Buitenlandblokkades                                              |with heading|h3|is visible|
+|Check if the title|Blokkeer onderstaande instellingen:                              |with heading|h3|is visible|
+|Set option        |Bellen van Nederland naar het buitenland                         |to          |Blokkeren    |
+|Set option        |Bellen vanuit het buitenland naar een ander land buiten Nederland|to          |Blokkeren    |
+|Set option        |Bellen van buitenland naar buitenland of Nederland               |to          |Blokkeren    |
+|Set option        |Gebeld worden in het buitenland                                  |to          |Blokkeren    |
+
+|script                                                                                                                                 |
+|Check if button 'Wijzigen'                  |is active                                                                                 |
+|Check if there is a paragraph with the title|Betaalde sms-diensten|containing a link|Lees meer over sms-diensten afmelden of blokkeren.|
+

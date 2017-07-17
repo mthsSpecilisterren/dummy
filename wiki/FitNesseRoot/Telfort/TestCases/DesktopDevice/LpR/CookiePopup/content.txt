@@ -1,0 +1,23 @@
+!*> Local scenarios
+|scenario                 |Check if there are no cookie options selected|
+|Check if the radio button|Ik wil minimale cookies   |is not selected   |
+|Check if the radio button|Ik wil beperkte cookies   |is not selected   |
+|Check if the radio button|Ik wil optimale cookies   |is not selected   |
+
+|scenario|Go back to the cookie message|
+|back                                  |
+
+|scenario         |Click on the link|link|in the cookie message|
+|Click on the link|@link                                       |
+*!
+
+
+|storyboard|
+|Open the Telfort Website                                      |
+|Check if the cookie message appears                           |
+|Click on the link|Instellingen aanpassen|in the cookie message|
+|Check if there are no cookie options selected                 |
+|Go back to the cookie message                                 |
+|Click on the link|Ja, ik ga akkoord     |in the cookie message|
+|Check if the cookie message has disappeared                   |
+

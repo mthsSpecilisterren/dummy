@@ -1,0 +1,72 @@
+!*> Local scenarios
+
+|scenario                |Check if the button            |text           |is visible           |
+|Check if visible on page|xpath=//*[contains(@class,"button")][normalize-space(text())="@text"]|
+
+|scenario|Enter textbox|textboxLabel|with value                           |value                           |
+|enter   |@value       |as          |xpath=//*[normalize-space(text())="@textboxLabel"]/following::input[1]|
+
+|scenario                          |Change data back to old situation                                    |
+|Click on                          |Mijn gegevens                          |in the navigation menu       |
+|Click on the button 'Wijzigen' for|Persoonsgegevens                       |within the page Mijn gegevens|
+|Enter textbox                     |Alternatief telefoonnummer voor contact|with value    |0612345675    |
+|Click on the button               |Wijzigingen doorvoeren                                               |
+|wait                              |2                                      |seconds                      |
+*!
+
+|script                                                                                                    |
+|Open the Telfort website and agree with cookie message                                                    |
+|Login Mijn Mobiel with username   |${accountSprint7Tc04_login}|and password|${accountSprint7Tc04_password}|
+|Click on                          |Mijn gegevens              |in the navigation menu                     |
+|note                              |Click samenvoeg lightBox weg                                           |
+|Click on the button 'Wijzigen' for|Persoonsgegevens           |within the page Mijn gegevens              |
+
+|script                                                                 |
+|Check if the title|Persoonsgegevens wijzigen|with heading|h1|is visible|
+|Check if flow step|Persoonsgegevens wijzigen|is visible                |
+|Check if flow step|Wijzigingen doorgevoerd  |is visible                |
+|Check if flow step|Persoonsgegevens wijzigen|is active                 |
+|Check if the title|Persoonsgegevens         |with heading|h3|is visible|
+
+!|script                                                                       |
+|Check if visible on page|Naam                                                 |
+|Check if the textbox    |Voorletters  |with prefilled text|L.A.S.T.|is visible|
+|Check if the textbox    |Tussenvoegsel|with prefilled text|        |is visible|
+|Check if the textbox    |Achternaam   |with prefilled text|Roundmol|is visible|
+
+!|script                                                                                                                    |
+|Check if visible on page|Adres                                                                                             |
+|Check if the textbox    |Postcode                               |with prefilled text|1043EJ                     |is visible|
+|Check if the textbox    |Huisnummer                             |with prefilled text|121                        |is visible|
+|Check if the textbox    |Toevoeging                             |with prefilled text|                           |is visible|
+|Check if the textbox    |Straat                                 |with prefilled text|Teleportboulevard          |is visible|
+|Check if the textbox    |Woonplaats                             |with prefilled text|AMSTERDAM                  |is visible|
+|Check if the textbox    |Telefoonnummer                         |with prefilled text|${accountSprint7Tc04_login}|is visible|
+|Check if the textbox    |Alternatief telefoonnummer voor contact|with prefilled text|0612345675                 |is visible|
+|Check if the textbox    |E-mailadres                            |with prefilled text|averboom@kza.nl            |is visible|
+
+|script                                               |
+|Check if the button|Terug                 |is visible|
+|Check if the button|Wijzigingen doorvoeren|is visible|
+
+
+|script                                                                                                                                                 |
+|note               |make some changes                                                                                                                  |
+|note               |Click on the link                      |Telfort mag mij per e-mail benaderen met commerciële acties en aantrekkelijke aanbiedingen.|
+|Enter textbox      |Alternatief telefoonnummer voor contact|with value                                   |0612345678                                   |
+|Click on the button|Wijzigingen doorvoeren                                                                                                             |
+|wait               |1                                      |seconds                                                                                    |
+
+|script                                                                                                              |
+|note                       |Check changes                                                                           |
+|Check if flow step         |Wijzigingen doorgevoerd                |is active                                       |
+|Check if the title         |Wijzigingen doorgevoerd                |with heading  |h3   |is visible                 |
+|Check if the following text|Je hebt de volgende gegevens gewijzigd:|is visible                                      |
+|Check if change            |Alternatief telefoonnummer voor contact|with situation|Oud  |corresponds with|0612345675|
+|Check if change            |Alternatief telefoonnummer voor contact|with situation|Nieuw|corresponds with|0612345678|
+|Change data back to old situation                                                                                   |
+
+
+
+|script            |
+|Logout Mijn Mobiel|

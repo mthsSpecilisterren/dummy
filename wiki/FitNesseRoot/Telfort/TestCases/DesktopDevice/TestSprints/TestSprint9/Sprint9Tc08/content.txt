@@ -1,0 +1,150 @@
+!*> Local scenarios
+
+|scenario                |Check column 'Simkaart'                                                           |
+|Check if visible on page|xpath=//div[@class='dataoverview-table-header']/span[1][text()='Simkaart']        |
+|Check if visible on page|xpath=//div[@class='dataoverview-table-row']/span[1][text()='8931261110171006355']|
+
+|scenario                |Check column 'Status'                                                   |
+|Check if visible on page|xpath=//div[@class='dataoverview-table-header']/span[2][text()='Status']|
+|Check if visible on page|xpath=//div[@class='dataoverview-table-row']/span[2][text()='Actief']   |
+
+|scenario                |Check column 'PUK-code'                                                   |
+|Check if visible on page|xpath=//div[@class='dataoverview-table-header']/span[3][text()='PUK-code']|
+|Check if visible on page|xpath=//div[@class='dataoverview-table-row']/span[3][text()='33270553']   |
+
+|scenario                |Check input box 'Simkaartnummer' no         |indexNo        |is visible        |
+|Check if visible on page|xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[@indexNo]//input|
+
+|scenario                |Check input box 'Simkaartnummer' no               |indexNo              |is active              |
+|Check if visible on page|xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[@indexNo]//input[not (@disabled)]|
+
+|scenario                |Check input box 'Simkaartnummer' no            |indexNo            |is inactive           |
+|Check if visible on page|xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[@indexNo]//input[@disabled]|
+
+|scenario|Check input box 'Simkaartnummer' no|indexNo                                                                        |has value|value|
+|check   |value of                           |xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[@indexNo]//input|@value         |
+
+
+|scenario                |Check if button 'Simkaart activeren' is visible |
+|Check if visible on page|xpath=//button[contains(.,'Simkaart activeren')]|
+
+|scenario                |Check if button 'Simkaart activeren' is active                   |
+|Check if visible on page|xpath=//button[contains(.,'Simkaart activeren')][not (@disabled)]|
+
+|scenario                |Check if button 'Simkaart activeren' is inactive           |
+|Check if visible on page|xpath=//button[contains(.,'Simkaart activeren')][@disabled]|
+
+
+|scenario                |Check if button  |buttonText |is visible |
+|Check if visible on page|xpath=//button[contains(.,'@buttonText')]|
+
+|scenario                |Check if button        |buttonText       |is active       |
+|Check if visible on page|xpath=//button[contains(.,'@buttonText')][not (@disabled)]|
+
+|scenario                |Check if button     |buttonText     |is inactive    |
+|Check if visible on page|xpath=//button[contains(.,'@buttonText')][@disabled]|
+
+
+|scenario|Type |text|in second input box 'Simkaartnummer'                                    |
+|enter   |@text|as  |xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[2]//input|
+
+|scenario                |Check if error message is visible below input box 'Simkaartnummer'                               |
+|Check if visible on page|xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[2]//span[text()='onjuiste invoer']|
+
+|scenario                    |Check if error message is not visible below input box 'Simkaartnummer'                           |
+|Check if not visible on page|xpath=//span[text()='Simkaartnummer']/following-sibling::div/*[2]//span[text()='onjuiste invoer']|
+
+|scenario |Check sim card no |simCardNo         |is invalid        |
+|Type     |@simCardNo        |in second input box 'Simkaartnummer' |
+|Check if error message is visible below input box 'Simkaartnummer'|
+|Check if button 'Simkaart activeren' is inactive                  |
+
+|scenario  |Check sim card no  |simCardNo           |is valid          |
+|Type      |@simCardNo         |in second input box 'Simkaartnummer'   |
+|Check if error message is not visible below input box 'Simkaartnummer'|
+|Check if button 'Simkaart activeren' is active                        |
+
+
+|scenario                           |Check first input box 'Simkaartnummer'|
+|Check input box 'Simkaartnummer' no|1       |is visible                   |
+|Check input box 'Simkaartnummer' no|1       |is inactive                  |
+|Check input box 'Simkaartnummer' no|1       |has value       |893126      |
+
+|scenario                           |Check second input box 'Simkaartnummer'|
+|Check input box 'Simkaartnummer' no|2              |is visible             |
+|Check input box 'Simkaartnummer' no|2              |is active              |
+
+|scenario                |Check if link|linkText|is visible|
+|Check if visible on page|xpath=//a[text()='@linkText']    |
+
+|scenario                |Check if radio button 'Telfort postpaid NFC' is visible|
+|Check if visible on page|xpath=//label[contains(.,'Telfort postpaid NFC')]      |
+
+|scenario|Click on radio button 'Telfort postpaid NFC'     |
+|click   |xpath=//label[contains(.,'Telfort postpaid NFC')]|
+
+|scenario                |Check if remark below radio button 'Telfort postpaid NFC' is visible                                                                                                   |
+|Check if visible on page|xpath=//div[normalize-space(.)='Let op! We versturen je nieuwe simkaart met de normale post mee. Het duurt een paar werkdagen voordat je je nieuwe simkaart ontvangt.']|
+
+*!
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc08_login}|and password|${accountSprint9Tc08_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+|Click on icon                  |Simkaart                                                               |
+
+|script                                                |
+|Check if the title|Simkaart|with heading|h2|is visible|
+|Check column 'Simkaart'                               |
+|Check column 'Status'                                 |
+|Check column 'PUK-code'                               |
+
+|script                                                                                                                                                                             |
+|Check if the title|Simkaart activeren                                                                                                                   |with heading|h3|is visible|
+|Check if the title|De simkaart is het kleine plastic kaartje met het glimmende koperkleurige oppervlak. Achterop de simkaart vind je het simkaartnummer.|with heading|p |is visible|
+|Check if the title|Vul hier de laatste 13 cijfers van je simkaartnummer in.                                                                             |with heading|p |is visible|
+
+|script                                 |
+|Check if visible on page|Simkaartnummer|
+|Check first input box 'Simkaartnummer' |
+|Check second input box 'Simkaartnummer'|
+
+|script                                          |
+|Check if button  |Simkaart activeren|is visible |
+|Check if button  |Simkaart activeren|is inactive|
+|Check sim card no|lorem ipsum dolor |is invalid |
+|Check sim card no|!@#$%             |is invalid |
+|Check sim card no|12345             |is invalid |
+|Check sim card no|1234567890123     |is valid   |
+
+|script                                                                                                                                                                               |
+|Check if the title|Simkaart (de)blokkeren                                                                                                               |with heading|h3  |is visible|
+|Check if the title|Is je telefoon gestolen of ben je hem kwijtgeraakt, blokkeer dan hier je simkaart. Als je hem weer vindt kun je hier ook deblokkeren.|with heading|p   |is visible|
+|Check if the title|Status simkaart:                                                                                                                     |with heading|span|is visible|
+|Check if the title|niet geblokkeerd                                                                                                                     |with heading|span|is visible|
+|Check if button   |Simkaart blokkeren                                                                                                                   |is visible                  |
+
+|script                                                                                                                                                                                                                                       |
+|Check if the title|Nieuwe simkaart aanvragen                                                                                                                                                                    |with heading|h3  |is visible|
+|Check if the title|Wanneer je een nieuwe simkaart aanvraagt ontvang je een uitdrukbare simkaart, geschikt als Nano, Micro of Standaard-simkaart en bruikbaar in elke telefoon. De nieuwe simkaart is ook voor 4G|with heading|p   |is visible|
+|Check if the title|Let op!                                                                                                                                                                                      |with heading|span|is visible|
+|Check if the title|De nieuwe simkaart dient uitsluitend ter vervanging van je oude simkaart! Het is niet mogelijk een tweede simkaart te gebruiken naast je huidige simkaart.                                   |with heading|p   |is visible|
+|Check if the title|De nieuwe simkaart word naar onderstaand adres verstuurd:                                                                                                                                    |with heading|p   |is visible|
+
+|script                                                              |
+|Check if the title|Teleportboulevard 121|with heading|div|is visible|
+|Check if the title|1043EJ AMSTERDAM     |with heading|div|is visible|
+|Check if link     |Adres wijzigen       |is visible                 |
+
+|script                                                                            |
+|Check if the title|Welk type simkaart wil je ontvangen?|with heading|h3|is visible|
+|Check if button   |Simkaart aanvragen                  |is visible                |
+|Check if button   |Simkaart aanvragen                  |is inactive               |
+|Check if radio button 'Telfort postpaid NFC' is visible                           |
+|Click on radio button 'Telfort postpaid NFC'                                      |
+|Check if remark below radio button 'Telfort postpaid NFC' is visible              |
+|Check if button   |Simkaart aanvragen                  |is active                 |
+
+|script            |
+|Logout Mijn Mobiel|

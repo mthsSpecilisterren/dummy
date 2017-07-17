@@ -1,0 +1,24 @@
+!*> Local scenarios
+|scenario|Check if chart element is visible                      |
+|ensure  |is visible on page|xpath=//canvas[@id="bar" and @style]|
+
+|scenario|Check if the text |text                                   |is visible                                   |
+|ensure  |is visible on page|xpath=//div[@class="invoice-graph"]/preceding-sibling::*//p[contains(text(),"@text")]|
+
+*!
+
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Note                           |Login with account for gemiddelde bedrag per maand                     |
+|Login Mijn Mobiel with username|${accountSprint1Tc04_login}|and password|${accountSprint1Tc04_password}|
+|note                           |Set cookie for the Stubhub                                             |
+|Set stubhub cookie                                                                                     |
+|Click on                       |Factuur                    |in the navigation menu                     |
+
+|storyboard                                                         |
+|Check if chart element is visible                                  |
+|Check if the text|Gemiddeld betaal je € 161,06 per maand|is visible|
+
+|storyboard        |
+|Logout Mijn Mobiel|

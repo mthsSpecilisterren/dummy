@@ -1,0 +1,36 @@
+!*> Local scenarios
+
+|scenario|Check if the section|sectionName    |contains a discount with the title|discountTitle|the text|discountText|a discount of|discountAmount|and the color|color|
+|ensure  |is visible on page  |@discountTitle |in                                |xpath=//*[.="@sectionName"]/../descendant::div[contains(@class, '@color')]          |
+|ensure  |is visible on page  |@discountText  |in                                |xpath=//*[.="@sectionName"]/../descendant::div[contains(@class, '@color')]          |
+|ensure  |is visible on page  |@discountAmount|in                                |xpath=//*[.="@sectionName"]/../descendant::div[contains(@class, '@color')]          |
+
+|scenario|Check if the total discount is|totalDiscountAmount                           |within section                           |sectionName                          |
+|ensure  |is visible on page            |xpath=//*[.="@sectionName"]/../descendant::p[@class='bundles_totalPrice'][contains(normalize-space(.),"@totalDiscountAmount")]|
+
+*!
+
+|script                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc08_test1_login}|and password|${accountSprint12Tc08_test1_password}|
+|Click on                       |Abonnement                        |in the navigation menu                            |
+|wait                           |3                                 |seconds                                           |
+
+
+!|script                                                                                                                                                                                  |
+|Check if the section          |Kortingen     |contains a discount with the title|Actieve korting|the text|Plus pakket eerste 2 maanden gratis|a discount of|- € 10,50|and the color|green|
+|Check if the total discount is|- € 10,00 /mnd|within section                    |Kortingen                                                                                               |
+
+
+|script                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc08_test2_login}|and password|${accountSprint12Tc08_test2_password}|
+|Click on                       |Abonnement                        |in the navigation menu                            |
+|wait                           |3                                 |seconds                                           |
+
+!|script                                                                                                                                                                                               |
+|Check if the section          |Kortingen     |contains a discount with the title|CombiVoordeel|the text|HBO pakket Telfort CombiVoordeel: Gratis HBO pakket|a discount of|- € 15,50|and the color|blue|
+|Check if the total discount is|- € 15,50 /mnd|within section                    |Kortingen                                                                                                            |
+ 
+
+

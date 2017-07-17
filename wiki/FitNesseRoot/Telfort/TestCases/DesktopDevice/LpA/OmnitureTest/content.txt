@@ -1,0 +1,73 @@
+!define URL {!-https://www.telfort.nl-!}
+!define COOKIE2 {!-http://kpn.blueconic.net/DG/DEFAULT-!}
+
+
+
+!*> Local scenarios
+|scenario  |Get omniture url                                 |
+|$omniture=|get attribute|src|of jsselector|s_i_kpncomtftprod|
+
+|scenario|Check if omniture url contains|search                    |
+|ensure  |text                          |$omniture|contains|@search|
+
+|scenario|Go to Contact page         |
+|open    |${URL}/algemeen/contact.htm|
+
+|scenario|Go to |surl|
+|open    |${URL}@surl|
+
+|scenario  |Click in header menu                         |l1                         |-                         |l2                        |-                        |l3                        |
+|hover over|xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@l1"]                                                                                                   |
+|click     |xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@l1"]/../../descendant::*[normalize-space(text())="@l2"]/../descendant::*[normalize-space(text())="@l3"]|
+
+|scenario|Click on the product option          |optionText          |
+|click   |xpath=//*[normalize-space(text())='@optionText']/..//label|
+
+|scenario           |Accept cookie message  |
+|Check if the cookie message appears        |
+|Click on the link  |Ja, ik ga akkoord      |
+|Check if the cookie message has disappeared|
+
+
+*!
+
+|script                                            |
+|open                          |${URL}             |
+|Get omniture url                                  |
+|Check if omniture url contains|events=event1      |
+|Check if omniture url contains|v1=home:persoonlijk|
+|Check if omniture url contains|h1=persoonlijk/home|
+|Accept cookie message                             |
+
+|script                                                           |
+|click                         |Contact|in|xpath=/html/body/footer|
+|Get omniture url                                                 |
+|Check if omniture url contains|event1                            |
+|Check if omniture url contains|v1=contact:algemeen               |
+
+|script                                                                     |
+|click                         |Bel de klantenservice                       |
+|Get omniture url                                                           |
+|Check if omniture url contains|event1,                                     |
+|Check if omniture url contains|event54                                     |
+|Check if omniture url contains|event61                                     |
+|Check if omniture url contains|v1=bel-de-klantenservice-dl:contact:algemeen|
+|Check if omniture url contains|v57=Body : Bel de klantenservice            |
+|click                         |Sluiten                                     |
+
+!|script                                                    |
+|click                         |CombiVoordeel               |
+|Get omniture url                                           |
+|Check if omniture url contains|event1,                     |
+|Check if omniture url contains|v1=combivoordeel:persoonlijk|
+
+|script                                                               |
+|click                         |Ja, ik heb Telfort producten          |
+|Get omniture url                                                     |
+|Check if omniture url contains|events=event14,event16                |
+|Check if omniture url contains|v19=01-heb-je-al-producten-van-Telfort|
+
+
+
+
+

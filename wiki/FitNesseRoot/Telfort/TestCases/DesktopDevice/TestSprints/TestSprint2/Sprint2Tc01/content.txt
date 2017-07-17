@@ -1,0 +1,66 @@
+!*> Local scenarios
+|scenario                |Check for H2 title  |title |
+|Check if visible on page|xpath=//h2[text()="@title"]|
+
+|scenario                |Check if progressbar                |name                |has percentage left of                |percentage               |
+|Check if visible on page|xpath=//*[text()="@name"]/../following-sibling::*/div[@class="progressBar_progress happy" and @style="width: @percentage"]|
+
+|scenario                |Check if remaining days of the bundel equals                    |daysLeft                    |
+|Check if visible on page|xpath=//div [contains(@class,"progressBar_daysleft") and contains(@data-content,"@daysLeft")]|
+
+|scenario                |Check if bundel                   |bundelName                   |shows                   |text                  |over                  |
+|Check if visible on page|xpath=//p[contains(@class,"progressBar_bundleName") and contains(text(),"@bundelName")]//following-sibling::p[contains(text(),"@text")]|
+
+*!
+
+|script                                                                                                                        |
+|Open the Telfort website and agree with cookie message                                                                        |
+|Note                           |Login with account, that has MB Bundel, Bell Bundel and SMS Bundel and usage from this bundels|
+|Login Mijn Mobiel with username|${accountSprint2Tc01_login}        |and password        |${accountSprint2Tc01_password}       |
+|Click on                       |Verbruik                           |in the navigation menu                                    |
+
+|script                                                          |
+|Check if the title|Verbruik          |with heading|h1|is visible|
+|note              |Check for H2 title|Buitenlandbundels         |
+
+
+|script                                                                                        |
+|Check if progressbar                        |Internet     |has percentage left of    |100%    |
+|Check if progressbar                        |Bellen       |has percentage left of    |100%    |
+|Note                                        |Check for the text 'Je hebt xx sms'jes verstuurd'|
+|Check if remaining days of the bundel equals|16                                               |
+|Logout Mijn Mobiel                                                                            |
+
+
+|comment                                                                                                          |
+|Note                           |Login with account that has no remaining minutes/mb's                            |
+|Login Mijn Mobiel with username|${accountSprint2Tc01_login}|and password          |${accountSprint2Tc01_password}|
+|Check if progressbar           |Internet                   |has percentage left of|0%                            |
+|Check if progressbar           |Bellen                     |has percentage left of|0%                            |
+|Logout                                                                                                           |
+
+|comment                                                                                                          |
+|Note                           |Login with account that has no usage for MB Bundel, Bell Bundel and SMS Bundel   |
+|Login Mijn Mobiel with username|${accountSprint2Tc01_login}|and password          |${accountSprint2Tc01_password}|
+|Check if progressbar           |Internet                   |has percentage left of|100%                          |
+|Check if progressbar           |Bellen                     |has percentage left of|100%                          |
+|Logout Mijn Mobiel                                                                                               |
+
+|comment                                                                                                             |
+|Note                                        |Login with account that has 30 days remaining                          |
+|Login Mijn Mobiel with username             |${accountSprint2Tc01_login}|and password|${accountSprint2Tc01_password}|
+|Check if remaining days of the bundel equals|30                                                                     |
+|Logout Mijn Mobiel                                                                                                  |
+
+|comment                                                                                                             |
+|Note                                        |Login with account that has 9 days remaining                           |
+|Login Mijn Mobiel with username             |${accountSprint2Tc01_login}|and password|${accountSprint2Tc01_password}|
+|Check if remaining days of the bundel equals|9                                                                      |
+|Logout Mijn Mobiel                                                                                                  |
+
+|comment                                                                                                             |
+|Note                                        |Login with account that has 1 day remaining                            |
+|Login Mijn Mobiel with username             |${accountSprint2Tc01_login}|and password|${accountSprint2Tc01_password}|
+|Check if remaining days of the bundel equals|1                                                                      |
+|Logout Mijn Mobiel                                                                                                  |
+

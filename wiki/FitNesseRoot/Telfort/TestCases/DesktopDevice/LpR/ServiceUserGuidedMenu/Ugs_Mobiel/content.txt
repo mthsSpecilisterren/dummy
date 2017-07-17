@@ -1,0 +1,174 @@
+|storyboard                       |
+|telfort.general Open Telfort |
+|telfort.general Go to Service|
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                 |
+|maxlvl|level1|level2                  |level3                |level4                                       |level5                                  |title?                                               |
+|4     |Mobiel|Bestellen en overstappen|Nummerbehoud          |Nummerbehoud aanvragen                       |                                        |Nummerbehoud mobiele nummer aanvragen                |
+|4     |Mobiel|Bestellen en overstappen|Nummerbehoud          |Aanvraag nummerbehoud afgewezen              |                                        |Aanvraag nummerbehoud mobiele nummer afgewezen       |
+|4     |Mobiel|Bestellen en overstappen|Nummerbehoud          |Niet bellen of internetten na nummerbehoud   |                                        |Niet bellen of internetten na nummerbehoud Mobiel    |
+|4     |Mobiel|Bestellen en overstappen|Nummerbehoud          |Telefoonnummer meenemen naar andere aanbieder|                                        |Mobiele telefoonnummer meenemen naar andere aanbieder|
+|4     |Mobiel|Bestellen en overstappen|Nummerbehoud          |Dubbele abonnementskosten voorkomen          |                                        |Dubbele abonnementskosten Mobiel voorkomen           |
+|4     |Mobiel|Bestellen en overstappen|Overstappen           |Overstappen van prepaid naar abonnement      |                                        |Overstappen van prepaid naar abonnement              |
+|4     |Mobiel|Bestellen en overstappen|Overstappen           |Overstappen van abonnement naar prepaid      |                                        |Overstappen van abonnement naar prepaid              |
+|4     |Mobiel|Bestellen en overstappen|Overstappen           |Overstappen van particulier naar zakelijk    |                                        |Van particulier naar zakelijk Mobiel                 |
+|4     |Mobiel|Bestellen en overstappen|Overstappen           |Overstappen van zakelijk naar particulier    |                                        |Overstappen van zakelijk naar particulier Mobiel     |
+|5     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|!-CombiVoordeel bestellen-!                  |!-CombiVoordeel aanzetten-!             |!-CombiVoordeel aanzetten-!                          |
+|5     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|!-CombiVoordeel bestellen-!                  |!-Status CombiVoordeel aanmelding-!     |!-Status CombiVoordeel aanmelding-!                  |
+|5     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|!-CombiVoordeel bestellen-!                  |!-Afmelden of stopzetten CombiVoordeel-!|!-Afmelden of stopzetten CombiVoordeel-!             |
+|5     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|!-CombiVoordeel bestellen-!                  |!-CombiVoordeel wijzigen-!              |!-CombiVoordeel wijzigen-!                           |
+|4     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|Abonnement verlengen                         |                                        |Verlengen mobiel abonnement                          |
+|4     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|Status van je bestelling                     |                                        |Status van je bestelling                             |
+|4     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|Toestelservice bestellen                     |                                        |Toestelservice bestellen                             |
+|4     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|Bestelling annuleren                         |                                        |Bestelling annuleren                                 |
+|4     |Mobiel|Bestellen en overstappen|Bestellen en verlengen|Toestel defect geleverd                      |                                        |Toestel defect geleverd                              |
+|3     |Mobiel|Bestellen en overstappen|Abonnement verlengen  |                                             |                                        |Verlengen mobiel abonnement                          |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                           |
+|maxlvl|level1|level2                |level3              |level4                            |level5                                        |title?                                                  |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toestel simlock                   |Telefoon simlockvrij maken                    |Telefoon simlockvrij maken                              |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toestel simlock                   |Unlockcode opvragen lukt niet                 |Unlockcode opvragen lukt niet                           |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toestel simlock                   |Invoeren unlockcode lukt niet                 |Invoeren unlockcode lukt niet                           |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon kwijt/gestolen           |Telefoon kwijt of gestolen                    |Telefoon kwijt of gestolen                              |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon kwijt/gestolen           |Leasetoestel kwijt of gestolen                |Leasetoestel kwijt of gestolen                          |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon repareren                |Reparatie eigen telefoon                      |Reparatie eigen telefoon                                |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon repareren                |Reparatie leasetoestel                        |Reparatie van je leasetoestel                           |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon repareren                |Status van de reparatie                       |Status reparatie                                        |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Telefoon repareren                |Batterij snel leeg                            |Batterij snel leeg                                      |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |Vervangende simkaart aanvragen                |Vervangende simkaart aanvragen                          |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |Simkaart activeren                            |Simkaart activeren                                      |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |Simkaart (de)blokkeren                        |Simkaart (de)blokkeren                                  |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |Simkaartnummer opvragen                       |Simkaartnummer opvragen                                 |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |Simkaart wordt niet geaccepteerd              |Simkaart wordt niet geaccepteerd                        |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Simkaart                          |NFC simkaart                                  |NFC simkaart bestellen en gebruiken                     |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toesteltips                       |Toestelhulp                                   |Toestelhulp                                             |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toesteltips                       |Batterij snel leeg                            |Batterij snel leeg                                      |
+|5     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Toesteltips                       |MB-verbruik beperken                          |MB-verbruik beperken                                    |
+|4     |Mobiel|Gebruiken en instellen|Telefoon en simkaart|Pukcode opvragen                  |                                              |Pukcode opvragen                                        |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Toestelhulp                                   |Toestelhulp                                             |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Snelheid mobiel internet                      |Snelheid mobiel internet                                |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |MB-verbruik beperken                          |MB-verbruik beperken                                    |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Mobiel internet werkt niet                    |Mobiel internet werkt niet                              |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Mobiel internet in het buitenland             |Mobiel internet in het buitenland                       |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Mobiele-internetdiensten afmelden of blokkeren|Mobiele-internetdiensten afmelden of blokkeren          |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Mobiel internet gebruiken         |Software en handleidingen voor je dongel      |Software en handleidingen voor je dongel                |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |Internetbundel aanvragen                      |Internetbundel aanvragen                                |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |Meenemen van belminuten en MB’s               |Meenemen van belminuten en MB’s                         |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |Extra MB's aanvragen                          |Extra MB's aanvragen                                    |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |4G aanzetten                                  |4G aanzetten                                            |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |MB-verbruik beperken                          |MB-verbruik beperken                                    |
+|5     |Mobiel|Gebruiken en instellen|Mobiel internet     |Internetbundels en tarieven       |Mogelijkheden met je internetbundel           |Mogelijkheden met je internetbundel                     |
+|4     |Mobiel|Gebruiken en instellen|Mobiel internet     |Dekking opzoeken (dekkingskaart)  |                                              |Dekking opzoeken (dekkingskaart)                        |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Bellen en gebeld worden           |Kan niet bellen                               |Kan niet bellen met mobiele telefoon                    |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Bellen en gebeld worden           |Telefonische overlast Mobiel                  |Telefonische overlast Mobiel                            |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Bellen en gebeld worden           |Slecht bereik                                 |Slecht bereik mobiele telefoon                          |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Bellen en gebeld worden           |Geen netwerk                                  |Geen netwerk mobiele telefoon                           |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Voicemail aan- en uitzetten                   |Voicemail mobiele telefoon aan- en uitzetten            |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Voicemail mobiele telefoon afluisteren        |Voicemail mobiele telefoon afluisteren                  |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Voicemail werkt niet                          |Voicemail mobiele telefoon werkt niet                   |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Kosten voicemail                              |Kosten voicemail mobiele telefoon                       |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Voicemail instellen                           |Voicemail mobiele telefoon instellen                    |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Voicemail                         |Toegangscode voicemail instellen              |Voicemail toegangscode (voicemailcode) mobiele telefoon |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Sms                               |Sms instellen                                 |Sms instellen                                           |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Sms                               |Sms versturen of ontvangen lukt niet          |Sms versturen of ontvangen lukt niet                    |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Sms                               |Sms-diensten afmelden of blokkeren            |Sms-diensten afmelden of blokkeren                      |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Servicenummers                    |Servicenummers blokkeren                      |Servicenummers blokkeren op mobiele telefoon            |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Servicenummers                    |Bellen naar servicenummers                    |Bellen naar servicenummers met mobiele telefoon         |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Servicenummers                    |Tarieven servicenummers mobiele telefoon      |Tarieven servicenummers mobiele telefoon                |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Telefoon doorschakelen                        |Doorschakelen mobiele telefoon                          |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Problemen met doorschakelen                   |Problemen met doorschakelen mobiele telefoon            |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Nummerherkenning                              |Nummerherkenning op mobiele telefoons                   |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Gesprekken blokkeren                          |Gesprekken blokkeren op mobiele telefoons               |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Groepsgesprek                                 |Groepsgesprek op mobiele telefoons                      |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Wisselgesprek                                 |Wisselgesprek op mobiele telefoons                      |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Tweede Gesprek                                |Tweede Gesprek op mobiele telefoons                     |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Gespreksmogelijkheden             |Nummers blokkeren                             |Nummers blokkeren in je mobiele telefoon                |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Mms                               |Toestelhulp                                   |Toestelhulp                                             |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Mms                               |Mms versturen of ontvangen                    |Mms versturen of ontvangen                              |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Mms                               |Mms versturen of ontvangen werkt niet         |Mms versturen of ontvangen werkt niet                   |
+|5     |Mobiel|Gebruiken en instellen|Bellen en sms'en    |Mms                               |Mms-bericht bekijken via website              |Mms-bericht bekijken via website                        |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Mobiel internet in het buitenland |Mobiel internet in het buitenland             |Mobiel internet in het buitenland                       |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Mobiel internet in het buitenland |Verbruikslimiet mobiel internet in buitenland |Verbruikslimiet mobiel internet in buitenland           |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Mobiel internet in het buitenland |Mobiel internet in het buitenland werkt niet  |Mobiel internet in het buitenland werkt niet            |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Bellen buitenland                 |Bellen in en naar het buitenland              |Bellen in en naar het buitenland                        |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Bellen buitenland                 |Sms'en in en naar het buitenland              |Sms'en in en naar het buitenland                        |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Bellen buitenland                 |Voicemail afluisteren in buitenland           |Voicemail mobiele telefoon afluisteren in het buitenland|
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Bellen buitenland                 |Opwaarderen in het buitenland                 |Opwaarderen in het buitenland                           |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Tarieven buitenland               |Tarieven buitenland                           |Uitleg over tarieven buitenland                         |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Tarieven buitenland               |Bespaartips buitenland                        |Bespaartips voor in het buitenland                      |
+|5     |Mobiel|Gebruiken en instellen|Buitenland          |Tarieven buitenland               |Buitenlandbundel bestellen                    |Buitenlandbundel bestellen                              |
+|4     |Mobiel|Gebruiken en instellen|Buitenland          |Buitenlandbundel bestellen        |                                              |Buitenlandbundel bestellen                              |
+|4     |Mobiel|Gebruiken en instellen|Netwerk             |Slecht bereik                     |                                              |Slecht bereik mobiele telefoon                          |
+|4     |Mobiel|Gebruiken en instellen|Netwerk             |Geen netwerk                      |                                              |Geen netwerk mobiele telefoon                           |
+|4     |Mobiel|Gebruiken en instellen|Netwerk             |Melding 'roaming' binnen Nederland|                                              |Melding 'roaming' binnen Nederland                      |
+|4     |Mobiel|Gebruiken en instellen|Netwerk             |4G aanzetten                      |                                              |4G aanzetten                                            |
+|4     |Mobiel|Gebruiken en instellen|Netwerk             |Dekking opzoeken (dekkingskaart)  |                                              |Dekking opzoeken (dekkingskaart)                        |
+|4     |Mobiel|Gebruiken en instellen|Mijn Telfort        |Inloggen Mijn Telfort             |                                              |Inloggen op Mijn Telfort                                |
+|4     |Mobiel|Gebruiken en instellen|Mijn Telfort        |Inloggen Mijn Telfort lukt niet   |                                              |Inloggen Mijn Telfort lukt niet                         |
+|4     |Mobiel|Gebruiken en instellen|Mijn Telfort        |Mijn Telfort app downloaden       |                                              |Mijn Telfort app downloaden                             |
+|4     |Mobiel|Gebruiken en instellen|Mijn Telfort        |Mogelijkheden Mijn Telfort        |                                              |Mogelijkheden Mijn Telfort mobiel                       |
+|3     |Mobiel|Gebruiken en instellen|Toestelhulp         |                                  |                                              |Toestelhulp                                             |
+
+|telfort.service Click trough guided menu and return title                                                                                       |
+|maxlvl|level1|level2                  |level3                     |level4                           |level5|title?                              |
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Sms opwaarderen                  |      |Sms opwaarderen                     |
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Aanmelden voor sms opwaarderen   |      |Aanmelden voor sms opwaarderen      |
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Online opwaarderen               |      |Online opwaarderen prepaid beltegoed|
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Automatisch opwaarderen          |      |Automatisch opwaarderen             |
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Opwaarderen met een opwaardeerbon|      |Opwaarderen met een opwaardeerbon   |
+|4     |Mobiel|Beltegoed en opwaarderen|Opwaarderen                |Opwaarderen in het buitenland    |      |Opwaarderen in het buitenland       |
+|4     |Mobiel|Beltegoed en opwaarderen|Beltegoed                  |Opvragen prepaid beltegoed       |      |Opvragen prepaid beltegoed          |
+|4     |Mobiel|Beltegoed en opwaarderen|Beltegoed                  |Geldigheid prepaid beltegoed     |      |Geldigheid prepaid beltegoed        |
+|4     |Mobiel|Beltegoed en opwaarderen|Beltegoed                  |Vijfje van Telfort aanvragen     |      |Vijfje van Telfort aanvragen        |
+|4     |Mobiel|Beltegoed en opwaarderen|Beltegoed                  |Prepaidbundel aanzetten          |      |Prepaidbundel aanzetten             |
+|3     |Mobiel|Beltegoed en opwaarderen|Tariefplan prepaid wijzigen|                                 |      |Tariefplan prepaid wijzigen         |
+|3     |Mobiel|Beltegoed en opwaarderen|Prepaidbundel aanzetten    |                                 |      |Prepaidbundel aanzetten             |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                          |
+|maxlvl|level1|level2  |level3                        |level4                                       |level5                                   |title?                                               |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Opzeggen abonnement                          |                                         |Opzeggen mobiel abonnement                           |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Abonnement verlengen                         |                                         |Verlengen mobiel abonnement                          |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Bundels wijzigen                             |                                         |Bundels wijzigen                                     |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Van Sim Only naar abonnement met toestel     |                                         |Van Sim Only naar abonnement met toestel             |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Leasetoestel overnemen                       |                                         |Leasetoestel overnemen                               |
+|4     |Mobiel|Wijzigen|Abonnement wijzigen           |Leasetoestel inleveren                       |                                         |Leasetoestel inleveren                               |
+|5     |Mobiel|Wijzigen|Overstappen                   |Overstappen naar prepaid of abonnement       |Overstappen van prepaid naar abonnement  |Overstappen van prepaid naar abonnement              |
+|5     |Mobiel|Wijzigen|Overstappen                   |Overstappen naar prepaid of abonnement       |Overstappen van abonnement naar prepaid  |Overstappen van abonnement naar prepaid              |
+|5     |Mobiel|Wijzigen|Overstappen                   |Overstappen naar zakelijk of particulier     |Overstappen van zakelijk naar particulier|Overstappen van zakelijk naar particulier Mobiel     |
+|5     |Mobiel|Wijzigen|Overstappen                   |Overstappen naar zakelijk of particulier     |Overstappen van particulier naar zakelijk|Van particulier naar zakelijk Mobiel                 |
+|4     |Mobiel|Wijzigen|Overstappen                   |Telefoonnummer meenemen naar andere aanbieder|                                         |Mobiele telefoonnummer meenemen naar andere aanbieder|
+|4     |Mobiel|Wijzigen|Overstappen                   |Nummerbehoud binnen Telfort                  |                                         |Nummerbehoud Mobiel binnen Telfort                   |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Nieuw telefoonnummer aanvragen               |                                         |Nieuw mobiel telefoonnummer aanvragen                |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Rekeningnummer wijzigen                      |                                         |Rekeningnummer Mobiel wijzigen                       |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Adres wijzigen                               |                                         |Adres wijzigen Mobiel                                |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Naam wijzigen                                |                                         |Naam wijzigen bij Telfort Mobiel                     |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Contract overnemen                           |                                         |Contract overnemen Telfort mobiel                    |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Nummervermelding telefoongids                |                                         |Nummervermelding mobiele telefoon in telefoongids    |
+|4     |Mobiel|Wijzigen|Persoonlijke gegevens wijzigen|Post van Telfort stopzetten                  |                                         |Post van Telfort stopzetten                          |
+|4     |Mobiel|Wijzigen|Leasetoestel                  |Wat doen met leasetoestel na einde contract  |                                         |Wat doen met leasetoestel na einde contract          |
+|4     |Mobiel|Wijzigen|Leasetoestel                  |Leasetoestel inleveren                       |                                         |Leasetoestel inleveren                               |
+|4     |Mobiel|Wijzigen|Leasetoestel                  |Leasetoestel overnemen                       |                                         |Leasetoestel overnemen                               |
+|3     |Mobiel|Wijzigen|Sms-codes van Telfort         |                                             |                                         |Sms-codes van Telfort                                |
+
+|telfort.service Click trough guided menu and return title                                                                                                    |
+|maxlvl|level1|level2             |level3              |level4                                     |level5|title?                                             |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |Eerste factuur                             |      |Eerste factuur mobiele abonnement                  |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |Eerste factuur na verlenging               |      |Eerste factuur na verlenging mobiele abonnement    |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |Laatste factuur (eindfactuur)              |      |Laatste factuur (eindfactuur) mobiele abonnement   |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |Factuur bekijken                           |      |Factuur bekijken Mobiel in Mijn Telfort            |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |Gebruikskosten hoger dan verwacht          |      |Gebruikskosten factuur Mobiel hoger dan verwacht   |
+|4     |Mobiel|Betalen en facturen|Factuur uitleg      |!-CombiVoordeel terugvinden op je factuur-!|      |!-CombiVoordeel terugvinden op je factuur-!        |
+|4     |Mobiel|Betalen en facturen|Factuur betalen     |Factuur betalen                            |      |Openstaande factuur betalen                        |
+|4     |Mobiel|Betalen en facturen|Factuur betalen     |Geblokkeerd vanwege betalingsachterstand   |      |Geblokkeerd vanwege betalingsachterstand Mobiel    |
+|4     |Mobiel|Betalen en facturen|Factuur betalen     |Aanmelding bij Preventel                   |      |Aanmelding bij Preventel                           |
+|4     |Mobiel|Betalen en facturen|Factuur betalen     |Google Play betalen                        |      |Google Play aankopen betalen met je Telfort factuur|
+|4     |Mobiel|Betalen en facturen|Verbruik inzien     |Verbruik inzien                            |      |Verbruik mobiele telefoon inzien                   |
+|4     |Mobiel|Betalen en facturen|Verbruik inzien     |Fair Use Policy                            |      |Fair Use Policy Telfort mobiel                     |
+|4     |Mobiel|Betalen en facturen|Uitleg over tarieven|Tarieven servicenummers mobiele telefoon   |      |Tarieven servicenummers mobiele telefoon           |
+|4     |Mobiel|Betalen en facturen|Uitleg over tarieven|Inflatiecorrectie                          |      |Inflatiecorrectie mobiele abonnement               |
+|4     |Mobiel|Betalen en facturen|Uitleg over tarieven|Afronding minuten                          |      |Afronding minuten bij mobiele abonnementen         |
+|3     |Mobiel|Betalen en facturen|Factuur bekijken    |                                           |      |Factuur bekijken Mobiel in Mijn Telfort            |
+
+|telfort.service Click trough guided menu and return title                        |
+|maxlvl|level1|level2             |level3|level4|level5|title?                    |
+|2     |Mobiel|Opzeggen abonnement|      |      |      |Opzeggen mobiel abonnement|

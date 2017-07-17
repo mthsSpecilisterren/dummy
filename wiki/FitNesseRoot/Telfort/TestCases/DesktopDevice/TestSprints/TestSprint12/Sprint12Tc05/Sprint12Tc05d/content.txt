@@ -1,0 +1,123 @@
+!*> Local variables
+
+!define xpathOption {!-//h3[text()='@settingText']/following-sibling::*[1]//li[@index]//div[text()='@optionText']-!}
+
+*!
+
+!*> Local scenarios
+
+|scenario|Click on settings tab                 |text                 |
+|click   |xpath=//ul[@class='settings-tabs']/li/a/span[text()='@text']|
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible in layout container|index|
+|Check if visible on page|xpath=//div[@class='layoutContainer'][@index]//@headingTag[text()='@titleText']          |
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible in main section|
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//@headingTag[text()='@titleText'] |
+
+|scenario                |Check if settings tabs column     |index     |has text     |text    |
+|Check if visible on page|xpath=//ul[@class='settings-tabs']/li[@index]/a/span[text()='@text']|
+
+|scenario                |Check if option       |index       |of setting      |settingText      |is      |optionText      |
+|Check if visible on page|xpath=//h3[text()='@settingText']/following-sibling::*[1]//li[@index]//div[text()='@optionText']|
+
+|scenario                |Check if option          |optionText          |of setting          |settingText          |has toggle button         |buttonText         |
+|Check if visible on page|xpath=//h3[text()='@settingText']/following-sibling::*[1]//div[text()='@optionText']/following-sibling::div//label[text()='@buttonText']|
+
+|scenario|Set option             |optionText             |of setting             |settingText             |to             |value             |
+|click   |xpath=//h3[text()='@settingText']/following-sibling::*[1]//div[text()='@optionText']/following-sibling::div//label[text()='@value']|
+
+|scenario                |Check if button         |buttonText         |is visible in main section         |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario|Click button              |buttonText              |in main section             |
+|click   |xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario                |Check if message        |messageText        |is visible in main section        |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+|scenario                    |Check if message       |messageText       |is not visible in main section      |
+|Check if not visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+*!
+
+|script                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc05_part2_login}|and password|${accountSprint12Tc05_part2_password}|
+|Click on navigation tab        |Thuis                                                                                |
+|Click on                       |Instellingen                      |in the navigation menu                            |
+
+|script                                                                      |
+|Check if the title           |Instellingen|with heading|h1    |is visible   |
+|Check if settings tabs column|1           |has text    |Voicemail & oproepen|
+|Check if settings tabs column|2           |has text    |TV pincodes         |
+|Check if settings tabs column|3           |has text    |Privacy             |
+
+|script                                                                                         |
+|Check if the title   |Selecteer een onderwerp uit het menu hierboven.|with heading|p|is visible|
+|Click on settings tab|Voicemail & oproepen                                                     |
+
+|script                                                                                                                 |
+|Check if the title|Voicemail en oproepen                              |with heading|h2|is visible in layout container|1|
+|Check if the title|Deze instellingen gelden voor onderstaande nummers:|with heading|p |is visible in layout container|2|
+
+
+SETTING 1: Blokkeren van nummers en gesprekken
+
+|script                                                                                           |
+|Check if the title|Blokkeren van nummers en gesprekken|with heading|h3|is visible in main section|
+
+|script                                                                                                                     |
+|Check if option|1|of setting|Blokkeren van nummers en gesprekken|is|Alle uitgaande gesprekken naar het buitenland blokkeren|
+
+|script                                                                                                                                      |
+|Check if option|Alle uitgaande gesprekken naar het buitenland blokkeren|of setting|Blokkeren van nummers en gesprekken|has toggle button|AAN|
+|Check if option|Alle uitgaande gesprekken naar het buitenland blokkeren|of setting|Blokkeren van nummers en gesprekken|has toggle button|UIT|
+|Set option     |Alle uitgaande gesprekken naar het buitenland blokkeren|of setting|Blokkeren van nummers en gesprekken|to               |AAN|
+
+
+SETTING 2: Nummerweergave & nummervermelding
+
+|script                                                                                         |
+|Check if the title|Nummerweergave & nummervermelding|with heading|h3|is visible in main section|
+
+|script                                                                          |
+|Check if option|1|of setting|Nummerweergave & nummervermelding|is|Nummerweergave|
+
+|script                                                                                           |
+|Check if option|Nummerweergave|of setting|Nummerweergave & nummervermelding|has toggle button|AAN|
+|Check if option|Nummerweergave|of setting|Nummerweergave & nummervermelding|has toggle button|UIT|
+|Set option     |Nummerweergave|of setting|Nummerweergave & nummervermelding|to               |UIT|
+
+|script                                                                                                                              |
+|Check if option|2|of setting|Nummerweergave & nummervermelding|is|Nummervermelding (in telefoongids en bij nummerinformatiediensten)|
+
+|script                                                                                                                                               |
+|Check if option|Nummervermelding (in telefoongids en bij nummerinformatiediensten)|of setting|Nummerweergave & nummervermelding|has toggle button|AAN|
+|Check if option|Nummervermelding (in telefoongids en bij nummerinformatiediensten)|of setting|Nummerweergave & nummervermelding|has toggle button|UIT|
+|Set option     |Nummervermelding (in telefoongids en bij nummerinformatiediensten)|of setting|Nummerweergave & nummervermelding|to               |AAN|
+
+
+SETTING 3: Voicemail instellingen
+
+|script                                                                              |
+|Check if the title|Voicemail instellingen|with heading|h3|is visible in main section|
+
+|script                                                                  |
+|Check if option|1|of setting|Voicemail instellingen|is|Voicemail gebruik|
+
+|script                                                                                   |
+|Check if option|Voicemail gebruik|of setting|Voicemail instellingen|has toggle button|AAN|
+|Check if option|Voicemail gebruik|of setting|Voicemail instellingen|has toggle button|UIT|
+|Set option     |Voicemail gebruik|of setting|Voicemail instellingen|to               |AAN|
+
+|script                                                                |
+|Check if button |Wijzigen              |is visible in main section    |
+|Click button    |Wijzigen              |in main section               |
+|Check if message|Er is iets fout gegaan|is visible in main section    |
+|wait            |3                     |seconds                       |
+|Check if message|Er is iets fout gegaan|is not visible in main section|
+
+
+|script            |
+|Logout Mijn Mobiel|

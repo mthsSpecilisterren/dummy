@@ -1,0 +1,266 @@
+!*> Local variables
+
+!define mailDomain {!-@telfortglasvezel.nl-!}
+*!
+
+!*> Local scenarios
+|scenario       |Store mailbox username in variable|variableName                                                                                                                                           |
+|$@variableName=|value of                          |xpath=//label[@class="email-settings_add-email"][.="Gebruikersnaam van je mailbox:"]/following-sibling::label[@class="email-settings_add-email_label"]||
+
+|scenario|Check if the section|sectionName     |contains the mailbox|mailboxName                         |
+|ensure  |is visible on page  |!-@mailboxName-!|in                  |xpath=//h3[text()="@sectionName"]/..|
+
+|scenario|Select mailbox|mailboxName|in dropdown box|
+|select  |@mailboxName  |for        |xpath=//select |
+
+|scenario|Check if the text |amountString |is visible for mailbox|mailboxName                                                                    |
+|ensure  |is visible on page|@amountString|in                    |xpath=//h3[.="E-mailadressen beheren"]/../descendant::*[.="@mailboxName"]/../..|
+
+|scenario|Check if the spamfilter|spamFilter |is visible for mailbox|mailboxName                                                        |
+|ensure  |is visible on page     |@spamFilter|in                    |xpath=//h3[.="Spamfilter"]/../descendant::*[.="@mailboxName"]/../..|
+
+
+|scenario|Check if the section|sectionName|contains the text|text                                           |
+|ensure  |is visible on page  |!-@text-!  |in               |xpath=//*[normalize-space(.)="@sectionName"]/..|
+
+
+|scenario|Check if the section|sectionName         |contains  HTML element         |elementName        |
+|ensure  |is visible on page  |xpath=//*[normalize-space(.)="@sectionName"]/../descendant::@elementName|
+
+|scenario|Enter e-mail address|emailAddress    |
+|enter   |@emailAddress       |as|id=emailadres|
+
+|scenario|Set e-mail forwarding to No                                |
+|click   |xpath=//input[@name="emailForwarder" and @value="false"]/..|
+
+|scenario|Set 'Spam verwijderen' to No                           |
+|click   |xpath=//input[@name="spamfilter" and @value="false"]/..|
+
+*!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc14_login}|and password|${accountSprint12Tc14_password}|
+
+|script                                                               |
+|Click on            |E-mail               |in the navigation menu    |
+|Check if the title  |Email                |with heading|h1|is visible|
+|Check if the title  |Mailboxen beheren    |with heading|h3|is visible|
+|Check if href button|Mailboxen verwijderen|is visible                |
+|Check if href button|Mailboxen toevoegen  |is visible                |
+
+!4 Create mailbox
+|script                                                              |
+|Click on the button|Mailboxen toevoegen                             |
+|Check if the title |Mailbox toevoegen    |with heading|h1|is visible|
+|Check if flow step |Wachtwoord aanmaken  |is visible                |
+|Check if flow step |Toevoeging bevestigen|is visible                |
+|Check if flow step |Wachtwoord aanmaken  |is active                 |
+|Check if the title |Mailboxen            |with heading|h3|is visible|
+
+|script                                                                                                                                                                                                            |
+|Check if the following text is visible|Hier kun je een extra mailbox met een aparte gebruikersnaam en wachtwoord toevoegen. Je kunt 4 extra mailboxen toevoegen. Elke mailbox is 1GB groot.                       |
+|Check if the following text is visible|Het eerste e-mailadres van je mailbox maken we automatisch voor je aan. Daarnaast kan je zelf nog 5 extra e-mailadressen toevoegen die ook aan deze mailbox zijn gekoppeld.|
+|Check if the following text is visible|Voer hieronder je nieuwe wachtwoord in.                                                                                                                                    |
+|Check if textbox with prefilled text  |Nieuw wachtwoord                                                                            |is visible                                                                    |
+|Check if textbox with prefilled text  |Herhaal nieuw wachtwoord                                                                    |is visible                                                                    |
+
+|script                                                                                                                               |
+|Fill in input field          |Nieuw wachtwoord                                                           |with password|Telfort20    |
+|Fill in input field          |Herhaal nieuw wachtwoord                                                   |with password|Telfort20    |
+|Check if the title           |Waaraan moet het wachtwoord voldoen?                                       |with heading |h3|is visible|
+|Check if password requirement|Uit een combinatie van minimaal 8 en maximaal 15 letters en cijfers bestaan|has passed                 |
+|Check if password requirement|Minimaal 6 letters, waarvan minimaal 1 hoofdletter en 1 kleine letter      |has passed                 |
+|Check if password requirement|Minimaal 2 cijfers bevatten                                                |has passed                 |
+|Check if password requirement|Geen andere tekens dan cijfers en letters bevatten                         |has passed                 |
+|Check if button              |Volgende stap                                                              |is active                  |
+
+|script                                                                                        |
+|Click on the button                   |Volgende stap                                          |
+|Check if flow step                    |Toevoeging bevestigen       |is active                 |
+|Check if the title                    |Nieuwe mailbox is toegevoegd|with heading|h3|is visible|
+|Check if the following text is visible|Gebruikersnaam van je mailbox:                         |
+|Store mailbox username in variable    |varMailboxUserName                                     |
+|Check if the following text is visible|Wachtwoord van je mailbox:                             |
+|Check if the following text is visible|E-mailadres van je mailbox:                            |
+|Check if href button                  |E-mailadressen toevoegen    |is visible                |
+|Check if href button                  |Naar overzicht              |is visible                |
+|Click on the button                   |Naar overzicht                                         |
+
+!4 Change password of the created mailbox
+|script                                                                                                                                      |
+|Check if the title                    |Wachtwoord mailboxen                                        |with heading        |h3   |is visible   |
+|note                                  |Check if the section Wachtwoord mailboxen contains the created mailbox                               |
+|Check if the section                  |Wachtwoord mailboxen                                        |contains the mailbox|$varMailboxUserName|
+|Click on the button                   |Wachtwoord wijzigen                                                                                  |
+|Check if the title                    |Wachtwoord wijzigen                                         |with heading        |h1   |is visible   |
+|Check if flow step                    |Wachtwoord wijzigen                                         |is visible                              |
+|Check if flow step                    |Wachtwoord bevestigen                                       |is visible                              |
+|Check if flow step                    |Wachtwoord wijzigen                                         |is active                               |
+|Check if the title                    |Selecteer de mailbox waarvan je het wachtwoord wilt wijzigen|with heading        |h3   |is visible   |
+|Check if the following text is visible|Mailbox                                                                                              |
+|Select mailbox                        |$varMailboxUserName                                         |in dropdown box                         |
+|Check if the following text is visible|Voer hieronder je nieuwe wachtwoord in.                                                              |
+|Check if textbox with prefilled text  |Nieuw wachtwoord                                            |is visible                              |
+|Check if textbox with prefilled text  |Herhaal nieuw wachtwoord                                    |is visible                              |
+
+|script                                                                                                                               |
+|Fill in input field          |Nieuw wachtwoord                                                           |with password|Telfort99    |
+|Fill in input field          |Herhaal nieuw wachtwoord                                                   |with password|Telfort99    |
+|Check if the title           |Waaraan moet het wachtwoord voldoen?                                       |with heading |h3|is visible|
+|Check if password requirement|Uit een combinatie van minimaal 8 en maximaal 15 letters en cijfers bestaan|has passed                 |
+|Check if password requirement|Minimaal 6 letters, waarvan minimaal 1 hoofdletter en 1 kleine letter      |has passed                 |
+|Check if password requirement|Minimaal 2 cijfers bevatten                                                |has passed                 |
+|Check if password requirement|Geen andere tekens dan cijfers en letters bevatten                         |has passed                 |
+|Check if button              |Volgende stap                                                              |is active                  |
+
+|script                                                                                                   |
+|Click on the button                   |Volgende stap                                                     |
+|Check if flow step                    |Wachtwoord bevestigen                |is active                   |
+|Check if the title                    |Je wachtwoord is succesvol gewijzigd |with heading |h3 |is visible|
+|Check if the following text is visible|Je hebt zojuist het wachtwoord van onderstaande mailbox gewijzigd:|
+|note                                  |Check if the name of the mailbox is visible                       |
+|Check if the following text is visible|$varMailboxUserName                                               |
+|Check if href button                  |Naar overzicht                       |is visible                  |
+|Click on the button                   |Naar overzicht                                                    |
+
+!4 Change Spamfilter
+|script                                                                             |
+|Check if the title     |Spamfilter      |with heading          |h3   |is visible   |
+|Check if the spamfilter|Spam verwijderen|is visible for mailbox|$varMailboxUserName|
+|Click on the button    |Wijzigen                                                   |
+
+|script                                                                                                                        |
+|Check if the title                    |Spamfilter wijzigen                                         |with heading|h1|is visible|
+|Check if flow step                    |Spamfilter                                                  |is visible                |
+|Check if flow step                    |Bevestigd                                                   |is visible                |
+|Check if flow step                    |Spamfilter                                                  |is active                 |
+|Check if the title                    |Selecteer de mailbox waarvan je het spamfilter wilt wijzigen|with heading|h3|is visible|
+|Check if the following text is visible|Mailbox                                                                                |
+
+|script                                                                    |
+|Select mailbox                        |$varMailboxUserName|in dropdown box|
+|Check if the following text is visible|$varMailboxUserName                |
+|Set 'Spam verwijderen' to No                                              |
+
+|script                                                                                                        |
+|Click on the button                   |Wijziging doorvoeren                                                   |
+|Check if flow step                    |Bevestigd                                   |is active                 |
+|Check if the title                    |Je spaminstellingen zijn succesvol gewijzigd|with heading|h3|is visible|
+|Check if the following text is visible|Je instellingen zijn gewijzigd naar:                                   |
+|Check if the following text is visible|Spam markeren                                                          |
+|Check if the following text is visible|Voor mailbox:                                                          |
+|Check if the following text is visible|$varMailboxUserName                                                    |
+
+|script                                                                          |
+|Click on the button    |Naar overzicht                                          |
+|Check if the spamfilter|Spam markeren|is visible for mailbox|$varMailboxUserName|
+
+
+!4 Add e-mail address
+|script                                                                                    |
+|Check if the title  |E-mailadressen beheren    |with heading          |h3   |is visible   |
+|note                |Check if the newly created mailbox has 0 e-mail adresses in use      |
+|Check if the section|E-mailadressen beheren    |contains the mailbox  |$varMailboxUserName|
+|Check if the text   |0 van 5 in gebruik        |is visible for mailbox|$varMailboxUserName|
+|Check if href button|E-mailadressen verwijderen|is visible                                |
+|Check if href button|E-mailadressen toevoegen  |is visible                                |
+|Click on the button |E-mailadressen toevoegen                                             |
+
+|script                                                                                                                          |
+|Check if the title                    |E-mailadressen toevoegen                                      |with heading|h1|is visible|
+|Check if flow step                    |Selecteer mailboxen                                           |is visible                |
+|Check if flow step                    |Controleer wijziging                                          |is visible                |
+|Check if flow step                    |Wijziging bevestigen                                          |is visible                |
+|Check if flow step                    |Selecteer mailboxen                                           |is active                 |
+|Check if the title                    |Selecteer de mailbox waaraan je een e-mailadres wilt toevoegen|with heading|h3|is visible|
+|Check if the following text is visible|Mailbox                                                                                  |
+
+|script                                                                                                                 |
+|Select mailbox                        |$varMailboxUserName          |in dropdown box                                   |
+|Check if the title                    |Voer de gegevens in          |with heading            |h3      |is visible      |
+|Check if the following text is visible|Hier kun je een extra e-mailadres aanmaken. Dit e-mailadres komt uit op mailbox:|
+|Check if the section                  |Voer de gegevens in          |contains the mailbox    |$varMailboxUserName      |
+|Check if the following text is visible|Nieuwe Telfort e-mailadres                                                      |
+|Check if the section                  |Nieuwe Telfort e-mailadres   |contains HTML element   |input                    |
+|Check if the section                  |Nieuwe Telfort e-mailadres   |contains the text       |${mailDomain}            |
+
+|script                            |
+|Enter e-mail address|test4321     |
+|Set e-mail forwarding to No       |
+|Click on the button |Volgende stap|
+
+|script                                                                                                    |
+|Check if flow step                    |Controleer wijziging                    |is active                 |
+|Check if the title                    |Onderstaand e-mailadres wordt toegevoegd|with heading|h3|is visible|
+|Check if the following text is visible|test4321${mailDomain}                                              |
+|Check if href button                  |Terug                                   |is visible                |
+|Click on the button                   |E-mailadres toevoegen                                              |
+
+|script                                                                                                  |
+|Check if flow step                    |Wijziging bevestigen  |is active                                 |
+|Check if the title                    |E-mailadres toegevoegd|with heading          |h3   |is visible   |
+|Check if the following text is visible|Onderstaande e-mailadres is succesvol toegevoegd:                |
+|Check if the following text is visible|test4321${mailDomain}                                            |
+|Click on the button                   |Naar overzicht                                                   |
+|Check if the text                     |1 van 5 in gebruik    |is visible for mailbox|$varMailboxUserName|
+
+!4 Delete the added e-mail address
+|script                                                                                                                           |
+|Click on the button                   |E-mailadressen verwijderen                                                                |
+|Check if the title                    |E-mailadressen verwijderen                                     |with heading|h1|is visible|
+|Check if flow step                    |Selecteer mailboxen                                            |is visible                |
+|Check if flow step                    |Controleer                                                     |is visible                |
+|Check if flow step                    |Wijziging bevestigen                                           |is visible                |
+|Check if flow step                    |Selecteer mailboxen                                            |is active                 |
+|Check if the title                    |Selecteer de mailbox waarvan je e-mailadressen wilt verwijderen|with heading|h3|is visible|
+|Check if the following text is visible|Mailbox                                                                                   |
+
+|script                                                                                                               |
+|Select mailbox                        |$varMailboxUserName                                |in dropdown box           |
+|Check if the title                    |Selecteer de e-mailadressen die je wilt verwijderen|with heading|h3|is visible|
+|Check if the following text is visible|Onderstaande e-mailadressen zijn geregistreerd onder                          |
+|Check if the following text is visible|$varMailboxUserName                                                           |
+|click                                 |test4321${mailDomain}                                                         |
+|Click on the button                   |Volgende stap                                                                 |
+
+|script                                                                                                         |
+|Check if flow step                    |Controleer                                   |is active                 |
+|Check if the title                    |Onderstaand e-mailadres zal verwijderd worden|with heading|h3|is visible|
+|Check if the following text is visible|test4321${mailDomain}                                                   |
+
+|script                                                                                                                 |
+|Click on the button                   |E-mailadressen verwijderen                                                      |
+|Check if flow step                    |Wijziging bevestigen                 |is active                                 |
+|Check if the title                    |Onderstaand e-mailadres is verwijderd|with heading          |h3   |is visible   |
+|Check if the following text is visible|test4321${mailDomain}                                                           |
+|Click on the button                   |Naar overzicht                                                                  |
+|Check if the text                     |0 van 5 in gebruik                   |is visible for mailbox|$varMailboxUserName|
+
+
+!4 Delete the created mailbox
+|script                                                                                                          |
+|note                                  |Delete the created mailbox                                               |
+|Click on the button                   |Mailboxen verwijderen                                                    |
+|Check if the title                    |Mailbox verwijderen                           |with heading|h1|is visible|
+|Check if flow step                    |Selecteer mailboxen                           |is visible                |
+|Check if flow step                    |Controleer wijziging                          |is visible                |
+|Check if flow step                    |Bevestiging                                   |is visible                |
+|Check if flow step                    |Selecteer mailboxen                           |is active                 |
+|Check if the title                    |Selecteer de mailboxen die je wilt verwijderen|with heading|h3|is visible|
+|Check if the following text is visible|Je kunt alleen extra mailboxen verwijderen                               |
+
+|script                                                                                                      |
+|note                                  |select the mailbox to delete                                         |
+|click                                 |$varMailboxUserName                                                  |
+|Click on the button                   |Volgende stap                                                        |
+|Check if flow step                    |Controleer wijziging                      |is active                 |
+|Check if the title                    |Onderstaande mailbox zal verwijderd worden|with heading|h3|is visible|
+|Check if the following text is visible|$varMailboxUserName                                                  |
+|Click on the button                   |Mailbox verwijderen                                                  |
+
+|script                                                                                              |
+|Check if flow step                    |Bevestiging                       |is active                 |
+|Check if the title                    |Onderstaande mailbox is verwijderd|with heading|h3|is visible|
+|Check if the following text is visible|$varMailboxUserName                                          |
+|Click on the button                   |Naar overzicht                                               |

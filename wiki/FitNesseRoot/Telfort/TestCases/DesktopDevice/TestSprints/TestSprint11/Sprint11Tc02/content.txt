@@ -1,0 +1,80 @@
+!*> Local scenarios
+
+|scenario          |Check if section            |sectionName            |contains the column            |columnName            |which contains            |content            |
+|is visible on page|xpath=//*[normalize-space(.)="@sectionName"]/following-sibling::*//*[normalize-space(.)="@columnName"]/following-sibling::*[normalize-space(.)="@content"]|
+
+
+|scenario          |Check if table cell of row                      |rowNumber                      |and column                      |columnName                      |of section                      |sectionName                      |contains                      |content                      |
+|is visible on page|xpath=//*[.="@sectionName"]/following-sibling::*//div[contains(@class,"responsive-table-row")][@rowNumber]/div[@class="responsive-table-row__item"][count(//*[text()="@sectionName"]/following-sibling::*//*[text()="@columnName"]/../preceding-sibling::div)+1]/div[.="@content"]|
+
+|scenario          |Check column name              |columnName             |of table of section             |sectionName             |
+|is visible on page|xpath=//*[.="@sectionName"]/following-sibling::*//div[@class="responsive-table-header__item"]//*[.="@columnName"]|
+
+|scenario         |check if the column names of the table of section|sectionName        |equals|col1||col2||col3||col4||col5|
+|Check column name|@col1                                            |of table of section|@sectionName                       |
+|Check column name|@col2                                            |of table of section|@sectionName                       |
+|Check column name|@col3                                            |of table of section|@sectionName                       |
+|Check column name|@col4                                            |of table of section|@sectionName                       |
+|Check column name|@col5                                            |of table of section|@sectionName                       |
+
+|scenario          |Check if the table of section          |sectionName          |has         |amountOfRows         |rows         |
+|is visible on page|xpath=//*[.="@sectionName"]/following-sibling::*//div[contains(@class,"responsive-table-row ")][@amountOfRows]|
+
+*!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint11Tc02_login}|and password|${accountSprint11Tc02_password}|
+|Click on navigation tab        |Thuis                                                                    |
+|Click on                       |Verbruik                    |in the navigation menu                      |
+
+
+|script                                                |
+|Check if the title|Verbruik|with heading|h1|is visible|
+
+|script                                                                                                                  |
+|select             |2015-09-04 t/m 2015-10-03|for                |Factuurmaand                                          |
+|Click on the button|Tonen                                                                                               |
+|Check if the title |Periode                  |with heading       |h2           |is visible                              |
+|Check if section   |Periode                  |contains the column|Factuurmaand |which contains|2015-09-04 t/m 2015-10-03|
+|Check if section   |Periode                  |contains the column|Factuur      |which contains|Niet beschikbaar         |
+|Check if section   |Periode                  |contains the column|Factuurnummer|which contains|2001875447               |
+|Check if section   |Periode                  |contains the column|Factuurbedrag|which contains|€ 57,69                  |
+
+|script                                                                        |
+|Check if the title|TV|with heading       |h2    |is visible                   |
+|Check if section  |TV|contains the column|Type  |which contains|Films & Series|
+|Check if section  |TV|contains the column|Aantal|which contains|3 videos      |
+|Check if section  |TV|contains the column|Totaal|which contains|€ 0,00        |
+
+|script                                                                                    |
+|Check if table cell of row|1|and column|Titel|of section|TV|contains|De Wereld Draait Door|
+|Check if table cell of row|2|and column|Titel|of section|TV|contains|NOS Journaal         |
+|Check if table cell of row|3|and column|Titel|of section|TV|contains|Spoorloos            |
+
+|script                                                                         |
+|Check if table cell of row|1|and column|Datum|of section|TV|contains|09-09-2015|
+|Check if table cell of row|2|and column|Datum|of section|TV|contains|28-09-2015|
+|Check if table cell of row|3|and column|Datum|of section|TV|contains|28-09-2015|
+
+|script                                                                      |
+|Check if table cell of row|1|and column|Bedrag|of section|TV|contains|€ 0,00|
+|Check if table cell of row|2|and column|Bedrag|of section|TV|contains|€ 0,00|
+|Check if table cell of row|3|and column|Bedrag|of section|TV|contains|€ 0,00|
+
+
+|script                                                                                                                                         |
+|Check if the title                               |Bellen|with heading       |h2         |is visible                                            |
+|Check if section                                 |Bellen|contains the column|Aantal     |which contains|9 Gesprekken                           |
+|Check if section                                 |Bellen|contains the column|Totale duur|which contains|42 minuten en 54 seconden              |
+|Check if section                                 |Bellen|contains the column|Totaal     |which contains|€ 11,69                                |
+|check if the column names of the table of section|Bellen|equals             |Gebeld naar|              |Gebeld van||Datum en tijd||Duur||Bedrag|
+|Check if the table of section                    |Bellen|has                |9          |rows                                                  |
+
+
+|script                                                                                                                                                                                                                                                                                                                                                                                                         |
+|Check if the title                    |Toelichting                                                                                 |with heading                                                                                 |h5                                                                                |is visible                                                                                |
+|Check if the following text is visible|Hoewel de informatie op deze website met uiterste zorg is samengesteld en wij deze zo volledig en nauwkeurig mogelijk trachten te houden, is dit overzicht slechts een indicatie van je verbruik. Aan dit overzicht kunnen geen rechten worden ontleend. Het daadwerkelijke verbruik en de daarmee samenhangende kosten, kun je terugvinden op de eerstvolgende factuur.|
+
+|script            |
+|Logout Mijn Mobiel|

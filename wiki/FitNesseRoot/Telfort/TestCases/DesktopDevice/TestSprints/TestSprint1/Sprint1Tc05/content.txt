@@ -1,0 +1,65 @@
+!*> Local scenarios
+!define accordionLocator {//*[@class="accordeon_item"]}
+
+|scenario |Scroll down to|part1||part2|
+|scroll to|@part1                     |
+|scroll to|@part2                     |
+
+|scenario  |Check if the text    |text    |is shown below the title   |
+|is visible|xpath=//last-invoice-component/p[contains(text(),"@text")]|
+
+
+|scenario |Check if there are 2 accordions|
+|scroll to|xpath=${accordionLocator}[1]   |
+|scroll to|xpath=${accordionLocator}[2]   |
+
+
+|scenario          |Check if the amount of accordion     |number     |equals    |amount    |
+|scroll to         |xpath=${accordionLocator}[@number]                                     |
+|is visible on page|xpath=${accordionLocator}[@number]//span[2][contains(text(),"@amount")]|
+
+
+|scenario|Click on accordion     |number    |
+|click   |xpath=${accordionLocator}[@number]|
+
+|scenario          |Check if the content of accordion     |number    |is visible    |
+|is visible on page|xpath=${accordionLocator}[@number]/*[@class="accordeon_content"]|
+
+
+*!
+
+
+!4 Deze test hoeft niet meer?
+
+Test 1
+
+|comment                                                                                                                    |
+|Open the Telfort website and agree with cookie message                                                                     |
+|Login Mijn Mobiel with username|${accountSprint1Tc05a_login}|and password|${accountSprint1Tc05a_password}                  |
+|Click on                       |Facturen                    |in the navigation menu                                        |
+|Scroll down to                 |Let Op!                     |            |Dit is de laatste factuur die je van ons ontvangt|
+|Check if the text              |Het abonnement is opgezegd  |is shown below the title                                      |
+
+Test 2
+
+|storyboard                                                                                               |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint1Tc05b_login}|and password|${accountSprint1Tc05b_password}|
+|note                           |Set cookie for the Stubhub                                               |
+|Set stubhub cookie                                                                                       |
+
+
+|storyboard                                                                                    |
+|Click on                         |Factuur|in the navigation menu                              |
+|Scroll down to                   |Let op!|      |Je eerste factuur kan hoger zijn dan verwacht|
+|Check if there are 2 accordions                                                               |
+|Check if the amount of accordion |1      |equals|€ 220,00                                     |
+|Check if the amount of accordion |2      |equals|€ 220,00                                     |
+|Click on accordion               |1                                                           |
+|Check if the content of accordion|1      |is visible                                          |
+|wait                             |3      |seconds                                             |
+|Click on accordion               |2                                                           |
+|Check if the content of accordion|2      |is visible                                          |
+
+
+

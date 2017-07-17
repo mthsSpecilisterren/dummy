@@ -1,0 +1,97 @@
+!*> Local scenarios
+
+|scenario|Check if first step is visible                                              |
+|ensure  |is visible on page|xpath=//li[@class="topupFlow_item topupFlow_item--first"]|
+
+|scenario|Check if second step is visible                                              |
+|ensure  |is visible on page|xpath=//li[@class="topupFlow_item topupFlow_item--second"]|
+
+
+|scenario          |Check if top-up option                   |topupOption                   |is visible                   |
+|is visible on page|xpath=//div[@class="radio"]/following-sibling::span[@class="selector_title" and text()="@topupOption"]|
+
+|scenario |Click on top-up option                          |topupOption                          |
+|scroll to|@topupOption                                                                          |
+|click    |xpath=//span[@class="selector_title" and text()="@topupOption"]/preceding-sibling::div|
+
+|scenario|Check if step 2 contains the title|titleText                                                             |
+|ensure  |is visible on page                |xpath=.//*[@id='topup-container']//h2[normalize-space(.)="@titleText"]|
+
+|scenario|Check if step 2 contains the text|text                                                            |
+|ensure  |is visible on page               |xpath=.//*[@id='topup-container']//*[normalize-space(.)="@text"]|
+
+|scenario|Check if input box|description                                                                |contains the value|telNummer|
+|check   |value of          |xpath=//span[normalize-space(.)="@description"]/following-sibling::*//input|@telNummer                  |
+
+|scenario|Check if input box|description                         |contains the placeholder                        |text                        |
+|ensure  |is visible on page|xpath=//span[normalize-space(.)="@description"]/following-sibling::*//input[normalize-space(@placeholder)='@text']|
+
+|scenario|Fill in input box|description|the code                               |text                               |
+|enter   |@text            |as         |xpath=//span[normalize-space(.)="@description"]/following-sibling::*//input|
+
+
+|scenario|Check if button   |btnText          |is visible          |
+|ensure  |is visible on page|xpath=//button[contains(.,"@btnText")]|
+
+|scenario|Check if button   |btnText                     |is active                    |
+|ensure  |is visible on page|xpath=//button[contains(.,"@btnText") and not (@disabled)]|
+
+|scenario       |Select top-up iframe                     |
+|switch to frame|xpath=.//*[@id='topup-container']//iframe|
+
+|scenario|Check if the iframe of step 2 contains the title|titleText                                                       |
+|Select top-up iframe                                                                                                      |
+|ensure  |is visible on page                              |xpath=//*[self::h1 or self::h2][normalize-space(.)="@titleText"]|
+|switch to default content                                                                                                 |
+
+*!
+
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc01_login}|and password|${accountSprint12Tc01_password}|
+|note                           |Click on navigation tab     |Mobiel                                      |
+|Click on                       |Opwaarderen                 |in the navigation menu                      |
+
+|script                                                               |
+|Check if the title|Opwaarderen            |with heading|h1|is visible|
+|Check if first step is visible                                       |
+|Check if the title|Hoe wil je opwaarderen?|with heading|h2|is visible|
+
+|script                                                               |
+|Check if top-up option|Opwaarderen met een opwaardeerkaart|is visible|
+|Check if top-up option|Online opwaarderen                 |is visible|
+|Check if top-up option|Sms opwaarderen                    |is visible|
+|Check if top-up option|Automatisch opwaarderen            |is visible|
+
+|script                                                                                                                                                 |
+|Click on top-up option            |Opwaarderen met een opwaardeerkaart                                                                                 |
+|Check if second step is visible                                                                                                                        |
+|Check if step 2 contains the title|Opwaarderen via opwaardeerkaart                                                                                     |
+|Check if step 2 contains the text |Vul je 14 cijferige opwaardeercode in. Het beltegoed wordt in een keer bijgeschreven en kan niet geannuleerd worden.|
+|Check if step 2 contains the text |Telefoonnummer                                                                                                      |
+|Check if input box                |Telefoonnummer                         |contains the value                  |${accountSprint12Tc01_login}           |
+|Check if step 2 contains the text |Opwaardeercode (14 cijfers)                                                                                         |
+|Check if input box                |Opwaardeercode (14 cijfers)            |contains the placeholder            |opwaardeercode                         |
+|Check if button                   |Opwaarderen                            |is visible                                                                  |
+|Fill in input box                 |Opwaardeercode (14 cijfers)            |the code                            |53132839495878                         |
+|Check if button                   |Opwaarderen                            |is active                                                                   |
+
+
+|script                                                             |
+|Click on top-up option                          |Online opwaarderen|
+|Check if the iframe of step 2 contains the title|Online opwaarderen|
+
+|script                                                          |
+|Click on top-up option                          |Sms opwaarderen|
+|Check if the iframe of step 2 contains the title|SMS opwaarderen|
+
+|script                                                                  |
+|Click on top-up option                          |Automatisch opwaarderen|
+|Check if the iframe of step 2 contains the title|Automatisch opwaarderen|
+
+
+
+
+|script            |
+|Logout Mijn Mobiel|

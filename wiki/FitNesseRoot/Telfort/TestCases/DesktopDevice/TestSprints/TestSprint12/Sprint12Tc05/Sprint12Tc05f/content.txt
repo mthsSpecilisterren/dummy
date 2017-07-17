@@ -1,0 +1,129 @@
+!*> Local scenarios
+
+|scenario|Click on settings tab                 |text                 |
+|click   |xpath=//ul[@class='settings-tabs']/li/a/span[text()='@text']|
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible in layout container|index|
+|Check if visible on page|xpath=//div[@class='layoutContainer'][@index]//@headingTag[text()='@titleText']          |
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible in main section|
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//@headingTag[text()='@titleText'] |
+
+|scenario                |Check if option        |index       |of setting       |settingText       |is       |optionText       |
+|Check if visible on page|xpath=//h3[text()='@settingText']/following-sibling::*[last()]//li[@index]//div[text()='@optionText']|
+
+|scenario                |Check if option           |optionText           |of setting           |settingText          |has toggle button          |buttonText          |
+|Check if visible on page|xpath=//h3[text()='@settingText']/following-sibling::*[last()]//div[text()='@optionText']/following-sibling::div//label[text()='@buttonText']|
+
+|scenario|Set option              |optionText              |of setting              |settingText              |to              |value             |
+|click   |xpath=//h3[text()='@settingText']/following-sibling::*[last()]//div[text()='@optionText']/following-sibling::div//label[text()='@value']|
+
+|scenario                |Check if button     |buttonText     |is visible in layout container    |index    |
+|Check if visible on page|xpath=//div[@class='layoutContainer'][@index]//button[contains(., '@buttonText')]|
+
+|scenario|Click button        |buttonText        |in layout container        |index        |
+|click   |xpath=//div[@class='layoutContainer'][@index]//button[contains(., '@buttonText')]|
+
+|scenario                |Check if message    |messageText    |is visible in layout container    |index   |
+|Check if visible on page|xpath=//div[@class='layoutContainer'][@index]//span[contains(., '@messageText')]|
+
+|scenario                    |Check if message   |messageText   |is not visible in layout container   |index  |
+|Check if not visible on page|xpath=//div[@class='layoutContainer'][@index]//span[contains(., '@messageText')]|
+
+|scenario                |Check if button         |buttonText         |is visible in main section         |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario|Click button              |buttonText              |in main section             |
+|click   |xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario                |Check if message        |messageText        |is visible in main section        |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+|scenario                    |Check if message       |messageText       |is not visible in main section      |
+|Check if not visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+|scenario                |Check if the text         |text         |is visible in main section        |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//p[normalize-space(.)='@text']|
+
+*!
+
+|script                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc05_part2_login}|and password|${accountSprint12Tc05_part2_password}|
+|Click on navigation tab        |Thuis                                                                                |
+|Click on                       |Instellingen                      |in the navigation menu                            |
+
+|script                       |
+|Click on settings tab|Privacy|
+
+|script                                                                                                                                                  |
+|Check if the title|Privacy instellingen                                                                |with heading|h2|is visible in layout container|1|
+|Check if the title|Telfort mag mij benaderen met commerciële acties en aantrekkelijke aanbiedingen via:|with heading|p |is visible in layout container|1|
+
+|script                                                                          |
+|Check if the title|Aanbiedingen|with heading|h3|is visible in layout container|2|
+
+|script                                                               |
+|Check if option|1|of setting|Aanbiedingen|is|Aanbiedingen Telefonisch|
+
+|script                                                                                |
+|Check if option|Aanbiedingen Telefonisch|of setting|Aanbiedingen|has toggle button|JA |
+|Check if option|Aanbiedingen Telefonisch|of setting|Aanbiedingen|has toggle button|NEE|
+|Set option     |Aanbiedingen Telefonisch|of setting|Aanbiedingen|to               |NEE|
+|Set option     |Aanbiedingen Telefonisch|of setting|Aanbiedingen|to               |JA |
+
+|script                                             |
+|Check if option|2|of setting|Aanbiedingen|is|E-mail|
+
+|script                                                              |
+|Check if option|E-mail|of setting|Aanbiedingen|has toggle button|JA |
+|Check if option|E-mail|of setting|Aanbiedingen|has toggle button|NEE|
+|Set option     |E-mail|of setting|Aanbiedingen|to               |JA |
+
+|script                                                             |
+|Check if option|3|of setting|Aanbiedingen|is|Aanbiedingen per brief|
+
+|script                                                                              |
+|Check if option|Aanbiedingen per brief|of setting|Aanbiedingen|has toggle button|JA |
+|Check if option|Aanbiedingen per brief|of setting|Aanbiedingen|has toggle button|NEE|
+|Set option     |Aanbiedingen per brief|of setting|Aanbiedingen|to               |NEE|
+
+|script                                                                      |
+|Check if button |Wijzigen              |is visible in layout container    |2|
+|Click button    |Wijzigen              |in layout container               |2|
+|Check if message|Er is iets fout gegaan|is visible in layout container    |2|
+|wait            |3                     |seconds                             |
+|Check if message|Er is iets fout gegaan|is not visible in layout container|2|
+
+|script                                                                                 |
+|Check if the title|Analyse van mijn gegevens|with heading|h3|is visible in main section|
+
+|script                                                                                                                                                                                                                                                  |
+|Check if the text|Je gegevens worden geanalyseerd om je zo goed mogelijk van dienst te zijn, onze producten te verbeteren en om passende, persoonlijk, advies te kunnen doen. Zie voor meer informatie ons Privacy Statement.|is visible in main section|
+
+|script                                                                                                     |
+|Check if option|1|of setting|Analyse van mijn gegevens|is|Telfort mag mijn persoonlijke gegevens analyseren|
+
+|script                                                                                                                      |
+|Check if option|Telfort mag mijn persoonlijke gegevens analyseren|of setting|Analyse van mijn gegevens|has toggle button|AAN|
+|Check if option|Telfort mag mijn persoonlijke gegevens analyseren|of setting|Analyse van mijn gegevens|has toggle button|UIT|
+|Set option     |Telfort mag mijn persoonlijke gegevens analyseren|of setting|Analyse van mijn gegevens|to               |UIT|
+
+|script                                                                                                |
+|Check if option|2|of setting|Analyse van mijn gegevens|is|Telfort mag mijn verkeersgegevens analyseren|
+
+|script                                                                                                                 |
+|Check if option|Telfort mag mijn verkeersgegevens analyseren|of setting|Analyse van mijn gegevens|has toggle button|AAN|
+|Check if option|Telfort mag mijn verkeersgegevens analyseren|of setting|Analyse van mijn gegevens|has toggle button|UIT|
+|Set option     |Telfort mag mijn verkeersgegevens analyseren|of setting|Analyse van mijn gegevens|to               |UIT|
+
+|script                                                          |
+|Check if button |Wijzigen        |is visible in main section    |
+|Click button    |Wijzigen        |in main section               |
+|Check if message|Wijziging gelukt|is visible in main section    |
+|wait            |3               |seconds                       |
+|Check if message|Wijziging gelukt|is not visible in main section|
+
+
+|script            |
+|Logout Mijn Mobiel|

@@ -1,0 +1,111 @@
+!*> Local scenarios
+
+|scenario|Set option|option                     |to                     |optionValue                     |and check if selected                     |
+|click   |xpath=//*[contains(text(),"@option")]/following-sibling::*[2]/descendant::label[text()="@optionValue"]                                    |
+|ensure  |value of  |xpath=//*[contains(text(),"@option")]/following-sibling::*[2]/descendant::label[text()="@optionValue"]/preceding-sibling::input|
+
+
+|scenario|Check if the section|sectionName                                        |contains the bundle                                        |bundleText                                        |
+|ensure  |is visible on page  |xpath=(//h2[.="@sectionName"])/parent::*[not(@class="ng-hide")]/parent::*/descendant::input[@type="radio"]/../../label[contains(normalize-space(.),"@bundleText")]|
+
+|scenario|Click on the option                      |optionText                      |
+|click   |xpath=//input[@type="radio"]/../../label[normalize-space(.)="@optionText"]|
+
+|scenario|Check if bundle|bundleText                     |is selected                    |
+|ensure  |value of       |xpath=//label[contains(normalize-space(.),"@bundleText")]/input|
+
+|scenario    |Click on the tooltip                                          |toolTipText                                         |
+|double click|xpath=//*[contains(text(),"@toolTipText")]//shared-components-tooltip-component[not(contains(@class,"ng-hide"))]/..|
+
+*!
+
+#Opties voor BlackBerry zijn uitgecommentarieerd, omdat deze optie niet meer zichtbaar is.
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint4Tc02_login}|and password|${accountSprint4Tc02_password}|
+|Click on                       |Abonnement                 |in the navigation menu                     |
+|click                          |Abonnement wijzigen                                                    |
+
+
+|storyboard                                                                                               |
+|Check if the title      |Abonnement wijzigen         |with heading         |h1        |is visible        |
+|Check if visible on page|Je kunt maandelijks je bundels wijzigen.                                        |
+|Check if visible on page|Wijzigingen worden binnen een dag verwerkt en kun je daarna niet meer annuleren.|
+|Check if visible on page|Je kunt vanaf de volgende maand ook altijd weer terug naar je vorige bundels.   |
+
+
+|storyboard                                   |
+|Check if flow step|Bundel wijzigen|is visible|
+|Check if flow step|Bundel wijzigen|is active |
+
+
+|storyboard                                                                |
+|Check if the title      |Bundel wijzigen|with heading       |h2|is visible|
+|Check if the title      |Internet       |with heading       |h2|is visible|
+|Check if visible on page|MB's                                             |
+|Check if the section    |Internet       |contains the bundle|Geen bundel  |
+|Check if the section    |Internet       |contains the bundle|100 MB       |
+|Check if the section    |Internet       |contains the bundle|250 MB       |
+|Check if bundle         |250 MB         |is selected                      |
+|Check if the section    |Internet       |contains the bundle|500 MB       |
+|Check if the section    |Internet       |contains the bundle|1000 MB      |
+|Check if the section    |Internet       |contains the bundle|1500 MB      |
+|Check if the section    |Internet       |contains the bundle|3000 MB      |
+
+!|storyboard                                                                       |
+|Check if visible on page|4G InternetVersneller                                    |
+|Check if visible on page|Supersnel mobiel internet                                |
+|note                    |Check if visible on page|BlackBerry Internet             |
+|note                    |Check if visible on page|Niet nodig voor BlackBerry OS 10|
+
+!|storyboard                                                       |
+|Check if the title  |Bellen     |with heading       |h2|is visible|
+|Check if the title  |Minuten    |with heading       |h4|is visible|
+|Check if the section|Bellen     |contains the bundle|Geen bundel  |
+|Check if the section|Bellen     |contains the bundle|150 minuten  |
+|Check if the section|Bellen     |contains the bundle|300 minuten  |
+|Check if bundle     |300 minuten|is selected                      |
+|Check if the section|Bellen     |contains the bundle|400 minuten  |
+|Check if the section|Bellen     |contains the bundle|500 minuten  |
+|Check if the section|Bellen     |contains the bundle|1000 minuten |
+
+!|storyboard                                                     |
+|Check if the title  |Sms      |with heading       |h2|is visible|
+|Check if the title  |Berichten|with heading       |h4|is visible|
+|Check if the section|Sms      |contains the bundle|Geen bundel  |
+|Check if the section|Sms      |contains the bundle|100 sms      |
+|Check if bundle     |100 sms  |is selected                      |
+|Check if the section|Sms      |contains the bundle|1000 sms     |
+
+
+!|storyboard                                                                                         |
+|scroll to           |Bellen                                                                         |
+|Set option          |4G InternetVersneller   |to                      |AAN|and check if selected    |
+|Set option          |4G InternetVersneller   |to                      |UIT|and check if selected    |
+|note                |Set option              |BlackBerry Internet     |to |AAN|and check if selected|
+|note                |Set option              |BlackBerry Internet     |to |UIT|and check if selected|
+|note                |Click on the tooltip    |BlackBerry Internet                                   |
+|Note                |doesn't work voor mobile|Check if visible on page|Voor internetgebruik op      |
+|Click on the tooltip|4G InternetVersneller                                                          |
+|Note                |doesn't work voor mobile|Check if visible on page|Supersnel mobiel internet    |
+
+!|storyboard                                                         |
+|Check if visible on page|VastBellen                                 |
+|Check if visible on page|Bel gratis naar vaste nummers              |
+|Check if visible on page|TelfortOnderling                           |
+|Check if visible on page|Bel gratis naar mobiele nummers van Telfort|
+
+
+!|storyboard                                                       |
+|scroll to           |Sms                                          |
+|Set option          |VastBellen      |to|AAN|and check if selected|
+|Set option          |VastBellen      |to|UIT|and check if selected|
+|Set option          |TelfortOnderling|to|AAN|and check if selected|
+|Set option          |TelfortOnderling|to|UIT|and check if selected|
+|Click on the tooltip|TelfortOnderling                             |
+|Click on the tooltip|VastBellen                                   |
+
+|storyboard        |
+|scroll to|Facebook|
+|click    |Vorige  |

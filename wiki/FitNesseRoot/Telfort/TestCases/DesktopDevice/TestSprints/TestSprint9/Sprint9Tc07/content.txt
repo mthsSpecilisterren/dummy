@@ -1,0 +1,56 @@
+!*> Local scenarios
+
+!define xpathTableRows {!-//div[contains(@class,"responsive-table-rows")]/div-!}
+
+
+|scenario|Check if column title|title                               |is visible                               |
+|ensure  |is visible on page   |xpath=//*[@class="responsive-table-header__item"][normalize-space(.)="@title"]|
+
+|scenario             |Check if there is a table visible with the columns _|col1,col2,col3,col4|
+|Check if column title|@col1                                               |is visible         |
+|Check if column title|@col2                                               |is visible         |
+|Check if column title|@col3                                               |is visible         |
+|Check if column title|@col4                                               |is visible         |
+
+|scenario|Check column 'Wijziging'                                                                                                                                                      |
+|note    |Checks if in the first column the content is not different then [Abonnement wijzigen, Nummerbehoud or Overige aanvraag]                                                       |
+|reject  |is visible on page|xpath=${xpathTableRows}/div[1][not(normalize-space(.)="Abonnement wijzigen" or normalize-space(.)="Nummerbehoud" or normalize-space(.)="Overige aanvraag")]|
+
+
+|scenario|Check column 'Datum'                                                                                                                                                                                                                                         |
+|note    |Checks if 2e column contains a correct date format DD-MM-YYYY HH:MM                                                                                                                                                                                          |
+|note    |Maybe better solution is todo this with Regex                                                                                                                                                                                                                |
+|reject  |is visible on page|xpath=${xpathTableRows}/div[2][not((number(substring(.,1,2))<32) and (number(substring(.,4,2))<13) and (number(substring(.,7,4))>2010) and (number(substring(.,12,2))<24) and (substring(.,14,1)=":") and (number(substring(.,15,2))<60))]|
+
+
+|scenario|Check column 'Status'                                                      |
+|note    |Checks if in the third column the length of the text > 2 and fails if not  |
+|reject  |is visible on page|xpath=${xpathTableRows}/div[3][not(string-length(.) >2)]|
+
+
+|scenario|Check column 'Details'                                                                                           |
+|note    |Checks if the 4e column contains a 'A' tag with the text 'Bekijk' and fails if not                               |
+|reject  |is visible on page|xpath=${xpathTableRows}/div[4]/descendant::*[text()]/self::*[not(self::a and text()="Bekijk")]|
+
+*!
+
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc07_login}|and password|${accountSprint9Tc07_password}|
+|Click on                       |Bestelstatus               |in the navigation menu                     |
+
+|storyboard                                                                                                 |
+|Check if the title                                 |Aanvragen en wijzigingen|with heading|h1    |is visible|
+|Check if the title                                 |Overzicht van aanvragen |with heading|h2    |is visible|
+|Backup timeouts and set timeouts to                |3                       |seconds                       |
+|Check if there is a table visible with the columns;|Wijziging               |Datum       |Status|Details   |
+|Check column 'Wijziging'                                                                                   |
+|Check column 'Datum'                                                                                       |
+|Check column 'Status'                                                                                      |
+|Check column 'Details'                                                                                     |
+|Restore timeouts                                                                                           |
+
+
+|storyboard        |
+|Logout Mijn Mobiel|

@@ -1,0 +1,87 @@
+!*> Local scenarios
+
+
+|scenario          |Check if the section                 |sectionName|contains the text             |text             |
+|is visible on page|xpath=//*[normalize-space(.)="@text"]|in         |xpath=//*[normalize-space(.)="@sectionName"] /..|
+
+|scenario          |Check if the section                       |sectionName|contains a link button        |buttonText       |
+|is visible on page|xpath=//a[normalize-space(.)="@buttonText"]|in         |xpath=//*[normalize-space(.)="@sectionName"] /..|
+
+
+|scenario          |Check if mainSection      |sectionNumber      |contains an image     |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//img|
+
+|scenario          |Check if mainSection            |sectionNumber           |contains the text           |text           |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div[contains(normalize-space(.),"@text")]|
+
+|scenario          |Check if mainSection          |sectionNumber          |contains the link         |text         |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//a[normalize-space(.)="@text"]|
+
+|scenario          |Check if mainSection    |sectionNumber    |contains the title    |text    |with tag   |tag   |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//@tag[normalize-space(.)="@text"]|
+
+|scenario          |Check if mainSection      |sectionNumber      |contains a bullet link that opens as a lightbox      |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//li//a[contains(@class,"lightbox")]|
+
+
+|scenario          |Check if image no|index|is visible|
+|is visible on page|xpath=(//img)[@index]             |
+
+|scenario          |Check if the button|buttonText|is visible|
+|is visible on page|xpath=//a[text()='@buttonText']          |
+
+|scenario          |Check if the text  |text |is visible |
+|is visible on page|xpath=//p[normalize-space(.)='@text']|
+
+*!
+
+
+|storyboard                                                                                               |
+|Open the Telfort website and agree with cookie message                                                   |
+|Set stubhub cookie                                                                                       |
+|Login Mijn Mobiel with username|${accountSprint10Tc03_login}|and password|${accountSprint10Tc03_password}|
+
+
+!|storyboard                                                                                                                      |
+|Check if the title|Prepaid             |with heading|h1                |is visible                                               |
+|note              |Check if mainSection|1           |contains the title|Welkom op de vernieuwde MijnTelfort omgeving.|with tag|h4|
+
+
+|storyboard                                                                            |
+|note|Check if mainSection|2|contains an image                                         |
+|note|Check if mainSection|2|contains the title|Voordelig Thuis met Telfort|with tag|h2|
+|note|Check if mainSection|2|contains the link |Lees verder                            |
+
+
+|storyboard                                                                                                  |
+|Check if mainSection|1                   |contains the title    |Bundeltegoed     |with tag       |h2       |
+|note                |Check if the section|Bundeltegoed          |contains the text|Internetbundel 50 MB over|
+|note                |Check if the section|Bundeltegoed          |contains the text|Belbundel 75 min over    |
+|note                |Check if the section|Bundeltegoed          |contains the text|Sms-bundel 100 sms over  |
+|Check if the section|Bundeltegoed        |contains a link button|Bekijk alle verbruik                       |
+
+
+|storyboard                                                                 |
+|Check if mainSection|1        |contains the title    |Beltegoed|with tag|h2|
+|Check if the section|Beltegoed|contains the text     |Totaal € 3,00        |
+|Check if the section|Beltegoed|contains a link button|Opwaarderen          |
+|Check if the section|Beltegoed|contains a link button|Bundels bestellen    |
+
+!|storyboard                                                                                                                                                                                                                                              |
+|Check if mainSection|2|contains the title|Wist je dat?                                                             |with tag                                                             |h2                                                             |
+|Check if mainSection|2|contains an image                                                                                                                                                                                                                 |
+|Check if mainSection|2|contains the text |Met de Mijn Telfort app heb je inzicht in je beltegoed en bundeltegoed, zodat je precies weet wat je nog hebt. Zo weet je altijd waar je aan toe bent. Je kunt de app gratis downloaden voor Android en iPhone.|
+|Check if mainSection|2|contains the link |Download voor Android                                                                                                                                                                                          |
+|Check if mainSection|2|contains the link |Download voor iPhone                                                                                                                                                                                           |
+
+
+|storyboard                                                                                                                                                                                                          |
+|Check if mainSection|3                   |contains the title|Storingen Mobiel                                         |with tag                                         |h2                                         |
+|Check if mainSection|3                   |contains the text |Heb je problemen met mobiel? Bekijk welke storingen er op dit moment bekend zijn in jouw omgeving. Ook houden we je op de hoogte van gepland onderhoud.|
+|note                |Check if mainSection|3                 |contains a bullet link that opens as a lightbox                                                                                                        |
+
+
+|storyboard                                                             |
+|note|Check if mainSection|4|contains the title|Instellingen|with tag|h2|
+
+

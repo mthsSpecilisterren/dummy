@@ -1,0 +1,59 @@
+!*> Local variables
+
+*!
+
+!*> Local scenarios
+|scenario|Check if the tab  |tabName                                           |is active                                           |
+|ensure  |is visible on page|xpath=//a[contains(@class,"subnavMT_tab")][contains(@class,"is_active")][normalize-space(.)="@tabName"]|
+
+|scenario|Check if the tab  |tabName                                             |is not active                                            |
+|ensure  |is visible on page|xpath=//a[contains(@class,"subnavMT_tab")][ not (contains(@class,"is_active"))][normalize-space(.)="@tabName"]|
+
+|scenario|Check if navigation item|navItem |is visible in the navigation menu      |
+|ensure  |is visible on page      |@navItem|in|xpath=//div[@class="subnavMT_items"]|
+
+|scenario|Check if navigation item|navItem                                            |is active                                           |
+|ensure  |is visible on page      |xpath=//a[contains(@class,"subnavMT_item")][contains(@class,"is_active")][normalize-space(.)="@navItem"]|
+
+|scenario|Select bill cycle|billCycle|in dropdown box|
+|select  |@billCycle       |for      |xpath=//select |
+
+|scenario|Check if table header, Col1:|col1 |Col2:|col2                                                                                  |Col3:|col3|Col4:|col4|Col5:|col5|is visible for date|date|
+|ensure  |is visible on page          |@col1|in   |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-header"]/div[1]|                                                         |
+|ensure  |is visible on page          |@col2|in   |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-header"]/div[2]|                                                         |
+|ensure  |is visible on page          |@col3|in   |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-header"]/div[3]|                                                         |
+|ensure  |is visible on page          |@col4|in   |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-header"]/div[4]|                                                         |
+|ensure  |is visible on page          |@col5|in   |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-header"]/div[5]|                                                         |
+
+|scenario|Check if detail line|number|of date|date  |equals, Tijd:  |col1  |Type:  |col2  |Nummer:  |col3 |Verbruik: |col4 |Bedrag: |col5 |
+|ensure  |is visible on page  |@col1 |in     |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-row"][@number]/div[1]|
+|ensure  |is visible on page  |@col2 |in     |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-row"][@number]/div[2]|
+|ensure  |is visible on page  |@col3 |in     |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-row"][@number]/div[3]|
+|ensure  |is visible on page  |@col4 |in     |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-row"][@number]/div[4]|
+|ensure  |is visible on page  |@col5 |in     |xpath=//*[normalize-space(.)="@date"]/..//div[@class="responsive-table-row"][@number]/div[5]|
+
+
+*!
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint2Tc05_login}|and password|${accountSprint2Tc05_password}|
+
+|script                                                                    |
+|Click on                              |Verbruik|in the navigation menu    |
+|Click on the link                     |Verbruiksdetails                   |
+|Check if the title                    |Verbruik|with heading|h1|is visible|
+|Check if the following text is visible|Factuur periode:                   |
+
+|script                                                                                                                                             |
+|Select bill cycle           |15-05-2016 t/m 15-06-2016|in dropdown box                                                                             |
+|Click on the button         |Tonen                                                                                                                 |
+|Check if table header, Col1:|Tijd                     |Col2:|Type|Col3:|Nummer|Col4:|Verbruik|Col5:|Bedrag|is visible for date|Woensdag 8 juni 2016|
+|Check if table header, Col1:|Tijd                     |Col2:|Type|Col3:|Nummer|Col4:|Verbruik|Col5:|Bedrag|is visible for date|Woensdag 25 mei 2016|
+
+|script                                                                                                                                              |
+|Check if detail line|1|of date|Woensdag 8 juni 2016|equals, Tijd:|10:21|Type:|MB gebruik in Nederland|Nummer:||Verbruik:|2.27 MB |Bedrag:|Uit bundel|
+|Check if detail line|1|of date|Woensdag 25 mei 2016|equals, Tijd:|11:35|Type:|MB gebruik in Nederland|Nummer:||Verbruik:|1.83 MB |Bedrag:|Uit bundel|
+|Check if detail line|2|of date|Woensdag 25 mei 2016|equals, Tijd:|10:58|Type:|MB gebruik in Nederland|Nummer:||Verbruik:|19.21 MB|Bedrag:|Uit bundel|
+
+

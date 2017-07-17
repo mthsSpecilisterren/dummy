@@ -1,0 +1,48 @@
+!*> Local scenarios
+
+|scenario |Scroll down to|item|
+|scroll to|@item              |
+
+|scenario                |Check if within          |scope          |the header          |header          |is visible          |
+|Check if visible on page|xpath=//h2[text()="@scope"]/following-sibling::div[@class="bundles_container"]//h3[text()="@header"]|
+
+
+
+|scenario                |Check if the below the header       |header       |the text       |text      |is visible      |
+|Check if visible on page|xpath=//div[@class="bundles_container"]//h3[text()="@header"]/../div[contains(text(),"@text")]|
+
+|scenario                |Check if within           |scope           |the total amount of           |amount           |is visible           |
+|Check if visible on page|xpath=//div[@class="bundles_container"]//span[contains(text(),"Totaal Toestelinformatie")]/../em[text()="@amount"]|
+
+|scenario                |Check if the total amount of                                    |amount                                    |is visible                                   |
+|Check if visible on page|xpath=//h2[text()="@scope"]/following-sibling::div[@class="bundles_container"]//span[contains(text(),"Totaal Toestelinformatie")]/../em[text()="@amount"]|
+
+
+|scenario                |Check if within      |scope      |there is a paragraph visible with the link     |linktext     |
+|Check if visible on page|xpath=//h2[text()="@scope"]/following-sibling::p[@class="info-paragraph"]/a[text()="@linktext"]|
+
+
+*!
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Note                           |Login with account, that has a toestelbundel                           |
+|Login Mijn Mobiel with username|${accountSprint3Tc06_login}|and password|${accountSprint3Tc06_password}|
+|Click on                       |Abonnement                 |in the navigation menu                     |
+
+|script                                                                                                                     |
+|Scroll down to               |Toestelinformatie                                                                            |
+|Check if within              |Toestelinformatie|the header         |Toestel                                   |is visible  |
+|Check if the below the header|Toestel          |the text           |iPhone 5s 16GB Silver                     |is visible  |
+|Check if within              |Toestelinformatie|the header         |Toestelbundel                             |is visible  |
+|Check if the below the header|Toestelbundel    |the text           |€ 24,00                                   |is visible  |
+|Check if within              |Toestelinformatie|the total amount of|€ 24,00                                   |is visible  |
+|note                         |Check if within  |Toestelinformatie  |there is a paragraph visible with the link|toestellease|
+
+
+
+
+
+
+
+

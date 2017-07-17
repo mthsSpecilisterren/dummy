@@ -1,0 +1,121 @@
+NOTE: This script assumes that 'Post op een ander adres ontvangen' is turned off.
+At the end, the script puts back the original values.
+
+!*> Local variables
+
+!define xpathCheckbox {!-//span[text()='@sectionName']/..//label[normalize-space(.)='@checkboxText']-!}
+!define xpathTitle {!-//span[text()='@sectionName']/../div[@class='formElement_inputfields'][@rowNumber]//label[text()='@titleText']-!}
+!define xpathTextbox {${xpathTitle}!-/following-sibling::input-!}
+
+*!
+
+!*> Local scenarios
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible within customer data section|
+|Check if visible on page|xpath=//customer-data-component//@headingTag[text()='@titleText']                           |
+
+|scenario|Click on button |buttonText|within customer data section|
+|click   |xpath=//customer-data-component//a[text()='@buttonText']|
+|wait    |3               |seconds                                |
+
+|scenario                |Check if checkbox|checkboxText|is visible within section|sectionName|
+|Check if visible on page|xpath=${xpathCheckbox}                                              |
+
+|scenario                |Check if the title|titleText|is visible in row|rowNumber|within section|sectionName|
+|Check if visible on page|xpath=${xpathTitle}                                                                |
+
+|scenario                |Check if the textbox|titleText|is visible in row|rowNumber|within section|sectionName|
+|Check if visible on page|xpath=${xpathTextbox}                                                                |
+
+|scenario            |Check if the title and textbox|titleText        |is visible in row|rowNumber     |within section|sectionName|
+|Check if the title  |@titleText                    |is visible in row|@rowNumber       |within section|@sectionName              |
+|Check if the textbox|@titleText                    |is visible in row|@rowNumber       |within section|@sectionName              |
+
+|scenario|Type on|titleText|with|text|in row|rowNumber|within section|sectionName|
+|enter   |@text  |as       |xpath=${xpathTextbox}                                |
+
+|scenario                |Check if the textbox|titleText|has value|textboxValue|in row|rowNumber|within section|sectionName|
+|Check if visible on page|xpath=${xpathTextbox}[@value="@textboxValue"]                                                    |
+
+|scenario|Click on button              |buttonText             |
+|wait    |3                            |seconds                |
+|click   |xpath=//button[normalize-space(text())='@buttonText']|
+|wait    |3                            |seconds                |
+
+|scenario                |Check if row         |rowNumber         |and column        |columnNumber        |has text        |text        |
+|Check if visible on page|xpath=//div[@class='formElement changeInfo']/div[@rowNumber]/p[@columnNumber][normalize-space(text())="@text"]|
+
+|scenario                |Check if button        |buttonText       |is visible       |
+|Check if visible on page|xpath=//a[contains(@class, 'button')][text()='@buttonText']|
+
+|scenario|Click on checkbox|checkboxText|within section|sectionName|
+|click   |xpath=${xpathCheckbox}                                   |
+
+*!
+
+|script                                                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                                                   |
+|note                           |Login Mijn Mobiel with username|${accountSprint12Tc10_login}|and password|${accountSprint12Tc10_password}|
+|Login Mijn Mobiel with username|${accountSprint12Tc10_login}   |and password                |${accountSprint12Tc10_password}             |
+|Click on navigation tab        |Mobiel                                                                                                   |
+|Click on                       |Mijn gegevens                  |in the navigation menu                                                   |
+
+|script                                                                                     |
+|Check if the title|Persoonsgegevens|with heading|h3|is visible within customer data section|
+|Click on button   |Wijzigen        |within customer data section                           |
+
+|script                                                                                        |
+|Check if the title|Post adres                       |with heading             |span|is visible|
+|Check if checkbox |Post op een ander adres ontvangen|is visible within section|Post adres     |
+
+|script                                                                                 |
+|Check if the title and textbox|Postcode  |is visible in row|1|within section|Post adres|
+|Check if the title and textbox|Huisnummer|is visible in row|1|within section|Post adres|
+|Check if the title and textbox|Toevoeging|is visible in row|1|within section|Post adres|
+|Check if the title and textbox|Straat    |is visible in row|2|within section|Post adres|
+|Check if the title and textbox|Woonplaats|is visible in row|2|within section|Post adres|
+
+|script                                                           |
+|Type on|Postcode  |with|2498BS|in row|1|within section|Post adres|
+|Type on|Huisnummer|with|19    |in row|1|within section|Post adres|
+
+|script                                                                                    |
+|Check if the textbox|Straat    |has value|Zomereik     |in row|2|within section|Post adres|
+|Check if the textbox|Woonplaats|has value|'s-Gravenhage|in row|2|within section|Post adres|
+
+|script                                                      |
+|Type on|Toevoeging|with|a|in row|1|within section|Post adres|
+
+|script                                |
+|Click on button|Wijzigingen doorvoeren|
+
+|script                                                                               |
+|Check if the title|Wijzigingen doorgevoerd                |with heading|h3|is visible|
+|Check if the title|Je hebt de volgende gegevens gewijzigd:|with heading|p |is visible|
+
+|script                                                                       |
+|Check if row|1|and column|1|has text|Post adres                              |
+|Check if row|2|and column|1|has text|Oud                                     |
+|Check if row|2|and column|2|has text|Teleportboulevard 121 a 1043EJ AMSTERDAM|
+|Check if row|3|and column|1|has text|Nieuw                                   |
+|Check if row|3|and column|2|has text|Zomereik 19 a 2498BS 's-Gravenhage      |
+
+|script                                                         |
+|Check if button|Terug naar mijn gegevens|is visible            |
+|Click on       |Mijn gegevens           |in the navigation menu|
+
+Put back original values
+
+|script                                               |
+|Click on button|Wijzigen|within customer data section|
+
+|script                                                                                  |
+|Check if checkbox|Post op een ander adres ontvangen|is visible within section|Post adres|
+|Click on checkbox|Post op een ander adres ontvangen|within section           |Post adres|
+
+|script                                |
+|Click on button|Wijzigingen doorvoeren|
+
+
+|script            |
+|Logout Mijn Mobiel|

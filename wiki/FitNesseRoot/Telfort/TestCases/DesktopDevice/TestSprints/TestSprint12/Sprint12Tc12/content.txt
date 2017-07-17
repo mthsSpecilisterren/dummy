@@ -1,0 +1,69 @@
+!*> Local variables
+
+!define xpathLoggedInHeader {!-//ul[@class='mainLoggedIn_list']/li[@index][normalize-space(.)='@text']-!}
+!define xpathLoggedInButton {!-//ul[@class='mainLoggedIn_list']/li[@index]/a[text()='@buttonText']-!}
+!define xpathLoggedInDiv {!-//div[@class="mainLoggedIn"]-!}
+
+*!
+
+!*> Local scenarios
+
+|scenario                |Check logged in header number|index|has text|text|
+|Check if visible on page|xpath=${xpathLoggedInHeader}                     |
+
+|scenario                |Check logged in header number|index|has button|buttonText|
+|Check if visible on page|xpath=${xpathLoggedInButton}                             |
+
+|scenario|Click button|buttonText|in header number|index|
+|click   |xpath=${xpathLoggedInButton}                  |
+
+|scenario                    |Check if logged out                                                 |
+|note                        |Go 1 page back and check if the Div with the logout links is visible|
+|back                                                                                             |
+|Check if not visible on page|${xpathLoggedInDiv}                                                 |
+
+*!
+
+Test 1
+
+|storyboard                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc12_test1_login}|and password    |${accountSprint12Tc12_test1_password}|
+|Check logged in header number  |1                                 |has text        |Mijn Telfort Mobiel Uitloggen        |
+|Check logged in header number  |1                                 |has button      |Uitloggen                            |
+|Check logged in header number  |2                                 |has text        |Mijn Telfort Thuis Uitloggen         |
+|Check logged in header number  |2                                 |has button      |Uitloggen                            |
+|Click button                   |Uitloggen                         |in header number|1                                    |
+|Check if logged out                                                                                                      |
+
+|storyboard                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc12_test1_login}|and password    |${accountSprint12Tc12_test1_password}|
+|Check logged in header number  |1                                 |has text        |Mijn Telfort Mobiel Uitloggen        |
+|Check logged in header number  |1                                 |has button      |Uitloggen                            |
+|Check logged in header number  |2                                 |has text        |Mijn Telfort Thuis Uitloggen         |
+|Check logged in header number  |2                                 |has button      |Uitloggen                            |
+|Click button                   |Uitloggen                         |in header number|2                                    |
+|Check if logged out                                                                                                      |
+
+
+Test 2
+
+|storyboard                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc12_test2_login}|and password    |${accountSprint12Tc12_test2_password}|
+|Check logged in header number  |1                                 |has text        |Mijn Telfort Mobiel Uitloggen        |
+|Check logged in header number  |1                                 |has button      |Uitloggen                            |
+|Click button                   |Uitloggen                         |in header number|1                                    |
+|Check if logged out                                                                                                      |
+
+
+Test 3
+
+|storyboard                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc12_test3_login}|and password    |${accountSprint12Tc12_test3_password}|
+|Check logged in header number  |1                                 |has text        |Mijn Telfort Thuis Uitloggen         |
+|Check logged in header number  |1                                 |has button      |Uitloggen                            |
+|Click button                   |Uitloggen                         |in header number|1                                    |
+|Check if logged out                                                                                                      |

@@ -1,0 +1,16 @@
+!***> Start Desktop
+|script          |selenium driver setup|
+|start driver for|${BROWSER}           |
+|show            |driver description   |
+*!
+
+!***> Libraries
+|Library     |
+|telfort test|
+*!
+
+|script                             |
+|clear all cookies                  |
+|set browser size to maximum        |
+|seconds before page load timeout|31|
+|seconds before timeout          |30|

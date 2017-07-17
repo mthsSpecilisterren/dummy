@@ -1,0 +1,88 @@
+NOTE: All steps are in the script. But when you run the script, the pop-up window won't appear anymore. Even if you remove all cookies.
+
+!*> Local variables
+
+!define xpathCheckbox {!-//first-time-login-component//div[contains(@class, 'checkbox')]/label[normalize-space(.)='@checkboxText']-!}
+!define xpathButton {!-//first-time-login-component//a[contains(@class, 'button')][text()='@buttonText']-!}
+
+*!
+
+!*> Local scenarios
+
+|scenario                |Check if lightbox is visible      |
+|Check if visible on page|xpath=//first-time-login-component|
+
+|scenario|Check if lightbox is not visible                     |
+|reject  |is visible on page|xpath=//first-time-login-component|
+
+|scenario                |Check if the title |titleText|with heading|headingTag|is visible within lightbox|
+|Check if visible on page|xpath=//first-time-login-component//@headingTag[normalize-space(.)='@titleText']|
+
+|scenario                |Check if checkbox|checkboxText|is visible within lightbox|
+|Check if visible on page|xpath=${xpathCheckbox}                                   |
+
+|scenario|Click on check box|checkBoxText|within lightbox|
+|click   |xpath=${xpathCheckbox}                         |
+
+|scenario                |Check if button|buttonText|is visible within lightbox|
+|Check if visible on page|xpath=${xpathButton}                                 |
+
+|scenario|Click on button|buttonText|within lightbox|
+|click   |xpath=${xpathButton}                      |
+|wait    |1              |seconds                   |
+
+|scenario|Remove cookies from domain Telfort|
+|open    |!-http://www.telfort.nl-!         |
+|delete all cookies                         |
+|clear local storage                        |
+
+
+
+|scenario                       |Login Telfort                                                                        |
+|note                           |Verwijder cookies vah het domain telfort.nl zodat de samenvoeg lightbox wordt getoond|
+|scenario                       |Remove cookies from domain Telfort                                                   |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc07_login}    |and password    |${accountSprint12Tc07_password}    |
+|wait                           |1                               |seconds                                             |
+
+|scenario          |Check fields in lightbox                                                                                                                                                                                                                                         |
+|Check if the title|Heb je ook Telfort Mobiel?                                                                                                                                                                                            |with heading|h2|is visible within lightbox|
+|Check if the title|Dan kun je vanaf nu Mijn Telfort Thuis en Mijn Telfort Mobiel samenvoegen, zodat je deze tegelijk kunt bekijken in Mijn Telfort. Om samen te voegen hoef je alleen maar één keer in te loggen via Mijn Telfort Mobiel.|with heading|p |is visible within lightbox|
+|Check if the title|Je kunt maximaal één Mijn Telfort Thuis account samenvoegen met één Mijn Telfort Mobiel account. Indien je op een later moment je accounts wilt samenvoegen kan dit onder Mijn gegevens.                              |with heading|p |is visible within lightbox|
+|Check if checkbox |Toon dit bericht nooit meer                                                                                                                                                                                           |is visible within lightbox                |
+|Check if button   |Niet samenvoegen                                                                                                                                                                                                      |is visible within lightbox                |
+|Check if button   |Samenvoegen                                                                                                                                                                                                           |is visible within lightbox                |
+|wait              |1                                                                                                                                                                                                                     |seconds                                   |
+
+*!
+
+|script                                                   |
+|Login Telfort                                            |
+|Check if lightbox is visible                             |
+|Check fields in lightbox                                 |
+|Click on button   |Samenvoegen|within lightbox           |
+|Check if the title|Samenvoegen|with heading|h1|is visible|
+|Logout Mijn Mobiel                                       |
+
+|script                                          |
+|Login Telfort                                   |
+|Check if lightbox is visible                    |
+|Check fields in lightbox                        |
+|Click on button|Niet samenvoegen|within lightbox|
+|Logout Mijn Mobiel                              |
+|Login Telfort                                   |
+|Check if lightbox is visible                    |
+|Logout Mijn Mobiel                              |
+
+
+|script                                                                                             |
+|note|Wait for mock service. Because selecting the option 'Toon dit bericht nooit meer' is permanent|
+|note|Login Telfort                                                                                 |
+|note|Check if lightbox is visible                                                                  |
+|note|Check fields in lightbox                                                                      |
+|note|Click on check box           |Toon dit bericht nooit meer           |within lightbox          |
+|note|Click on button              |Niet samenvoegen                      |within lightbox          |
+|note|Logout Mijn Mobiel                                                                            |
+|note|Login Telfort                                                                                 |
+|note|Check if lightbox is not visible                                                              |
+|note|Logout Mijn Mobiel                                                                            |

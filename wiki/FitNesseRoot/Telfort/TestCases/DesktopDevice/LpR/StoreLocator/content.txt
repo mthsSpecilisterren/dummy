@@ -1,0 +1,31 @@
+!*> Local scenarios
+|scenario           |Search for |zoekString         |
+|enter              |@zoekString|as|id=inputLocation|
+|Click on the button|Zoeken                         |
+
+|scenario         |Click on Soort Winkel    |soortWinkel    |
+|Click on the link|xpath=//label[contains(.,'@soortWinkel')]|
+*!
+
+|storyboard                                            |
+|Open the Telfort website and agree with cookie message|
+|Go to Store Locator page                              |
+
+|storyboard                                                                |
+|Search for                            |amsterdam                          |
+|Check if the following text is visible|Telfort winkel Amsterdam Heiligeweg|
+
+
+|storyboard                                                          |
+|Click on Soort Winkel                 |Zakelijke verkooppunten      |
+|Click on the button                   |Zoeken                       |
+|Check if the following text is visible|2Mobile Consultancy Amsterdam|
+
+|storyboard                                                                  |
+|Click on Soort Winkel                 |Telfort Winkels                      |
+|Search for                            |1111aa                               |
+|Check if the following text is visible|Telfort winkel Amsterdam Bijlmerplein|
+|Search for                            |3111aa                               |
+|Check if the following text is visible|Telfort winkel Rotterdam Lijnbaan    |
+|Click on the button                   |Gebruik uw locatie                   |
+|note                                  |Moet nog worden geimplementeerd      |

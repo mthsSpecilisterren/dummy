@@ -1,0 +1,86 @@
+!*> Local scenarios
+|scenario           |Click on Main button     |mainbutton     |
+|Click on the button|xpath=//a[@title="@mainbutton"]/parent::*|
+
+|scenario          |Check if text         |text         |is present in group         |group        |
+|is visible on page|xpath=//*[normalize-space(.)="@group"]/parent::*//*[normalize-space(.)="@text"]|
+
+|scenario           |Click on          |text          |in group          |group         |
+|Click on the button|xpath=//*[normalize-space(.)="@group"]/parent::*//*[text()="@text"]|
+
+|scenario          |Check if the WIJZIG button in group      |group      |is disabled     |
+|is visible on page|xpath=//*[text()="@group"]/parent::*//*[@type='submit' and(@disabled)]|
+
+|scenario          |Check if the WIJZIG button in group        |group        |is enabled       |
+|note              |er is wel een 'submit'knop, maar deze is niet 'disabled'                   |
+|is visible on page|xpath=//*[text()="@group"]/parent::*//*[@type='submit' and not (@disabled)]|
+
+|scenario           |Click on WIJZIG in group             |group            |
+|Click on the button|xpath=//*[text()="@group"]/parent::*//*[@type='submit']|
+
+|script                                                                                                    |
+|Note                           |step 1                                                                    |
+|Open the Telfort website and agree with cookie message                                                    |
+|Login Mijn Mobiel with username|${accountSprint12Tc05_login}|and password|${accountSprint12Tc05_password}||
+|Note                           |eerst tabblad "Thuis" selecteren                                          |
+|Click on navigation tab        |Thuis                                                                     |
+|Note                           |step 2                                                                    |
+|Click on                       |Instellingen                |in the navigation menu                       |
+                                   
+|script                                                                                                                                            |
+|Note                |step 42                                                                                                                      |
+|Click on Main button|Privacy                                                                                                                      |
+|Note                |step 43                                                                                                                      |
+|Check if the title  |Privacy instellingen                                                                |with heading       |h2    |is visible   |
+|Note                |step 44                                                                                                                      |
+|Check if text       |Telfort mag mij benaderen met commerciële acties en aantrekkelijke aanbiedingen via:|is present in group|Privacy instellingen|
+
+|script                                                                                                   |
+|Note                               |step 45                                                              |
+|Check if the title                 |Aanbiedingen            |with heading       |h3      |is visible     |
+|Note                               |step 46                                                              |
+|Check if text                      |Aanbiedingen Telefonisch|is present in group|Aanbiedingen            |
+|Check if text                      |JA                      |is present in group|Aanbiedingen Telefonisch|
+|Check if text                      |NEE                     |is present in group|Aanbiedingen Telefonisch|
+|Note                               |first check if the button wijzigen is disabled                       |
+|Check if the WIJZIG button in group|Aanbiedingen            |is disabled                                 |
+|Click on                           |JA                      |in group           |Aanbiedingen Telefonisch|
+|Note                               |step 47                                                              |
+|Check if text                      |E-mail                  |is present in group|Aanbiedingen            |
+|Check if text                      |JA                      |is present in group|E-mail                  |
+|Check if text                      |NEE                     |is present in group|E-mail                  |
+|Click on                           |NEE                     |in group           |E-mail                  |
+|Note                               |step 48                                                              |
+|Check if text                      |Aanbiedingen per brief  |is present in group|Aanbiedingen            |
+|Check if text                      |JA                      |is present in group|Aanbiedingen per brief  |
+|Check if text                      |NEE                     |is present in group|Aanbiedingen per brief  |
+|Click on                           |JA                      |in group           |Aanbiedingen per brief  |
+
+|script                                                                               |
+|Note|step 49                                                                         |
+|Note|***does not work***|Check if the WIJZIG button in group|Aanbiedingen|is enabled |
+|Note|***does not work***|Click on WIJZIG in group           |Aanbiedingen            |
+|Note|***does not work***|Check if the WIJZIG button in group|Aanbiedingen|is disabled|
+
+|script                                                                                                                                                                                                                                                                                                                               |
+|Note                               |step 50                                                                                                                                                                                                                                                                                          |
+|Check if the title                 |Analyse van mijn gegevens                                                                                                                                                                                  |with heading                       |h3                             |is visible       |
+|Note                               |step 51                                                                                                                                                                                                                                                                                          |
+|Check if text                      |Je gegevens worden geanalyseerd om je zo goed mogelijk van dienst te zijn, onze producten te verbeteren en om passende, persoonlijk, advies te kunnen doen. Zie voor meer informatie ons Privacy Statement.|is present in group                |Analyse van mijn gegevens                        |
+|Note                               |step 52                                                                                                                                                                                                                                                                                          |
+|Check if text                      |Telfort mag mijn persoonlijke gegevens analyseren                                                                                                                                                          |is present in group                |Analyse van mijn gegevens                        |
+|Check if text                      |AAN                                                                                                                                                                                                        |is present in group                |Telfort mag mijn persoonlijke gegevens analyseren|
+|Check if text                      |UIT                                                                                                                                                                                                        |is present in group                |Telfort mag mijn persoonlijke gegevens analyseren|
+|Note                               |first check if the button wijzigen is disabled                                                                                                                                                                                                                                                   |
+|Check if the WIJZIG button in group|Analyse van mijn gegevens                                                                                                                                                                                  |is disabled                                                                          |
+|Click on                           |UIT                                                                                                                                                                                                        |in group                           |Telfort mag mijn persoonlijke gegevens analyseren|
+|Note                               |step 53                                                                                                                                                                                                                                                                                          |
+|Check if text                      |Telfort mag mijn verkeersgegevens analyseren                                                                                                                                                               |is present in group                |Analyse van mijn gegevens                        |
+|Check if text                      |AAN                                                                                                                                                                                                        |is present in group                |Telfort mag mijn verkeersgegevens analyseren     |
+|Check if text                      |UIT                                                                                                                                                                                                        |is present in group                |Telfort mag mijn verkeersgegevens analyseren     |
+|Click on                           |UIT                                                                                                                                                                                                        |in group                           |Telfort mag mijn verkeersgegevens analyseren     |
+|Note                               |step 54                                                                                                                                                                                                                                                                                          |
+|Note                               |***does not work***                                                                                                                                                                                        |Check if the WIJZIG button in group|Analyse van mijn gegevens      |is enabled       |
+|Note                               |***does not work***                                                                                                                                                                                        |Click on WIJZIG in group           |Analyse van mijn gegevens                        |
+|Note                               |***does not work***                                                                                                                                                                                        |Check if the WIJZIG button in group|Analyse van mijn gegevens      |is disabled      |
+

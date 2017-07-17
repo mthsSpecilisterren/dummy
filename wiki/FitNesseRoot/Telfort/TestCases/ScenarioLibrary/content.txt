@@ -1,0 +1,570 @@
+!*> Accounts Mijn gedeelte
+
+!define defaultAccountMijnMobiel_telnr {0612697132}
+!define defaultAccountMijnMobiel_password {Telfort20}
+
+!define default2AccountMijnMobiel_telnr {0612699566}
+!define default2AccountMijnMobiel_password {Telfort20}
+
+
+!define accountWithFirstInvoice_telnr {0612696490}
+!define accountWithFirstInvoice_password {Telfort20}
+
+!define accountWithFinalInvoice_telnr {0612696477}
+!define accountWithFinalInvoice_password {Telfort21}
+
+
+!define accountWithToestelLease_telnr {0612697888}
+!define accountWithToestelLease_password {Telfort21}
+
+
+!define accountGemiddeldeBedragPerMaand_telnr {0612699087}
+!define accountGemiddeldeBedragPerMaand_password {Telfort26}
+
+!define accountSubscriptionMoreThan2Months_telnr {0612696477}
+!define accountSubscriptionMoreThan2Months_password {Telfort21}
+
+!define accountWithDownloadableInvoices_telnr {0635350126}
+!define accountWithDownloadableInvoices_password {Telfort20}
+
+!define accountWithUnpaidInvoices_telnr {0612696477}
+!define accountWithUnpaidInvoices_password {Telfort21}
+
+
+
+#-------------------------------------------------------------
+
+!-Account for Sprint1Tc01-!
+!define accountSprint1Tc01_login {${defaultAccountMijnMobiel_telnr}}
+!define accountSprint1Tc01_password {${defaultAccountMijnMobiel_password}}
+
+
+!-Account for Sprint1Tc03 -!
+!define accountSprint1Tc03_login {0635350014}
+!define accountSprint1Tc03_password {Telfort20}
+
+
+!-Account for Sprint1Tc04 -!
+!define accountSprint1Tc04_login {0635350014}
+!define accountSprint1Tc04_password {Telfort20}
+
+
+!-Account for Sprint1Tc05a -!
+!define accountSprint1Tc05a_login {0635351865}
+!define accountSprint1Tc05a_password {Telfort20}
+
+!-Account for Sprint1Tc05b -!
+!define accountSprint1Tc05b_login {0635351865}
+!define accountSprint1Tc05b_password {Telfort20}
+
+
+
+#-------------------------------------------------------------
+!-Account for Sprint2Tc01-!
+!define accountSprint2Tc01_login {0612695806}
+!define accountSprint2Tc01_password {Telfort20}
+
+!-Account for Sprint2Tc02-!
+!define accountSprint2Tc02_login {0612695806}
+!define accountSprint2Tc02_password {Telfort20}
+
+
+!-Account for Sprint2Tc03-!
+!define accountSprint2Tc03_login {0612696293}
+!define accountSprint2Tc03_password {Telfort20}
+
+
+!-Account for Sprint2Tc04-!
+!define accountSprint2Tc04_login {0612695806}
+!define accountSprint2Tc04_password {Telfort20}
+
+!-Account for Sprint2Tc05-!
+!define accountSprint2Tc05_login {0612695806}
+!define accountSprint2Tc05_password {Telfort20}
+
+
+#-------------------------------------------------------------
+!-Account for Sprint3Tc01-!
+!define accountSprint3Tc01_login {0612699566}
+!define accountSprint3Tc01_password {Telfort20}
+
+
+!-Account for Sprint3Tc03-!
+!define accountSprint3Tc03_login {0612696293}
+!define accountSprint3Tc03_password {Telfort20}
+
+
+!-Account for Sprint3Tc04-!
+!define accountSprint3Tc04_login {0612698838}
+!define accountSprint3Tc04_password {Telfort20}
+
+!-Account for Sprint3Tc05-!
+!define accountSprint3Tc05_login {0635350281}
+!define accountSprint3Tc05_password {Telfort20}
+
+!-Account for Sprint3Tc06-!
+!define accountSprint3Tc06_login {0635350453}
+!define accountSprint3Tc06_password {Telfort20}
+
+
+
+#-------------------------------------------------------------
+
+!-Account for Sprint4Tc01-!
+!define accountSprint4Tc01_login {0635350453}
+!define accountSprint4Tc01_password {Telfort20}
+
+!-Account for Sprint4Tc02-!
+!define accountSprint4Tc02_login {0612696293}
+!define accountSprint4Tc02_password {Telfort20}
+
+
+#-------------------------------------------------------------
+!-Account for Sprint6Tc01-!
+!define accountSprint6Tc01_login {0612699013}
+!define accountSprint6Tc01_password {Telfort20}
+
+
+!-Account for Sprint6Tc02-!
+!define accountSprint6Tc02_login {0612699727}
+!define accountSprint6Tc02_password {Telfort20}
+ 
+#-------------------------------------------------------------
+
+!-Account for Sprint7Tc03-!
+!define accountSeePersonalSettings_telnr {0612699613}
+!define accountSeePersonalSettings_password {Telfort20}
+
+!-Account for Sprint7Tc04-!
+!define accountSprint7Tc04_login {0612699566}
+!define accountSprint7Tc04_password {Telfort20}
+
+
+!-Account for Sprint7Tc05-!
+!define accountSprint7Tc05_login {0612696293}
+!define accountSprint7Tc05_password {Telfort20}
+
+
+!-Account for Sprint7Tc06-!
+!define accountSprint7Tc06_login {0612699727}
+!define accountSprint7Tc06_password {Telfort20}
+
+!-Account for Sprint7Tc07-!
+!define accountSprint7Tc07_login {0612699795}
+!define accountSprint7Tc07_password {Telfort20}
+
+#-------------------------------------------------------------
+
+!-Account for Sprint9Tc01-!
+!define accountSprint9Tc01_login {${default2AccountMijnMobiel_telnr}}
+!define accountSprint9Tc01_password {Telfort20}
+
+!-Account for Sprint9Tc02-!
+!define accountSprint9Tc02_login {${default2AccountMijnMobiel_telnr}}
+!define accountSprint9Tc02_password {Telfort20}
+
+!-Account for Sprint9Tc03-!
+!define accountSprint9Tc03_login {${default2AccountMijnMobiel_telnr}}
+!define accountSprint9Tc03_password {Telfort20}
+
+!-Account for Sprint9Tc04-!
+!define accountSprint9Tc04_login {${accountSprint9Tc01_login}}
+!define accountSprint9Tc04_password {${accountSprint9Tc01_password}}
+
+!-Account for Sprint9Tc05-!
+!define accountSprint9Tc05_login {${accountSprint9Tc01_login}}
+!define accountSprint9Tc05_password {${accountSprint9Tc01_password}}
+
+!-Account for Sprint9Tc07-!
+!define accountSprint9Tc07_login {0626758572}
+!define accountSprint9Tc07_password {Telfort20}
+
+!-Account for Sprint9Tc08-!
+!define accountSprint9Tc08_login {0612699936}
+!define accountSprint9Tc08_password {Telfort20}
+
+#------------------------------------------------------------------------
+!-Account for Sprint10Tc01 prepaid-!
+!define accountSprint10Tc01_login {0612692849}
+!define accountSprint10Tc01_password {Telfort20}
+
+!-Account for Sprint10Tc02-!
+!define accountSprint10Tc02_login {0635351059}
+!define accountSprint10Tc02_login {0635350281}
+!define accountSprint10Tc02_password {Telfort20}
+
+!-Account for Sprint10Tc03-!
+!define accountSprint10Tc03_login {0635351059}
+!define accountSprint10Tc03_password {Telfort20}
+!define accountSprint10Tc03_login {0612697659}
+
+!-Account for Sprint10Tc04-!
+!define accountSprint10Tc04_login {ke435387}
+!define accountSprint10Tc04_password {lpORUAc1Kh}
+
+#------------------------------------------------------------------------
+!-Account for Sprint11Tc01-!
+!define accountSprint11Tc01_login {api-codetest14}
+!define accountSprint11Tc01_password {lpORUAc1Kh}
+
+!-Account for Sprint11Tc02-!
+!define accountSprint11Tc02_login {mo438184}
+!define accountSprint11Tc02_password {lpORUAc1Kh}
+
+!-Account for Sprint11Tc03-!
+!define accountSprint11Tc03_login {0635351059}
+!define accountSprint11Tc03_password {Telfort20}
+!define accountSprint11Tc03_login {0612693132}
+
+!-Account for Sprint11Tc04 -!
+!define accountSprint11Tc04_login {0635350248}
+!define accountSprint11Tc04_password {Telfort20}
+
+#------------------------------------------------------------------------
+!-Account for Sprint12Tc01 -!
+!define accountSprint12Tc01_login {0612693132}
+!define accountSprint12Tc01_password {Telfort20}
+
+!-Account for Sprint12Tc02 UAT omgeving-!
+!define accountSprint12Tc02_login {0612693132}
+!define accountSprint12Tc02_password {Telfort20}
+
+
+!-Account for Sprint12Tc03 Productie omgeving-!
+!define accountSprint12Tc03_login {0619604190}
+!define accountSprint12Tc03_password {Telfort20}
+
+!-Account for Sprint12Tc04 -!
+!define accountSprint12Tc04_login {mo438184}
+!define accountSprint12Tc04_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc05 -!
+!define accountSprint12Tc05_login {api-codetest02}
+!define accountSprint12Tc05_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc05 Part 2 (Step 55-97)-!
+!define accountSprint12Tc05_part2_login {mo438184}
+!define accountSprint12Tc05_part2_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc07 -!
+!define accountSprint12Tc07_login {api-codetest38}
+!define accountSprint12Tc07_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc08 Test 1 -!
+!define accountSprint12Tc08_test1_login {ti1001565090}
+!define accountSprint12Tc08_test1_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc08 Test 2 -!
+!define accountSprint12Tc08_test2_login {me1001051137}
+!define accountSprint12Tc08_test2_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc09 UAT omgeving-!
+!define accountSprint12Tc09_login {0612693132}
+!define accountSprint12Tc09_password {Telfort20}
+
+!-Account for Sprint12Tc10 Productie omgeving-!
+!define accountSprint12Tc10_login {0619604190}
+!define accountSprint12Tc10_password {Telfort20}
+
+
+!-Account for Sprint12Tc12 Test 1-!
+!define accountSprint12Tc12_test1_login {0612699319}
+!define accountSprint12Tc12_test1_password {Telfort20}
+
+!-Account for Sprint12Tc12 Test 2-!
+!define accountSprint12Tc12_test2_login {${default2AccountMijnMobiel_telnr}}
+!define accountSprint12Tc12_test2_password {Telfort20}
+
+!-Account for Sprint12Tc12 Test 3-!
+!define accountSprint12Tc12_test3_login {api-codetest08}
+!define accountSprint12Tc12_test3_password {lpORUAc1Kh}
+
+!-Account for Sprint12Tc14 UAT-!
+!define accountSprint12Tc14_login {api-codetest16}
+!define accountSprint12Tc14_password {lpORUAc1Kh}
+
+*!
+
+
+
+!*> General scenarios
+
+|scenario                        |Backup timeouts and set timeouts to|amount|seconds|
+|$oldPageTimeOut=                |seconds before page load timeout                  |
+|$oldTimeOut=                    |seconds before timeout                            |
+|seconds before page load timeout|@amount                                           |
+|seconds before timeout          |@amount                                           |
+
+|scenario                        |Restore timeouts|
+|seconds before page load timeout|$oldPageTimeOut |
+|seconds before timeout          |$oldTimeOut     |
+
+
+|scenario                        |Check if not visible on page|element |
+|$oldPageTimeOut=                |seconds before page load timeout     |
+|$oldTimeOut=                    |seconds before timeout               |
+|seconds before page load timeout|3                                    |
+|seconds before timeout          |3                                    |
+|reject                          |is visible                  |@element|
+|seconds before page load timeout|$oldPageTimeOut                      |
+|seconds before timeout          |$oldTimeOut                          |
+
+
+|scenario|Click on the link|link|
+|click   |@link                 |
+
+|scenario|Click on the button|buttonName|
+|click   |@buttonName                   |
+
+|scenario|Check if the radio button|radioButton |is not selected|
+|check   |value of                 |@radioButton|false          |
+
+|scenario|Check if there is a lightbox visible                       |
+|ensure  |is visible on page|xpath=//div[contains(@class,'lightbox')]|
+
+
+|scenario|Check if the following text is visible|text |
+|ensure  |is visible on page                    |@text|
+
+|scenario|Check if the following text is not visible|text |
+|reject  |is visible on page                        |@text|
+
+|scenario|Check if visible on page|element |
+|ensure  |is visible on page      |@element|
+
+|scenario     |Check if the link|link        |works and go back        |
+|$oldLocation=|location                                                |
+|click        |@link                                                   |
+|$newLocation=|location                                                |
+|ensure       |value            |$oldLocation|differs from|$newLocation|
+|$pageTitle=  |page title                                              |
+|reject       |text             |$pageTitle  |contains    |404         |
+|back                                                                  |
+
+|scenario                |Check if the title|titleText|with heading|headingTag|is visible|
+|Check if visible on page|xpath=//@headingTag[normalize-space(.)="@titleText"]           |
+
+|scenario                |Check if the title |titleText|with heading|headingTag|and class|className|is visible|
+|Check if visible on page|xpath=//@headingTag[contains(@class, "@className")][normalize-space(.)="@titleText"]|
+
+#--------------------------
+|scenario|Check if the page title contains|keyWord         |
+|check   |page title                      |=~/@keyWord(.*)/|
+
+
+
+
+#scenarios for buttons
+|scenario|Check if href button|buttonText                         |is visible                        |
+|ensure  |is visible on page  |xpath=//a[contains(@class,"button")][normalize-space(.)="@buttonText"]|
+
+
+|scenario|Click on href button                    |buttonText                   |
+|click   |xpath=//a[contains(@class,"button")][normalize-space(.)="@buttonText"]|
+
+
+|scenario|Check if button   |buttonText                           |is visible                           |
+|ensure  |is visible on page|xpath=//button[contains(@class,"button")][normalize-space(.)="@buttonText"]|
+
+
+|scenario                |Check if button                   |buttonText                  |is active                  |
+|Check if visible on page|xpath=//button[contains(.,"@buttonText")][not ((@disabled) or contains(@class,"disabled"))]|
+
+
+
+
+#scenarios for dealing with cookies
+|scenario       |Set stubhub cookie                                                         |
+|note           |Set cookie for the Stubhub                                                 |
+|set cookie name|SH-COLLECTION|value|CI-TO-Telfort-Fitnesse-Mobile|path|/|domain|.telfort.nl|
+
+
+|scenario                              |Check if the cookie message appears|
+|Check if the following text is visible|cookies                            |
+
+|scenario                              |Check if the cookie message has disappeared|
+|Check if the following text is visible|css=.mainHeader                            |
+|wait                                  |1                 |seconds                 |
+
+#scenarios for opening the Telfort website
+|scenario|Open the Telfort website|
+|open    |${URL}                  |
+
+|scenario|Open the Telfort website and agree with cookie message|
+|open    |${URL}                                                |
+|note    |cookie check should go here                           |
+
+|scenario|clear all cookies          |
+|note    |cookie clear should go here|
+
+
+*!
+
+!*> Navigation
+|scenario|Go to personal Service page   |
+|open    |${URL}/persoonlijk/service.htm|
+
+|scenario|Go to Combivoordeel page            |
+|open    |${URL}/persoonlijk/combivoordeel.htm|
+
+|scenario|Go to Storingen & Onderhoud page                     |
+|open    |${URL}/persoonlijk/service/storingen-en-onderhoud.htm|
+
+|scenario|Go to Store Locator page              |
+|open    |${URL}/persoonlijk/telfort-winkels.htm|
+
+|scenario|Go to Mijn Mobiel login page                        |
+|open    |${URL}/persoonlijk/service/mijn-telfort/inloggen.htm|
+*!
+
+!*> Search
+|scenario|Search for |searchTerm|using the header search box|
+|enter   |@searchTerm|as        |Zoeken naar ...            |
+|click   |Zoeken naar ...                                   |
+|click   |css=.mainSearch_submit                            |
+
+|scenario|Search for |searchTerm|using the footer search box   |
+|enter   |@searchTerm|as        |css=.footerSearch_input.curves|
+|click   |css=.footerSearch_submit                             |
+
+|scenario          |Check if there are search results                     |
+|is visible on page|xpath=//div[@class="layoutContainer resultspage"]     |
+|note              |Check if the following text is visible|Alle resultaten|
+
+*!
+
+!*> Mijn Telfort
+!|scenario        |Open the MijnTelfort login page |
+|Click on the link|MijnTelfort                     |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]|
+
+
+#scenarios for login
+|scenario|Click on the button Inloggen          |
+|click   |xpath=//button[contains(.,"Inloggen")]|
+
+
+|scenario |Click on Mijn Mobiel Inloggen                       |
+|scroll to|xpath=//*[starts-with(.,"Mijn Mobiel")]/parent::*//a|
+|click    |xpath=//*[starts-with(.,"Mijn Mobiel")]/parent::*//a|
+
+
+!|scenario        |Login Mijn Mobiel with username |username |and password |password |
+|Click on the link|MijnTelfort                                                       |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]                                  |
+|enter            |@username                       |as       |name=username          |
+|enter            |@password                       |as       |name=password          |
+|Click on the button Inloggen                                                        |
+|note             |Check if MijnTelfort menu items are visible, if not abort the test|
+|wait for visible |xpath=//div[@class="subnavMT_items"]                              |
+
+
+!|scenario        |Login Mijn Mobiel with username|username|and password|password|and environment|environment|
+|Click on the link|MijnTelfort                                                                               |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]                                                          |
+|enter            |@username                      |as      |name=username                                    |
+|enter            |@password                      |as      |name=password                                    |
+|select           |@environment                   |for     |xpath=//select[contains(@class,"dropdown")]      |
+|Click on the button Inloggen                                                                                |
+|note             |Check if MijnTelfort menu items are visible, if not abort the test                        |
+|wait for visible |xpath=//div[@class="subnavMT_items"]                                                      |
+
+
+|scenario|Logout Mijn Mobiel|
+|                           |
+
+
+
+|scenario|Click on navigation tab                  |tab                 |
+|click   |xpath=//div[@class="subnavMT_tabs"]/a[contains(text(),"@tab")]|
+
+|scenario |Click on          |item         |in the navigation menu         |
+|scroll to|xpath=//div[@class="subnavMT_items"]/a[contains(text(),"@item")]|
+|click    |xpath=//div[@class="subnavMT_items"]/a[contains(text(),"@item")]|
+
+
+|scenario  |Check if the Mijn Telfort environment is visible|
+|note      |Check if MijnTelfort menu items are visible     |
+|is visible|xpath=//div[@class="subnavMT_items"]            |
+
+
+#Scenarios for radio options
+
+|scenario|Check if option   |optionText                           |is visible                          |
+|ensure  |is visible on page|xpath=//input[@type="radio"]/../../label[normalize-space(.)="@optionText"]|
+
+|scenario|Click on the option                      |optionText                      |
+|click   |xpath=//input[@type="radio"]/../../label[normalize-space(.)="@optionText"]|
+
+
+#Scenarios for flows
+
+|scenario                |Check if flow step               |flowStep               |is visible               |
+|Check if visible on page|xpath=//*[@class="formStepNavigation_list"]//*[normalize-space(text())="@flowStep"]|
+
+|scenario                |Check if flow step                           |flowStep                           |is active                          |
+|Check if visible on page|xpath=//*[@class="formStepNavigation_list"]/li[contains(@class,"_is_active")]//*[normalize-space(text())="@flowStep"]|
+
+
+#Scenarios for input boxes with placeholders
+|scenario                |Check if textbox with prefilled text|text|is visible|
+|Check if visible on page|xpath=//input[@placeholder="@text"]                 |
+
+|scenario                |Check if the textbox        |textboxLabel        |with prefilled text        |text        |is visible        |
+|Check if visible on page|xpath=//*[normalize-space(text())="@textboxLabel"]/following::input[1][normalize-space(@placeholder)="@text"]|
+
+
+|scenario           |Fill in input field|placeholderText|with password|password|
+|Fill in input field|@placeholderText   |with text      |@password             |
+
+
+|scenario |Fill in input field|placeholderText|with text |text |
+|scroll to|@placeholderText                                    |
+|enter    |@text              |as             |@placeholderText|
+
+
+#Scenarios for Password requirements
+|scenario                |Check if password requirement         |requirement         |has passed         |
+|Check if visible on page|xpath=//*[@class="password-checklist"]/li[text()="@requirement"][@class="pass"]|
+
+|scenario                |Check if password requirement         |requirement         |has failed         |
+|Check if visible on page|xpath=//*[@class="password-checklist"]/li[text()="@requirement"][@class="fail"]|
+
+
+
+
+|scenario                |Check if change              |changeTitle              |with situation             |situation             |corresponds with             |text             |
+|Check if visible on page|xpath=//*[normalize-space(text())="@changeTitle"]/following::*[normalize-space(text())="@situation"]/following-sibling::p[normalize-space(text())="@text"]|
+
+
+|scenario|Click on the button 'Wijzigen' for           |scope           |within the page Mijn gegevens          |
+|click   |xpath=//*[normalize-space(text())="@scope"]/following-sibling::*/a[normalize-space(text())="Wijzigen"]|
+
+#scenario to set the option of a toggle button
+|scenario|Set option                 |option                         |to                        |optionValue                        |
+|note    |scroll to                  |xpath=//div[normalize-space(text())="@option"]                                                |
+|click   |xpath=(//*[normalize-space(text())="@option"][not(contains(@class,"ng-hide"))]/following::label[text()="@optionValue"])[1]|
+
+
+!*> Mijn Mobiel - Instellingen Page
+
+#Define xpath for the 'Instellingen'icons
+!define iconLocator {!-//a[@title="@iconText"]/span[starts-with(@class,"settings-tabs_item_icon")]-!}
+
+|scenario                |Check if icon|iconText|is visible|
+|Check if visible on page|xpath=${iconLocator}             |
+
+|scenario         |Check if icon       |iconText|is clickable|
+|Check if the link|xpath=${iconLocator}|works and go back    |
+
+|scenario|Click on icon|iconText|
+|click   |xpath=${iconLocator}  |
+
+|scenario           |Click samenvoeg lightBox weg        |
+|Click on the button|xpath=//*[text()='Niet samenvoegen']|
+
+
+
+*!
+
+*!

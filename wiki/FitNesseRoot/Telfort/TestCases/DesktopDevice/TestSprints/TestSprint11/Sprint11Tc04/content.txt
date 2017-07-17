@@ -1,0 +1,162 @@
+!*> Local scenarios
+|scenario          |Check if option              |optionNr              |from bundel              |bundelName              |is              |description             |
+|is visible on page|xpath=//div[not(@class="ng-hide")]/*[.="@bundelName"]/following::input[@type="radio"][@optionNr]/parent::label[normalize-space(.)="@description"]|
+
+|scenario          |Check if sticky basket contains text                     |col1                     |                     |col2                    |
+|is visible on page|xpath=//div[@class="stickyBasket_container"]//span[normalize-space(.)="@col1"]/following-sibling::span[normalize-space(.)="@col2"]|
+
+|scenario          |Check if 'Bestel' button in sticky basket is active                           |
+|is visible on page|xpath=//prepaid-sticky-basket-component//button[.="Bestel" and not(@disabled)]|
+
+
+|scenario|Click on the button          |buttonName          |in the sticky basket          |
+|click   |xpath=//prepaid-sticky-basket-component//button[normalize-space(.)="@buttonName"]|
+
+|scenario|Click on the button           |buttonName          |in the step navigation          |
+|click   |xpath=//div[@class='formElement__step-navigation']/a[contains(text(),"@buttonName")]|
+
+
+|scenario|Select option                       |optionName                       |from bundel                       |bundelName                      |
+|click   |xpath=(//div[not(@class="ng-hide")]/*[.="@bundelName"]/following::input[@type="radio"]/parent::label[normalize-space(.)="@optionName"])[1]|
+
+|scenario  |Store sticky basket value|col1                             |in                             |varName                             |
+|$@varName=|value of                 |xpath=//div[@class="stickyBasket_container"]//span[normalize-space(.)="@col1"]/following-sibling::span|
+
+|scenario          |Check if field             |fieldName             |from bundel             |bundelName             |contains             |text            |
+|is visible on page|xpath=//*[.="@bundelName"]/following-sibling::*/div[1][normalize-space(.)="@fieldName"]/following-sibling::div[normalize-space(.)="@text"]|
+
+|scenario          |Check if form contains text             |col1             |             |col2             |
+|is visible on page|xpath=//div[normalize-space(.)="@col1"]/following-sibling::div[normalize-space(.)="@col2"]|
+
+|scenario          |Check if button                          |buttonName                         |is visible and active                         |
+|is visible on page|xpath=//a[starts-with(@class,"button") and not (contains(@class,"button--inactive"))][normalize-space(text())="@buttonName"]|
+
+|scenario|Fill in password|password        |
+|enter   |@password       |as|name=password|
+*!
+
+!4 '|note' verwijderen, als de pagina weer naar behoren werkt!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint11Tc04_login}|and password|${accountSprint11Tc04_password}|
+|Click on                       |Bundels bestellen           |in the navigation menu                      |
+
+|script                                                                                                                                                                                                                                                                                                                                |
+|Check if the title|Bundels bestellen                     |with heading                                                                                 |h1                                                                                 |is visible                                                                                |
+|note              |Check if the following text is visible|Wijzigingen worden binnen een dag verwerkt, gelden met terugwerkende kracht voor de gehele huidige gebruiksperiode, en kun je daarna niet annuleren.                                                                                                                        |
+|note              |Check if the following text is visible|Verhogen van je bundel kan op elk moment. Verlagen kan tijdens de looptijd van je contract alleen naar de door jou oorspronkelijk afgesloten bundel (ook als je oorspronkelijk geen bundel had). Na de looptijd van je contract kun je je bundels vrij verhogen of verlagen.|
+
+|script                                                 |
+|Check if flow step|Kies je bundels          |is visible|
+|Check if flow step|Controleer je bestelling |is visible|
+|Check if flow step|Je bestelling is afgerond|is visible|
+|Check if flow step|Kies je bundels          |is active |
+
+|script                                                       |
+|Check if the title|Kies je bundels|with heading|h2|is visible|
+|Check if the title|Belbundels     |with heading|h2|is visible|
+
+|script                                                                                   |
+|Check if the title|Maandbundels|with heading|h4          |is visible                     |
+|Check if option   |1           |from bundel |Maandbundels|is|Geen bundel                 |
+|Check if option   |2           |from bundel |Maandbundels|is|Maand belbundel 75 minuten  |
+|Check if option   |3           |from bundel |Maandbundels|is|Maand belbundel 150 minuten |
+|Check if option   |4           |from bundel |Maandbundels|is|Maand belbundel 300 minuten |
+|Check if option   |5           |from bundel |Maandbundels|is|Maand belbundel 400 minuten |
+|Check if option   |6           |from bundel |Maandbundels|is|Maand belbundel 500 minuten |
+|Check if option   |7           |from bundel |Maandbundels|is|Maand belbundel 1000 minuten|
+
+|script                                                                                                     |
+|Select option                       |Maand belbundel 75 minuten          |from bundel     |Maandbundels    |
+|Check if sticky basket contains text|Maand belbundel 75 minuten          |                |€ 5,00          |
+|Check if sticky basket contains text|Totaal te betalen                   |                |€ 5,00          |
+|note                                |Check if sticky basket contains text|Huidig beltegoed|    |€ 77,27    |
+|note                                |Check if sticky basket contains text|Nieuw beltegoed |    |€ 72,27    |
+|Store sticky basket value           |Maand belbundel 75 minuten          |in              |maandBelbundel  |
+|Store sticky basket value           |Huidig beltegoed                    |in              |currentCredit   |
+|Store sticky basket value           |Nieuw beltegoed                     |in              |newCredit       |
+|Store sticky basket value           |Totaal te betalen                   |in              |totalAmountToPay|
+|Check if 'Bestel' button in sticky basket is active                                                        |
+
+!|script                                                                                                                                 |
+|Check if the title                  |Overige bundels|with heading|h4             |is visible                                            |
+|Check if option                     |1              |from bundel |Overige bundels|is             |Geen bundel                           |
+|note                                |Check if option|2           |from bundel    |Overige bundels|is|TelfortOnderling bundel 250 minuten|
+|Select option                       |Geen bundel    |from bundel |Overige bundels                                                       |
+|note                                |Let's check if Nieuw tegoed is still the same                                                      |
+|Check if sticky basket contains text|Nieuw beltegoed|            |$newCredit                                                            |
+
+|script                                                                                                                       |
+|note                                |Check if the title|Sms bundels|with heading|h2         |is visible                      |
+|note                                |Check if option   |1          |from bundel |Sms bundels|is|Geen bundel                  |
+|note                                |Check if option   |2          |from bundel |Sms bundels|is|Maand sms bundel 100 sms'jes |
+|note                                |Check if option   |3          |from bundel |Sms bundels|is|Maand sms bundel 1000 sms'jes|
+|note                                |Select option     |Geen bundel|from bundel |Sms bundels                                 |
+|note                                |Let's check if Nieuw tegoed is still the same                                           |
+|Check if sticky basket contains text|Nieuw beltegoed   |           |$newCredit                                               |
+
+|script                                                                                           |
+|Check if the title|Internetbundels|with heading|h2         |is visible                           |
+|Check if the title|Maandbundels   |with heading|h4         |is visible                           |
+|note              |Check if option|1           |from bundel|Maandbundels|is|Geen bundel          |
+|note              |Check if option|2           |from bundel|Maandbundels|is|NL maandbundel 25MB  |
+|note              |Check if option|3           |from bundel|Maandbundels|is|NL maandbundel 50MB  |
+|note              |Check if option|4           |from bundel|Maandbundels|is|NL maandbundel 100MB |
+|note              |Check if option|5           |from bundel|Maandbundels|is|NL maandbundel 250MB |
+|note              |Check if option|6           |from bundel|Maandbundels|is|NL maandbundel 500MB |
+|note              |Check if option|7           |from bundel|Maandbundels|is|NL maandbundel 1000MB|
+
+|script                                                                                                                |
+|note                                |Select option                       |NL maandbundel 50MB|from bundel|Maandbundels|
+|note                                |Check if sticky basket contains text|NL maandbundel 50MB|           |€ 2,50      |
+|Check if sticky basket contains text|Maand belbundel 75 minuten          |                   |€ 5,00                  |
+|note                                |Check if sticky basket contains text|Totaal te betalen  |           |€ 7,50      |
+|Check if sticky basket contains text|Huidig beltegoed                    |                   |$currentCredit          |
+|note                                |Check if sticky basket contains text|Nieuw beltegoed    |           |€ 69,77     |
+|Store sticky basket value           |Nieuw beltegoed                     |in                 |newCredit               |
+|Store sticky basket value           |NL maandbundel 50MB                 |in                 |maandMBbundel           |
+|Store sticky basket value           |Totaal te betalen                   |in                 |totalAmountToPay        |
+
+|script                                                                 |
+|Click on the button|Bestel                  |in the sticky basket      |
+|Check if flow step |Controleer je bestelling|is active                 |
+|Check if the title |Controleer je bestelling|with heading|h2|is visible|
+
+|script                                                                                              |
+|note|Check if the title|NL maandbundel 50MB|with heading|h3                 |is visible             |
+|note|Check if field    |ingangsdatum       |from bundel |NL maandbundel 50MB|contains|per direct    |
+|note|Check if field    |kosten             |from bundel |NL maandbundel 50MB|contains|$maandMBbundel|
+
+|script                                                                                                        |
+|Check if the title|Maand belbundel 75 minuten|with heading|h3                        |is visible              |
+|Check if field    |ingangsdatum              |from bundel |Maand belbundel 75 minuten|contains|per direct     |
+|Check if field    |kosten                    |from bundel |Maand belbundel 75 minuten|contains|$maandBelbundel|
+
+|script                                                          |
+|Check if form contains text|Totaal te betalen||$totalAmountToPay|
+|Check if form contains text|Huidig beltegoed ||$currentCredit   |
+|Check if form contains text|Nieuw beltegoed  ||$newCredit       |
+
+|script                                                                                                                                        |
+|Check if the following text is visible|Maak je bestelling definitief door je wachtwoord in te voeren en op ‘Bestelling bevestigen’ te klikken.|
+|Check if the following text is visible|Wachtwoord                                                                                             |
+
+|script                                                      |
+|Fill in password|${accountSprint11Tc04_password}            |
+|Check if button |Vorige               |is visible and active|
+|Check if button |Bestelling bevestigen|is visible and active|
+
+|script                                                                                                       |
+|note                                  |Click on the button      |Bestelling bevestigen|in the step navigation|
+|note|Check if the title                    |Je bestelling is afgerond|with heading         |h2     |is visible    |
+|note|Check if the following text is visible|Je bestelling is succesvol verwerkt.                                  |
+|note|Check if the following text is visible|Nieuw beltegoed                                 |
+|note|Check if the following text is visible|€27,50                                |
+|note|Check if the following text is visible|Vervaldatum                               |
+|note|Check if button |Terug naar Tegoed          |is visible and active|
+|note|Check if button |Ga naar opwaardeeroverzicht|is visible and active|
+
+|script            |
+|Logout Mijn Mobiel|
+

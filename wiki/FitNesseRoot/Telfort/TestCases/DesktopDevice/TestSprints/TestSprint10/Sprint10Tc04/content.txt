@@ -1,0 +1,95 @@
+!*> Local scenarios
+!define xpathTableRows {!-//div[@class="invoices-table-rows"]/div-!}
+!define maandenJaar {!-((text()="januari") or (text()="februari") or (text()="maart") or (text()="april") or (text()="mei") or (text()="juni") or (text()="juli") or (text()="augustus") or (text()="september") or (text()="oktober") or (text()="november") or (text()="december"))-!}
+
+
+|scenario|Check if the text 'Gemiddeld betaalde je € xx,xx per maand'|is visible                                                                                             |
+|$A=     |value of                                                   |xpath=//p[starts-with(text(),"Gemiddeld betaalde je €")]                                               |
+|check   |value of                                                   |xpath=//p[starts-with(text(),"Gemiddeld betaalde je €")]|=~/Gemiddeld betaalde je € \d+,\d\d per maand/|
+
+|scenario          |Check if chart element is visible   |
+|is visible on page|xpath=//canvas[@id="bar" and @style]|
+
+|scenario                |Check column title                     |title                    |
+|Check if visible on page|xpath=//div[@class="invoices-table-header"]/span[text()="@title"]|
+
+|scenario          |Check if the table 'Overzicht laatste 12 maanden' contains the columns _|col1,col2,col3,col4|
+|Check column title|@col1                                                                                       |
+|Check column title|@col2                                                                                       |
+|Check column title|@col3                                                                                       |
+|Check column title|@col4                                                                                       |
+
+|scenario          |Check if the text  |text |is visible |
+|is visible on page|xpath=//*[normalize-space(.)='@text']|
+
+|scenario          |Check if the section 'Factuurnotificatie' contains the link           |linktext          |
+|is visible on page|xpath=//*[.="Factuurnotificatie"]/following-sibling::*//a[normalize-space(.)="@linktext"]|
+
+|scenario          |Check if section with the title       |titleText      |is visible      |
+|is visible on page|xpath=//h3[normalize-space(.)="@titleText"]/ancestor::div[position()=1]|
+
+|scenario          |Check if section with the title          |titleText          |contains the text         |text         |
+|is visible on page|xpath=//h3[normalize-space(.)="@titleText"]/ancestor::div[position()=1]//*[normalize-space(.)="@text"]|
+
+|scenario          |Check if section with the title          |titleText          |contains the link         |linktext         |
+|is visible on page|xpath=//h3[normalize-space(.)="@titleText"]/ancestor::div[position()=1]//a[normalize-space(.)="@linktext"]|
+
+|scenario|check column 'Maand'                                                 |
+|reject  |is visible on page|xpath=${xpathTableRows}/span[1][not${maandenJaar}]|
+
+|scenario|check column 'Bedrag'                                                           |
+|reject  |is visible on page|xpath=${xpathTableRows}/span[2][not(starts-with(text(),"€"))]|
+
+|scenario|check column 'Betaald'                                                                                                                                                            |
+|reject  |is visible on page|xpath=${xpathTableRows}/span[3][not(starts-with(text(),"Wordt verwerkt") or contains(@ng-if,"&& invoice.overdue" ) or contains(@ng-if,"invoice.paid == true"))]|
+
+|scenario|check column 'Download PDF'|
+|note    |Todo???                    |
+
+
+*!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint10Tc04_login}|and password|${accountSprint10Tc04_password}|
+|Click samenvoeg lightBox weg                                                                             |
+|Click on navigation tab        |Thuis                                                                    |
+|Click on                       |Facturen                    |in the navigation menu                      |
+
+
+|script                                                                                                                         |
+|Check if the title                                         |Facturen                                |with heading|h1|is visible|
+|Check if the title                                         |Factuur historie                        |with heading|h2|is visible|
+|Check if the text 'Gemiddeld betaalde je € xx,xx per maand'|is visible                                                         |
+|Check if the title                                         |(gebaseerd over de afgelopen 12 maanden)|with heading|p |is visible|
+
+|script                           |
+|Check if chart element is visible|
+
+|script                                                                           |
+|is visible on page|Periode: Maand                                                |
+|Check if the text |!-Bedrag: € 62,08 | Niet Betaald | Bekijk details-!|is visible|
+
+|script                                                                                                                                |
+|Check if the title                                                     |Overzicht laatste 12 maanden|with heading|h2     |is visible  |
+|Check if the table 'Overzicht laatste 12 maanden' contains the columns;|Maand                       |Bedrag      |Betaald|Download PDF|
+|Backup timeouts and set timeouts to                                    |3                           |seconds                          |
+|check column 'Maand'                                                                                                                  |
+|check column 'Bedrag'                                                                                                                 |
+|check column 'Betaald'                                                                                                                |
+|check column 'Download PDF'                                                                                                           |
+|Restore timeouts                                                                                                                      |
+
+|script                                                                                                                                                    |
+|Check if the title                                         |Factuurnotificatie                                                 |with heading|h2|is visible|
+|Check if the text                                          |!-Factuurnotificatie: Uit Aan | Wijzig-!                           |is visible                |
+|Check if the section 'Factuurnotificatie' contains the link|Wijzig                                                                                        |
+|Check if the text                                          |(je ontvangt elke maand een e-mail wanneer je factuur online staat)|is visible                |
+
+|script                                                                                                                     |
+|Check if section with the title|Blijf op de hoogte|is visible                                                              |
+|Check if section with the title|Blijf op de hoogte|contains the text|Je resterende beltegoed wordt omgezet naar een korting|
+|Check if section with the title|Blijf op de hoogte|contains the link|Stel je vraag via chat                                |
+
+|script            |
+|Logout Mijn Mobiel|

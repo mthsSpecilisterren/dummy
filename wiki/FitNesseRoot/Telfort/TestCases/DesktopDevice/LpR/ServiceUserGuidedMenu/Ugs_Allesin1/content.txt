@@ -1,0 +1,60 @@
+|storyboard                       |
+|telfort.general Open Telfort |
+|telfort.general Go to Service|
+
+|telfort.service Click trough guided menu and return title                                              |
+|maxlvl|level1    |level2     |level3                       |level4|level5|title?                       |
+|3     |Alles-in-1|Installeren|Internet installeren         |      |      |Internet installeren         |
+|3     |Alles-in-1|Installeren|TV-ontvanger installeren     |      |      |TV-ontvanger installeren     |
+|3     |Alles-in-1|Installeren|TV-verbindingsset installeren|      |      |TV-verbindingsset installeren|
+|3     |Alles-in-1|Installeren|Vast bellen installeren      |      |      |Vast bellen installeren      |
+|3     |Alles-in-1|Installeren|Installatie door een monteur |      |      |Installatie door een monteur |
+|3     |Alles-in-1|Installeren|Monteur bestellen            |      |      |Monteur bestellen            |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                   |
+|maxlvl|level1    |level2  |level3                                         |level4                                         |level5                         |title?                                           |
+|4     |Alles-in-1|Wijzigen|Persoonlijke gegevens wijzigen                 |Telefoonnummer wijzigen                        |                               |Vaste telefoonnummer wijzigen                    |
+|4     |Alles-in-1|Wijzigen|Persoonlijke gegevens wijzigen                 |E-mailadres wijzigen                           |                               |E-mailadres wijzigen                             |
+|4     |Alles-in-1|Wijzigen|Persoonlijke gegevens wijzigen                 |Rekeningnummer wijzigen                        |                               |Rekeningnummer Internet, TV en Bellen wijzigen   |
+|4     |Alles-in-1|Wijzigen|Persoonlijke gegevens wijzigen                 |Wachtwoord Mijn Telfort wijzigen               |                               |Wachtwoord Mijn Telfort wijzigen                 |
+|5     |Alles-in-1|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland                     |Verhuizen Internet, TV & bellen|Verhuizen Internet, TV & bellen                  |
+|5     |Alles-in-1|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland                     |Verhuizen glasvezel abonnement |Verhuizen glasvezel abonnement                   |
+|4     |Alles-in-1|Wijzigen|Verhuizen                                      |Verhuizen naar het buitenland                  |                               |Verhuizen naar het buitenland                    |
+|4     |Alles-in-1|Wijzigen|Verhuizen                                      |Kosteloos verhuizen                            |                               |Kosteloos verhuizen                              |
+|4     |Alles-in-1|Wijzigen|Verhuizen                                      |Nummerbehoud vaste telefoon                    |                               |Nummerbehoud vaste telefoon                      |
+|4     |Alles-in-1|Wijzigen|Mijn Telfort                                   |Hulp bij inloggen Mijn Telfort                 |                               |Hulp bij inloggen Mijn Telfort                   |
+|4     |Alles-in-1|Wijzigen|Mijn Telfort                                   |Wachtwoord Mijn Telfort wijzigen               |                               |Wachtwoord Mijn Telfort wijzigen                 |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Extra zenderpakketten bestellen                |                               |Extra zenderpakketten bestellen                  |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Bestelling annuleren                           |                               |Bestelling Internet, TV en Bellen annuleren      |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Interactieve TV bestellen                      |                               |Interactieve TV bestellen                        |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Extra tv-ontvanger bestellen                   |                               |Extra tv-ontvanger bestellen voor Interactieve TV|
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Overstappen van Telfort internet naar glasvezel|                               |Overstappen van Telfort internet naar glasvezel  |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Snelheid abonnement verhogen                   |                               |Snelheid abonnement verhogen                     |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Digitenne bestellen                            |                               |Digitenne bestellen                              |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Vast bestellen                |                               |Bellen Onbeperkt Vast bestellen                  |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Buitenland bestellen          |                               |Bellen Onbeperkt Buitenland bestellen            |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Mobiel bestellen              |                               |Bellen Onbeperkt Mobiel bestellen                |
+|4     |Alles-in-1|Wijzigen|Abonnement wijzigen                            |Factuur na wijziging                           |                               |Factuur na wijziging Internet, TV en Bellen      |
+|3     |Alles-in-1|Wijzigen|Overstappen van Telfort internet naar glasvezel|                                               |                               |Overstappen van Telfort internet naar glasvezel  |
+|3     |Alles-in-1|Wijzigen|Contract overnemen                             |                                               |                               |Contract overnemen Internet, TV en Bellen        |
+
+|telfort.service Click trough guided menu and return title                                                                                                                        |
+|maxlvl|level1    |level2             |level3                          |level4                                     |level5|title?                                                 |
+|4     |Alles-in-1|Betalen en facturen|Factuur begrijpen               |Eerste factuur                             |      |Eerste factuur Internet, TV en Bellen                  |
+|4     |Alles-in-1|Betalen en facturen|Factuur begrijpen               |Maandelijkse factuur                       |      |Maandelijkse factuur Internet, TV en Bellen            |
+|4     |Alles-in-1|Betalen en facturen|Factuur begrijpen               |Factuur na wijziging                       |      |Factuur na wijziging Internet, TV en Bellen            |
+|4     |Alles-in-1|Betalen en facturen|Factuur begrijpen               |!-CombiVoordeel terugvinden op je factuur-!|      |!-CombiVoordeel terugvinden op je factuur-!            |
+|3     |Alles-in-1|Betalen en facturen|Factuur betalen                 |                                           |      |Openstaande factuur betalen                            |
+|3     |Alles-in-1|Betalen en facturen|Verbruik videotheek bekijken    |                                           |      |Verbruik videotheek bekijken                           |
+|3     |Alles-in-1|Betalen en facturen|Gesprekskosten bekijken         |                                           |      |Gesprekskosten bekijken                                |
+|3     |Alles-in-1|Betalen en facturen|Factuur hoger dan verwacht      |                                           |      |Factuur Internet, TV en Bellen hoger dan verwacht      |
+|3     |Alles-in-1|Betalen en facturen|Factuur bekijken in Mijn Telfort|                                           |      |Factuur Internet, TV en Bellen bekijken in Mijn Telfort|
+|3     |Alles-in-1|Betalen en facturen|Automatische incasso mislukt    |                                           |      |Automatische incasso mislukt                           |
+
+|telfort.service Click trough guided menu and return title                                                                 |
+|maxlvl|level1    |level2  |level3                                  |level4|level5|title?                                  |
+|3     |Alles-in-1|Opzeggen|Internet, TV & Bellen opzeggen          |      |      |Internet, TV & Bellen opzeggen          |
+|3     |Alles-in-1|Opzeggen|Glasvezel opzeggen                      |      |      |Glasvezel opzeggen                      |
+|3     |Alles-in-1|Opzeggen|!-Afmelden of stopzetten CombiVoordeel-!|      |      |!-Afmelden of stopzetten CombiVoordeel-!|
+|3     |Alles-in-1|Opzeggen|Opzegtermijn                            |      |      |Opzegtermijn Internet, TV en Bellen     |
+|3     |Alles-in-1|Opzeggen|Bestelling annuleren                    |      |      |Bestelling annuleren                    |

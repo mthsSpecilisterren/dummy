@@ -1,0 +1,22 @@
+!*> Local scenarios
+|scenario|Click Buitenlandbundels                                                           |
+|click   |xpath=//*[contains(text(),'Buitenlandbundels')]/following-sibling::*/descendant::a|
+*!
+!3 requires mocked account to finish step 14,15,16
+
+|script                                                           |
+|Open the Telfort website and agree with cookie message           |
+|Login Mijn Mobiel with username|0612697132|and password|Telfort20|
+|Click on                       |Abonnement|in the navigation menu|
+|Click Buitenlandbundels                                          |
+
+|script                                                                                                                               |
+|Check if there is a lightbox visible                                                                                                 |
+|Check if visible on page|Buitenlandbundels                                                                                           |
+|Check if visible on page|Hier kun je buitenlandbundels bestellen voor bellen en internetten binnen de EU.                            |
+|Check if visible on page|De bundels zijn 7 dagen geldig en je ontvangt altijd een sms als je 80% en 100% van je tegoed hebt gebruikt.|
+|Check if visible on page|Bestellingen worden direct verwerkt en kun je niet annuleren.                                               |
+|Check if visible on page|Bel weekbundel                                                                                              |
+|Check if visible on page|50 minuten voor €7,50                                                                                       |
+|Check if visible on page|Internet weekbundel EU                                                                                      |
+|Check if visible on page|100MB voor €5,00                                                                                            |

@@ -1,0 +1,78 @@
+!*> General scenarios
+|scenario |Click on the link|link|
+|scroll to|@link                 |
+|click    |@link                 |
+
+|scenario|Click on mobile menu icon                        |
+|click   |xpath=//header/button[@class="mainHeader_toggle"]|
+
+
+Search
+|scenario|Search for   |searchTerm  |using the header search box  |
+|note    |First click on the magnifier icon, to show the searchbox|
+|click   |xpath=//header//span[@class="mainSearch_label"]         |
+|enter   |@searchTerm  |as          |Zoeken naar ...              |
+|click   |Zoeken naar ...                                         |
+|click   |css=.mainSearch_submit                                  |
+*!
+
+
+!*> Mijn Telfort
+!|scenario        |Open the MijnTelfort login page |
+|Click on mobile menu icon                         |
+|Click on the link|MijnTelfort                     |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]|
+
+
+scenarios for login
+
+!|scenario        |Login Mijn Mobiel with username |username |and password |password |
+|open             |${URL}                                                            |
+|Click on mobile menu icon                                                           |
+|Click on the link|MijnTelfort                                                       |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]                                  |
+|note             |Click on Mijn Mobiel Inloggen                                     |
+|enter            |@username                       |as       |name=username          |
+|enter            |@password                       |as       |name=password          |
+|Click on the button Inloggen                                                        |
+|note             |Check if MijnTelfort menu items are visible, if not abort the test|
+|wait for visible |xpath=//div[@class="subnavMT_items"]                              |
+
+
+!|scenario        |Login Mijn Mobiel with username|username|and password|password|and environment|environment|
+|open             |${URL}                                                                                    |
+|Click on mobile menu icon                                                                                   |
+|Click on the link|MijnTelfort                                                                               |
+|Click on the link|xpath=//a[text()="Mijn Telfort"]                                                          |
+|note             |Click on Mijn Mobiel Inloggen                                                             |
+|enter            |@username                      |as      |name=username                                    |
+|enter            |@password                      |as      |name=password                                    |
+|select           |@environment                   |for     |xpath=//select[contains(@class,"dropdown")]      |
+|Click on the button Inloggen                                                                                |
+|note             |Check if MijnTelfort menu items are visible, if not abort the test                        |
+|wait for visible |xpath=//div[@class="subnavMT_items"]                                                      |
+
+
+*!
+
+!*> Mijn Mobiel - Instellingen Page
+
+
+|scenario                |Check if icon |iconText|is visible|
+|click                   |Maak een selectie                 |
+|Check if visible on page|@iconText                         |
+|click                   |xpath=//div[@class="dropdownmenu"]|
+
+|scenario|Click on icon      |iconText      |
+|click   |xpath=//div[@class="dropdownmenu"]|
+|click   |xpath=//a[text()="@iconText"]     |
+|click   |xpath=//div[@class="dropdownmenu"]|
+|click   |xpath=//a[text()="@iconText"]     |
+
+
+|scenario|Check if icon|iconText|is clickable|
+|click   |xpath=//div[@class="dropdownmenu"] |
+|click   |@iconText                          |
+
+*!
+

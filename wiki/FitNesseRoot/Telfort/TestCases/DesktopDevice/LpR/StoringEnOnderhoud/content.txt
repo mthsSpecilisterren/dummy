@@ -1,0 +1,29 @@
+!*> Local scenarios
+|scenario         |Search for the zipcode|zipcode   |
+|enter            |@zipcode              |as|1234 AB|
+|Click on the link|Zoek                             |
+
+|scenario                              |Check if there are no storingen for category|categoryName|
+|Check if the following text is visible|Er zijn geen storingen bekend voor @categoryName.        |
+
+|scenario|Select the option|optionName|from drop-down menu|menuName|
+|select  |@optionName      |for       |@menuName                   |
+
+|scenario         |Open first storing|
+|Click on the link|Bekijk            |
+*!
+
+|storyboard                                                |
+|Open the Telfort website and agree with cookie message|
+|Go to Storingen & Onderhoud page                      |
+
+
+|storyboard                                                                                                         |
+|Search for the zipcode                      |9999 ZZ                                                           |
+|Check if there are no storingen for category|Alle producten                                                    |
+|Select the option                           |Internet, TV & Bellen|from drop-down menu|css=.maintenanceProducts|
+|Check if there are no storingen for category|Internet, TV & Bellen                                             |
+|Click on the link                           |Klik hier voor alle storingen                                     |
+|Open first storing                                                                                             |
+|Check if there is a lightbox visible                                                                           |
+

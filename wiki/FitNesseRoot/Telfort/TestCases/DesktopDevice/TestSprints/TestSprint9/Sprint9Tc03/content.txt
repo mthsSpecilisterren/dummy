@@ -1,0 +1,220 @@
+!*> Local scenarios
+
+|scenario                |Check if dropdown box   |description  |is visible  |
+|Check if visible on page|xpath=//p["@description"]/following-sibling::select|
+
+|scenario                |Check if option no  |optionNo  |is  |description  |
+|Check if visible on page|xpath=//option[@optionNo+1][text()="@description"]|
+
+|scenario|Select option|option                                            |
+|select  |@option      |for|Wat moet er gebeuren met inkomende gesprekken?|
+
+|scenario                |Check if button          |buttonText          |within          |scope          |is visible         |
+|Check if visible on page|xpath=//*[normalize-space(text())="@scope"]/following-sibling::*//button[contains(.,"@buttonText")]|
+
+|scenario                |Check if button              |buttonText              |within             |scope             |is active             |
+|Check if visible on page|xpath=//*[normalize-space(text())="@scope"]/following-sibling::*//button[not (@disabled)][contains(.,"@buttonText")]|
+|wait                    |1                            |seconds                                                                               |
+
+|scenario                |Check if button            |buttonText            |within            |scope            |is inactive           |
+|Check if visible on page|xpath=//*[normalize-space(text())="@scope"]/following-sibling::*//button[@disabled][contains(.,"@buttonText")]|
+|wait                    |1                          |seconds                                                                           |
+
+Option 2: "Altijd direct doorschakelen naar ander nummer"
+
+|scenario                |Check if input box      |description     |is visible     |
+|Check if visible on page|xpath=//p[text()="@description"]/following-sibling::input|
+
+|scenario          |Check if warning text is visible                                                              |
+|is visible on page|Let op!                                                                                       |
+|is visible on page|Je betaalt het aantal belminuten dat de beller is doorverbonden naar een ander telefoonnummer.|
+
+|scenario|Type |text|in input box                 |description                |
+|enter   |@text|as  |xpath=//p[text()="@description"]/following-sibling::input|
+
+Option 3: "Uitgebreide doorschakelopties"
+
+|scenario          |Check if option no          |optionNo         |of         |description         |is         |option         |
+|is visible on page|xpath=//*[.="@description"]/following-sibling::*[position()=@optionNo]//label[normalize-space(.)="@option"]|
+
+|scenario          |Check if|description|has all options                             |
+|Check if option no|1       |of         |@description|is|Niet doorschakelen          |
+|Check if option no|2       |of         |@description|is|Doorschakelen naar voicemail|
+|Check if option no|3       |of         |@description|is|Doorschakelen naar nummer   |
+
+
+|scenario|Set                 |description                 |to option                 |option                |
+|click   |xpath=//*[.="@description"]/following-sibling::*[position()<4]//label[normalize-space(.)="@option"]|
+|wait    |1                   |seconds                                                                       |
+
+|scenario          |Check if           |description          |has an input box          |
+|is visible on page|xpath=//*[.="@description"]/following-sibling::*[position()=4]/input|
+
+|scenario          |Check if        |description        |has warning text       |text       |shown       |
+|is visible on page|xpath=//*[.="@description"]/following-sibling::*[position()=4]/p[contains(.,"@text")]|
+
+|scenario|Check if    |description     |has warning text present                                                                            |
+|Check if|@description|has warning text|Let op!                                                                                       |shown|
+|Check if|@description|has warning text|Je betaalt het aantal belminuten dat de beller is doorverbonden naar een ander telefoonnummer.|shown|
+
+|scenario|Set         |description|to 'Doorschakelen naar nummer' and check input box and warning text present|
+|Set     |@description|to option  |Doorschakelen naar nummer                                                  |
+|Check if|@description|has an input box                                                                       |
+|Check if|@description|has warning text present                                                               |
+
+
+|scenario|Type forwarding no|forwardingNo|for                           |description                          |
+|enter   |@forwardingNo     |as          |xpath=//*[.="@description"]/following-sibling::*[position()=4]/input|
+
+|scenario          |Set         |description|to 'Doorschakelen naar nummer', fill in phone number and check if button 'Wijzigen' is active|
+|Set               |@description|to option  |Doorschakelen naar nummer                                                                    |
+|Check if button   |Wijzigen    |within     |Voicemail en doorschakelingen                          |is inactive                          |
+|Type forwarding no|0302615111  |for        |@description                                                                                 |
+|Check if button   |Wijzigen    |within     |Voicemail en doorschakelingen                          |is active                            |
+|Set               |@description|to option  |Niet doorschakelen                                                                           |
+
+|scenario          |Set          |description1|and                          |description2|to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active|
+|Set               |@description1|to option   |Doorschakelen naar nummer                                                                                                                |
+|Set               |@description2|to option   |Doorschakelen naar nummer                                                                                                                |
+|Check if button   |Wijzigen     |within      |Voicemail en doorschakelingen|is inactive                                                                                                |
+|Type forwarding no|0302615111   |for         |@description1                                                                                                                            |
+|Check if button   |Wijzigen     |within      |Voicemail en doorschakelingen|is inactive                                                                                                |
+|Type forwarding no|0302615111   |for         |@description2                                                                                                                            |
+|Check if button   |Wijzigen     |within      |Voicemail en doorschakelingen|is active                                                                                                  |
+|Set               |@description1|to option   |Niet doorschakelen                                                                                                                       |
+|Set               |@description2|to option   |Niet doorschakelen                                                                                                                       |
+
+|scenario          |set all to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active                             |
+|Set               |Als je niet opneemt                                         |to option|Doorschakelen naar nummer                                   |
+|Set               |Als je in gesprek bent                                      |to option|Doorschakelen naar nummer                                   |
+|Set               |Als je telefoon uitstaat of buiten bereik van het netwerk is|to option|Doorschakelen naar nummer                                   |
+|Check if button   |Wijzigen                                                    |within   |Voicemail en doorschakelingen          |is inactive         |
+|Type forwarding no|0302615111                                                  |for      |Als je niet opneemt                                         |
+|Check if button   |Wijzigen                                                    |within   |Voicemail en doorschakelingen          |is inactive         |
+|Type forwarding no|0302615111                                                  |for      |Als je in gesprek bent                                      |
+|Check if button   |Wijzigen                                                    |within   |Voicemail en doorschakelingen          |is inactive         |
+|Type forwarding no|0302615111                                                  |for      |Als je telefoon uitstaat of buiten bereik van het netwerk is|
+|Check if button   |Wijzigen                                                    |within   |Voicemail en doorschakelingen          |is active           |
+|Set               |Als je niet opneemt                                         |to option|Niet doorschakelen                                          |
+|Set               |Als je in gesprek bent                                      |to option|Niet doorschakelen                                          |
+|Set               |Als je telefoon uitstaat of buiten bereik van het netwerk is|to option|Niet doorschakelen                                          |
+
+Option 4: "Nooit doorschakelen"
+
+|scenario          |Check if             |description            |has option            |option            |
+|is visible on page|xpath=//*[.="@description"]/following-sibling::div//label[normalize-space(.)="@option"]|
+
+*!
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc03_login}|and password|${accountSprint9Tc03_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+|Click on icon                  |Voicemail & oproepen                                                   |
+
+|script                                                                                         |
+|Check if the title   |Voicemail en oproepen                         |with heading|h2|is visible|
+|Check if the title   |Voicemail en doorschakelingen                 |with heading|h3|is visible|
+|Check if the title   |Wat moet er gebeuren met inkomende gesprekken?|with heading|p |is visible|
+|Check if dropdown box|Wat moet er gebeuren met inkomende gesprekken?|is visible                |
+
+|script                                                               |
+|Check if option no|1|is|Voicemail bij geen gehoor|
+|Check if option no|2|is|Altijd direct doorschakelen|
+|Check if option no|3|is|Uitgebreide doorschakelopties                |
+|Check if option no|4|is|Nooit doorschakelen                          |
+
+Option 1: "Voicemail bij geen gehoor"
+
+|script                                                                  |
+|Select option  |Voicemail bij geen gehoor|
+|Check if button|Wijzigen|within|Voicemail en doorschakelingen|is visible|
+|Check if button|Wijzigen|within|Voicemail en doorschakelingen|is active |
+
+Option 2: "Altijd direct doorschakelen naar ander nummer"
+
+|script                                                                                     |
+|select option     |Altijd direct doorschakelen|
+|Check if the title|Altijd direct doorschakelen naar ander nummer:|with heading|p|is visible|
+|Check if input box|Altijd direct doorschakelen naar ander nummer:|is visible               |
+|Check if warning text is visible                                                           |
+
+|script                                                                                |
+|Check if button|Wijzigen  |within      |Voicemail en doorschakelingen   |is visible   |
+|Check if button|Wijzigen  |within      |Voicemail en doorschakelingen   |is inactive  |
+|Type           |0302615111|in input box|Altijd direct doorschakelen naar ander nummer:|
+|Check if button|Wijzigen  |within      |Voicemail en doorschakelingen   |is active    |
+
+Option 3: "Uitgebreide doorschakelopties"
+
+|script                                                                                                   |
+|select option     |Uitgebreide doorschakelopties                                                         |
+|Check if the title|Als je niet opneemt                                         |with heading|p|is visible|
+|Check if the title|Als je in gesprek bent                                      |with heading|p|is visible|
+|Check if the title|Als je telefoon uitstaat of buiten bereik van het netwerk is|with heading|p|is visible|
+
+|script                                                                               |
+|Check if|Als je niet opneemt                                         |has all options|
+|Check if|Als je in gesprek bent                                      |has all options|
+|Check if|Als je telefoon uitstaat of buiten bereik van het netwerk is|has all options|
+
+|script                                                                                                                                                  |
+|Check if button|Wijzigen                                                    |within         |Voicemail en doorschakelingen         |is visible          |
+|Check if button|Wijzigen                                                    |within         |Voicemail en doorschakelingen         |is inactive         |
+|Set            |Als je niet opneemt                                         |to 'Doorschakelen naar nummer' and check input box and warning text present|
+|Set            |Als je in gesprek bent                                      |to 'Doorschakelen naar nummer' and check input box and warning text present|
+|Set            |Als je telefoon uitstaat of buiten bereik van het netwerk is|to 'Doorschakelen naar nummer' and check input box and warning text present|
+
+|script                                                                                                                          |
+|note           |set all to 'Niet doorschakelen', fill in phone number and check if button is active                             |
+|Set            |Als je niet opneemt                                         |to option|Niet doorschakelen                       |
+|Check if button|Wijzigen                                                    |within   |Voicemail en doorschakelingen|is inactive|
+|Set            |Als je in gesprek bent                                      |to option|Niet doorschakelen                       |
+|Check if button|Wijzigen                                                    |within   |Voicemail en doorschakelingen|is inactive|
+|Set            |Als je telefoon uitstaat of buiten bereik van het netwerk is|to option|Niet doorschakelen                       |
+|Check if button|Wijzigen                                                    |within   |Voicemail en doorschakelingen|is active  |
+
+|script                                                                                                                                                        |
+|Set|Als je niet opneemt                                         |to 'Doorschakelen naar nummer', fill in phone number and check if button 'Wijzigen' is active|
+|Set|Als je in gesprek bent                                      |to 'Doorschakelen naar nummer', fill in phone number and check if button 'Wijzigen' is active|
+|Set|Als je telefoon uitstaat of buiten bereik van het netwerk is|to 'Doorschakelen naar nummer', fill in phone number and check if button 'Wijzigen' is active|
+
+|script                                                                                                                                                                                    |
+|Set|Als je niet opneemt   |and|Als je in gesprek bent                                      |to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active|
+|Set|Als je niet opneemt   |and|Als je telefoon uitstaat of buiten bereik van het netwerk is|to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active|
+|Set|Als je in gesprek bent|and|Als je telefoon uitstaat of buiten bereik van het netwerk is|to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active|
+
+|script                                                                                                |
+|Set all to 'Doorschakelen naar nummer', fill in phone numbers and check if button 'Wijzigen' is active|
+
+Option 4: "Nooit doorschakelen"
+
+|script                                                                                                |
+|select option     |Nooit doorschakelen                                                                |
+|Check if the title|Voicemail en doorschakelingen|with heading|h3                           |is visible|
+|Check if button   |Wijzigen                     |within      |Voicemail en doorschakelingen|is visible|
+|Check if button   |Wijzigen                     |within      |Voicemail en doorschakelingen|is active |
+
+|script                                                                                                             |
+|Check if the title|Taalkeuze binnen het voicemail menu|with heading|h3                                 |is visible |
+|Check if          |Taalkeuze binnen het voicemail menu|has option  |Nederlands                                     |
+|Check if          |Taalkeuze binnen het voicemail menu|has option  |Engels                                         |
+|Check if button   |Wijzigen                           |within      |Taalkeuze binnen het voicemail menu|is visible |
+|Check if button   |Wijzigen                           |within      |Taalkeuze binnen het voicemail menu|is inactive|
+
+|script                                                                                                                                                                                      |
+|Check if the title|Pincode voicemail                                                                                                              |with heading|h3               |is visible|
+|Check if the title|De pincode voor je voicemail zal worden hersteld naar de standaardcode 5678. Het kan enkele minuten duren voor dit is gewijzigd|with heading|p                |is visible|
+|Check if button   |Pincode herstellen                                                                                                             |within      |Pincode voicemail|is visible|
+
+|script                                                                                       |
+|Check if the title|Wissel- en groepsgesprek|with heading|h3                      |is visible |
+|Check if button   |Wijzigen                |within      |Wissel- en groepsgesprek|is visible |
+|Check if button   |Wijzigen                |within      |Wissel- en groepsgesprek|is inactive|
+|Set option        |Wisselgesprek           |to          |AAN                                 |
+|Set option        |Tweede gesprek          |to          |UIT                                 |
+|Set option        |Groepsgesprek           |to          |UIT                                 |
+|Check if button   |Wijzigen                |within      |Wissel- en groepsgesprek|is active  |
+
+|script            |
+|Logout Mijn Mobiel|

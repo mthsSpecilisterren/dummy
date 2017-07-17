@@ -1,0 +1,42 @@
+!*> Local scenarios
+|scenario                |Check if button 'Wijzigen'                within                 |scope                |is active                |
+|Check if visible on page|xpath=//*[normalize-space(text())="@scope"]/following-sibling::*//button[not (@disabled)][contains(.,"Wijzigen")]|
+
+|scenario|Click on 'Verbruikslimiet' option                        |option                       |
+|click   |xpath=//h3[text()="Verbruikslimiet"]/following-sibling::*[normalize-space(.)="@option"]|
+*!
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc02_login}|and password|${accountSprint9Tc02_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+
+
+!|storyboard                                                                          |
+|Click on icon                    |Verbruik & factuur                                 |
+|Check if the title               |Verbruik & factuur      |with heading|h2|is visible|
+|Check if the title               |Verbruiksmeldingen      |with heading|h3|is visible|
+|Set option                       |StartUpdate sms (gratis)|to          |UIT          |
+|Set option                       |BelUpdate sms (gratis)  |to          |UIT          |
+|Check if button 'Wijzigen' within|Verbruik & factuur      |is active                 |
+
+|storyboard                                                                                                                         |
+|Check if the title               |Verbruik internet in het buitenland         |with heading         |h3         |is visible        |
+|Check if visible on page         |Hier kun je een verbruikslimiet instellen voor het gebruik van mobiel internet in het buitenland.|
+|Check if visible on page         |Deze limiet geldt voor internetgebruik van losse MB’s in het buitenland.                         |
+|Check if visible on page         |De kosten van afgenomen buitenlandbundels worden hier niet in meegenomen.                        |
+|Check if the title               |Verbruikslimiet                             |with heading         |h3         |is visible        |
+|Click on 'Verbruikslimiet' option|Onbeperkt                                                                                        |
+|Click on 'Verbruikslimiet' option|Beperkt tot max. € 60,50 per factuurperiode                                                      |
+|Click on 'Verbruikslimiet' option|Onbeperkt tot start volgende factuurperiode                                                      |
+|Set option                       |Waarschuwings-sms (gratis)                  |to                   |UIT                           |
+|Check if button 'Wijzigen' within|Verbruik internet in het buitenland         |is active                                           |
+
+
+|storyboard                                                                                              |
+|Check if the title               |Factuurmelding                             |with heading|h3|is visible|
+|Set option                       |Sms-melding bij een nieuwe factuur (gratis)|to          |UIT          |
+|Check if button 'Wijzigen' within|Factuurmelding                             |is active                 |
+
+|storyboard        |
+|Logout Mijn Mobiel|

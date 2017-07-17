@@ -1,0 +1,112 @@
+!*> Local scenarios
+
+|scenario          |Check if page title|title       |is visible                            |
+|Check if the title|@title             |with heading|h1|and class|contract_title|is visible|
+
+|scenario          |Check if section title|title       |is visible                           |
+|Check if the title|@title                |with heading|h2|and class|bundles_title|is visible|
+
+
+|scenario|Check if row number|rowNumber    |and column number    |columnNumber    |of the contract summary table has text   |text   |
+|ensure  |is visible on page |xpath=//div[@class='contractSummary']/div[@columnNumber]/div/p[@rowNumber][normalize-space(.)='@text']|
+
+|scenario           |Check if column number|columnNumber     |of the contract summary table has title|title                                        |
+|Check if row number|1                     |and column number|@columnNumber                          |of the contract summary table has text|@title|
+
+|scenario           |Check if column number|columnNumber     |of the contract summary table has content|content                                        |
+|Check if row number|2                     |and column number|@columnNumber                            |of the contract summary table has text|@content|
+
+|scenario              |Check if column number|columnNumber                             |of the contract summary table has title|title|and|content|content|
+|Check if column number|@columnNumber         |of the contract summary table has title  |@title                                                           |
+|Check if column number|@columnNumber         |of the contract summary table has content|@content                                                         |
+
+
+|scenario|Check if row number|rowNumber        |and column number       |columnNumber       |of the 'pakket' table has text       |text       |
+|ensure  |is visible on page |xpath=(//div[@class='bundles_container'])[1]/div/*[@columnNumber]/div//p[@rowNumber][normalize-space(.)='@text']|
+
+|scenario           |Check if column number|columnNumber     |of the 'pakket' table has title|title                                |
+|Check if row number|1                     |and column number|@columnNumber                  |of the 'pakket' table has text|@title|
+
+|scenario           |Check if column number|columnNumber     |of the 'pakket' table has content|content                                |
+|Check if row number|2                     |and column number|@columnNumber                    |of the 'pakket' table has text|@content|
+
+|scenario              |Check if column number|columnNumber                     |of the 'pakket' table has title|title|and|content|content|
+|Check if column number|@columnNumber         |of the 'pakket' table has title  |@title                                                   |
+|Check if column number|@columnNumber         |of the 'pakket' table has content|@content                                                 |
+
+
+|scenario|Check if row number|rowNumber        |and column number        |columnNumber        |of the 'extra opties' table has text        |text       |
+|ensure  |is visible on page |xpath=(//div[@class='bundles_container'])[2]/div/div[@columnNumber]/div[@rowNumber][contains(normalize-space(.),'@text')]|
+
+|scenario           |Check if column number|columnNumber     |of the 'extra opties' table has title|title                                      |
+|Check if row number|1                     |and column number|@columnNumber                        |of the 'extra opties' table has text|@title|
+
+|scenario           |Check if column number|columnNumber     |of the 'extra opties' table has content|content                                      |
+|Check if row number|2                     |and column number|@columnNumber                          |of the 'extra opties' table has text|@content|
+
+|scenario              |Check if column number|columnNumber                           |of the 'extra opties' table has title|title|and|content|content|
+|Check if column number|@columnNumber         |of the 'extra opties' table has title  |@title                                                         |
+|Check if column number|@columnNumber         |of the 'extra opties' table has content|@content                                                       |
+
+
+|scenario|Check if the total cost number|totalCostNumber                                          |are                                          |amount                                         |
+|ensure  |is visible on page            |xpath=(//p[@class='bundles_totalPrice'])[@totalCostNumber][contains(normalize-space(.), '@amount /mnd') or contains(normalize-space(.), '@amount/mnd')]|
+
+|scenario                      |Check if the total 'pakket' costs are|amount     |
+|Check if the total cost number|1                                    |are|@amount|
+
+|scenario                      |Check if the total 'extra opties' costs are|amount     |
+|Check if the total cost number|3                                          |are|@amount|
+
+|scenario                      |Check if the total subscription costs are displayed as|description     |
+|Check if the total cost number|5                                                     |are|@description|
+
+|scenario|Check if button   |buttonText              |is visible              |
+|ensure  |is visible on page|xpath=//a[@class='button'][text()= '@buttonText']|
+
+*!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint11Tc01_login}|and password|${accountSprint11Tc01_password}|
+|Click on navigation tab        |Thuis                                                                    |
+|Click on                       |Abonnement                  |in the navigation menu                      |
+
+|script                                        |
+|note|Check if page title|Abonnement|is visible|
+
+|script                                                                                                                       |
+|Check if column number|1|of the contract summary table has title|Pakket             |and content|Alles-in-1 Interactief Extra|
+|Check if column number|2|of the contract summary table has title|Einddatum contract:|and content|11 augustus 2014            |
+|Check if column number|3|of the contract summary table has title|!-CombiVoordeel-!  |and content|Meer informatie             |
+
+|script                                  |
+|Check if section title|Pakket|is visible|
+
+|script                                                                                          |
+|Check if column number|1|of the 'pakket' table has title|Internet |and content|100Mbit / 100Mbit|
+|Check if column number|2|of the 'pakket' table has title|Televisie|and content|Interactieve TV  |
+|Check if column number|3|of the 'pakket' table has title|Bellen                                 |
+
+|script                                       |
+|Check if the total 'pakket' costs are|€ 60,00|
+
+|script                                        |
+|Check if section title|Extra opties|is visible|
+
+|script                                                                                                         |
+|Check if column number|1|of the 'extra opties' table has title|Plus pakket                 |and content|€ 10,00|
+|Check if column number|2|of the 'extra opties' table has title|Ziggo Sport Totaal          |and content|€ 15,50|
+|Check if column number|3|of the 'extra opties' table has title|2e interactieve TV-ontvanger|and content|€ 4,00 |
+|Check if column number|4|of the 'extra opties' table has title|3e interactieve TV-ontvanger|and content|€ 4,00 |
+|Check if column number|5|of the 'extra opties' table has title|FOX Sports Compleet         |and content|€ 15,00|
+
+|script                                                                        |
+|Check if the total 'extra opties' costs are           |€ 48,50                |
+|Check if the total subscription costs are displayed as|Totale kosten: € 108,50|
+
+|script                                        |
+|Check if button|Abonnement wijzigen|is visible|
+
+|script            |
+|Logout Mijn Mobiel|

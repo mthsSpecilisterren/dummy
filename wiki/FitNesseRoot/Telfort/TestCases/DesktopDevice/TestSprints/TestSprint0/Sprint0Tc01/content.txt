@@ -1,0 +1,40 @@
+!*> Local scenarios
+
+|scenario|Check if mainchannel tooltip with the text|tooltipText                            |is visible                            |
+|ensure  |is visible                                |xpath=//span[@class='mainChannel_toolTip' and contains(text(),'@tooltipText')]|
+
+|scenario                        |Check if mainchannel tooltip with the text|tooltipText                          |is not visible                          |
+|$oldPageTimeOut=                |seconds before page load timeout                                                                                         |
+|$oldTimeOut=                    |seconds before timeout                                                                                                   |
+|seconds before page load timeout|3                                                                                                                        |
+|seconds before timeout          |3                                                                                                                        |
+|reject                          |is visible                                |xpath=//span[@class='mainChannel_toolTip' and contains(text(),'@tooltipText')]|
+|seconds before page load timeout|$oldPageTimeOut                                                                                                          |
+|seconds before timeout          |$oldTimeOut                                                                                                              |
+
+
+|scenario                                  |Hover over|place|and check if the tooltip|tooltip|is visible|
+|hover over                                |@place                                                      |
+|Check if mainchannel tooltip with the text|Webmail   |is visible                                       |
+
+
+|scenario                                  |Hover over|place|and check if the tooltip|tooltip|is not visible|
+|hover over                                |@place                                                          |
+|Check if mainchannel tooltip with the text|Webmail   |is not visible                                       |
+
+
+*!
+
+
+|storyboard                                            |
+|Open the Telfort website and agree with cookie message|
+
+!3 Is this test still relevant since there is no tooltip anymore?
+
+|storyboard                                                                    |
+|note      |Hover over|Webmail |and check if the tooltip|Webmail|is visible    |
+|note      |Hover over|Zakelijk|and check if the tooltip|Webmail|is not visible|
+|note      |Hover over|Webmail |and check if the tooltip|Webmail|is visible    |
+|Search for|mobiel    |using the header search box                             |
+|Check if there are search results                                             |
+

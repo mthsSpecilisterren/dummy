@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+<Edit>true</Edit>
+<Files>true</Files>
+<Help/>
+<Properties>true</Properties>
+<RecentChanges>true</RecentChanges>
+<Refactor>true</Refactor>
+<Search>true</Search>
+<Suite>true</Suite>
+<Suites/>
+<SymbolicLinks>
+<Sprint12Tc01>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc01</Sprint12Tc01>
+<Sprint12Tc02>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc02</Sprint12Tc02>
+<Sprint12Tc03>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc03</Sprint12Tc03>
+<Sprint12Tc04>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc04</Sprint12Tc04>
+<Sprint12Tc08>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc08</Sprint12Tc08>
+<Sprint12Tc10>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc10</Sprint12Tc10>
+<Sprint12Tc14>&lt;TestCases.DesktopDevice.TestSprints.TestSprint12.Sprint12Tc14</Sprint12Tc14>
+</SymbolicLinks>
+<Versions>true</Versions>
+<WhereUsed>true</WhereUsed>
+</properties>

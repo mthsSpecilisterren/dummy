@@ -1,0 +1,76 @@
+|storyboard                       |
+|telfort.general Open Telfort |
+|telfort.general Go to Service|
+
+|telfort.service Click trough guided menu and return title                                                                                                                   |
+|maxlvl|level1     |level2                |level3                     |level4                                         |level5|title?                                         |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Vast bellen bestellen                          |      |Vast bellen bestellen                          |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Abonnementskosten Vast bellen                  |      |Abonnementskosten Vast bellen                  |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Bellen Onbeperkt Vast bestellen                |      |Bellen Onbeperkt Vast bestellen                |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Bellen Onbeperkt Mobiel bestellen              |      |Bellen Onbeperkt Mobiel bestellen              |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Bellen Onbeperkt Buitenland bestellen          |      |Bellen Onbeperkt Buitenland bestellen          |
+|4     |Vast bellen|Bestellen en ontvangen|Bestellen                  |Bestelling annuleren                           |      |Bestelling Internet, TV en Bellen annuleren    |
+|4     |Vast bellen|Bestellen en ontvangen|Overstappen                |Overstappen naar Telfort                       |      |Overstappen naar Telfort Internet, TV en Bellen|
+|4     |Vast bellen|Bestellen en ontvangen|Overstappen                |Overstappen van Telfort internet naar glasvezel|      |Overstappen van Telfort internet naar glasvezel|
+|4     |Vast bellen|Bestellen en ontvangen|Overstappen                |Contractnummer vinden                          |      |Contractnummer vinden                          |
+|3     |Vast bellen|Bestellen en ontvangen|Status bestelling bekijken |                                               |      |Status bestelling bekijken                     |
+|3     |Vast bellen|Bestellen en ontvangen|Oplevering Vast bellen     |                                               |      |Oplevering Vast bellen                         |
+|3     |Vast bellen|Bestellen en ontvangen|Nummerbehoud vaste telefoon|                                               |      |Nummerbehoud vaste telefoon                    |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                          |
+|maxlvl|level1     |level2                |level3                              |level4                                                        |level5|title?                                                        |
+|4     |Vast bellen|Gebruiken en instellen|Telefooninstellingen                |Voicemail                                                     |      |Voicemail vast bellen instellen, afluisteren of uitzetten     |
+|4     |Vast bellen|Gebruiken en instellen|Telefooninstellingen                |Nummerblokkering                                              |      |Nummerblokkering vaste telefoon                               |
+|4     |Vast bellen|Gebruiken en instellen|Telefooninstellingen                |Nummervermelding in de telefoongids                           |      |Nummervermelding vaste telefoon in de telefoongids            |
+|4     |Vast bellen|Gebruiken en instellen|Telefooninstellingen                |Nummerweergave aan- en uitzetten                              |      |Nummerweergave vaste telefoon aan- en uitzetten               |
+|4     |Vast bellen|Gebruiken en instellen|Telefooninstellingen                |Doorschakelen aan- en uitzetten                               |      |Doorschakelen vaste telefoon aan- en uitzetten                |
+|4     |Vast bellen|Gebruiken en instellen|Hulp bij technische problemen       |Ik kan niet bellen/gebeld worden met mijn vaste telefoon      |      |Ik kan niet bellen/gebeld worden met mijn vaste telefoon      |
+|4     |Vast bellen|Gebruiken en instellen|Hulp bij technische problemen       |Geluidskwaliteit van Vast bellen is niet goed (Sitecom router)|      |Geluidskwaliteit van Vast bellen is niet goed (Sitecom router)|
+|4     |Vast bellen|Gebruiken en instellen|Mijn Telfort                        |Mogelijkheden van Mijn Telfort                                |      |Mogelijkheden van Mijn Telfort                                |
+|4     |Vast bellen|Gebruiken en instellen|Mijn Telfort                        |Hulp bij inloggen Mijn Telfort                                |      |Hulp bij inloggen Mijn Telfort                                |
+|3     |Vast bellen|Gebruiken en instellen|Vast bellen installeren             |                                                              |      |Vast bellen installeren                                       |
+|3     |Vast bellen|Gebruiken en instellen|Storingen en onderhoud              |                                                              |      |Storingen en onderhoudsmeldingen                              |
+|3     |Vast bellen|Gebruiken en instellen|Fair Use Policy                     |                                                              |      |Fair Use Policy Vast Bellen                                   |
+|3     |Vast bellen|Gebruiken en instellen|Telefonische overlast vaste telefoon|                                                              |      |Telefonische overlast vaste telefoon                          |
+|3     |Vast bellen|Gebruiken en instellen|Tarieven vast bellen                |                                                              |      |Tarieven vast bellen                                          |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                        |
+|maxlvl|level1     |level2  |level3                                         |level4                               |level5                         |title?                                         |
+|4     |Vast bellen|Wijzigen|Persoonlijke gegevens wijzigen                 |Telefoonnummer wijzigen              |                               |Vaste telefoonnummer wijzigen                  |
+|4     |Vast bellen|Wijzigen|Persoonlijke gegevens wijzigen                 |E-mailadres wijzigen                 |                               |E-mailadres wijzigen                           |
+|4     |Vast bellen|Wijzigen|Persoonlijke gegevens wijzigen                 |Rekeningnummer wijzigen              |                               |Rekeningnummer Internet, TV en Bellen wijzigen |
+|4     |Vast bellen|Wijzigen|Persoonlijke gegevens wijzigen                 |Wachtwoord Mijn Telfort wijzigen     |                               |Wachtwoord Mijn Telfort wijzigen               |
+|5     |Vast bellen|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland           |Verhuizen Internet, TV & bellen|Verhuizen Internet, TV & bellen                |
+|5     |Vast bellen|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland           |Verhuizen glasvezel abonnement |Verhuizen glasvezel abonnement                 |
+|4     |Vast bellen|Wijzigen|Verhuizen                                      |Verhuizen naar het buitenland        |                               |Verhuizen naar het buitenland                  |
+|4     |Vast bellen|Wijzigen|Verhuizen                                      |Kosteloos verhuizen                  |                               |Kosteloos verhuizen                            |
+|4     |Vast bellen|Wijzigen|Verhuizen                                      |Nummerbehoud vaste telefoon          |                               |Nummerbehoud vaste telefoon                    |
+|4     |Vast bellen|Wijzigen|Mijn Telfort                                   |Hulp bij inloggen Mijn Telfort       |                               |Hulp bij inloggen Mijn Telfort                 |
+|4     |Vast bellen|Wijzigen|Mijn Telfort                                   |Wachtwoord Mijn Telfort wijzigen     |                               |Wachtwoord Mijn Telfort wijzigen               |
+|4     |Vast bellen|Wijzigen|Abonnement wijzigen                            |Vast bellen bestellen                |                               |Vast bellen bestellen                          |
+|4     |Vast bellen|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Vast bestellen      |                               |Bellen Onbeperkt Vast bestellen                |
+|4     |Vast bellen|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Mobiel bestellen    |                               |Bellen Onbeperkt Mobiel bestellen              |
+|4     |Vast bellen|Wijzigen|Abonnement wijzigen                            |Bellen Onbeperkt Buitenland bestellen|                               |Bellen Onbeperkt Buitenland bestellen          |
+|4     |Vast bellen|Wijzigen|Abonnement wijzigen                            |Bestelling annuleren                 |                               |Bestelling Internet, TV en Bellen annuleren    |
+|3     |Vast bellen|Wijzigen|Overstappen van Telfort internet naar glasvezel|                                     |                               |Overstappen van Telfort internet naar glasvezel|
+|3     |Vast bellen|Wijzigen|Contract overnemen                             |                                     |                               |Contract overnemen Internet, TV en Bellen      |
+
+|telfort.service Click trough guided menu and return title                                                                                                                         |
+|maxlvl|level1     |level2             |level3                          |level4                                     |level5|title?                                                 |
+|4     |Vast bellen|Betalen en facturen|Uitleg over je factuur          |Eerste factuur                             |      |Eerste factuur Internet, TV en Bellen                  |
+|4     |Vast bellen|Betalen en facturen|Uitleg over je factuur          |Maandelijkse factuur                       |      |Maandelijkse factuur Internet, TV en Bellen            |
+|4     |Vast bellen|Betalen en facturen|Uitleg over je factuur          |Factuur na wijziging                       |      |Factuur na wijziging Internet, TV en Bellen            |
+|4     |Vast bellen|Betalen en facturen|Uitleg over je factuur          |!-CombiVoordeel terugvinden op je factuur-!|      |!-CombiVoordeel terugvinden op je factuur-!            |
+|3     |Vast bellen|Betalen en facturen|Factuur bekijken in Mijn Telfort|                                           |      |Factuur Internet, TV en Bellen bekijken in Mijn Telfort|
+|3     |Vast bellen|Betalen en facturen|Gesprekskosten bekijken         |                                           |      |Gesprekskosten bekijken                                |
+|3     |Vast bellen|Betalen en facturen|Factuur hoger dan verwacht      |                                           |      |Factuur Internet, TV en Bellen hoger dan verwacht      |
+|3     |Vast bellen|Betalen en facturen|Factuur betalen                 |                                           |      |Openstaande factuur betalen                            |
+|3     |Vast bellen|Betalen en facturen|Automatische incasso mislukt    |                                           |      |Automatische incasso mislukt                           |
+
+|telfort.service Click trough guided menu and return title                                                           |
+|maxlvl|level1     |level2  |level3                        |level4|level5|title?                                     |
+|3     |Vast bellen|Opzeggen|Internet, TV & Bellen opzeggen|      |      |Internet, TV & Bellen opzeggen             |
+|3     |Vast bellen|Opzeggen|Glasvezel opzeggen            |      |      |Glasvezel opzeggen                         |
+|3     |Vast bellen|Opzeggen|Nummerbehoud na opzegging     |      |      |Nummerbehoud na opzegging                  |
+|3     |Vast bellen|Opzeggen|Opzegtermijn                  |      |      |Opzegtermijn Internet, TV en Bellen        |
+|3     |Vast bellen|Opzeggen|Bestelling annuleren          |      |      |Bestelling Internet, TV en Bellen annuleren|

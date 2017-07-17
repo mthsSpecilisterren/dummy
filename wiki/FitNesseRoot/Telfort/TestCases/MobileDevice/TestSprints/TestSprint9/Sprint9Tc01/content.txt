@@ -1,0 +1,37 @@
+!*> Local scenarios
+|scenario          |Check if instellingen|instellingenHeading|is selected  |
+|Check if the title|@instellingenHeading |with heading       |h2|is visible|
+
+*!
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc01_login}|and password|${accountSprint9Tc01_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+
+|storyboard                                                                                                          |
+|Check if the title|Instellingen                                   |with heading          |h1          |is visible   |
+|note              |Check if the title                             |Wijzig uw instellingen|with heading|h2|is visible|
+|Check if the title|Selecteer een onderwerp uit het menu hierboven.|with heading          |p           |is visible   |
+
+|storyboard                                   |
+|Check if icon|Simkaart            |is visible|
+|Check if icon|Verbruik & Factuur  |is visible|
+|Check if icon|Voicemail & oproepen|is visible|
+|Check if icon|Blokkades           |is visible|
+|Check if icon|Privacy             |is visible|
+
+|storyboard                                                         |
+|Check if icon     |Simkaart             |is clickable              |
+|Check if the title|Simkaart             |with heading|h2|is visible|
+|Check if icon     |Verbruik & Factuur   |is clickable              |
+|Check if the title|Verbruik & factuur   |with heading|h2|is visible|
+|Check if icon     |Voicemail & oproepen |is clickable              |
+|Check if the title|Voicemail en oproepen|with heading|h2|is visible|
+|Check if icon     |Blokkades            |is clickable              |
+|Check if the title|Blokkades            |with heading|h2|is visible|
+|Check if icon     |Privacy              |is clickable              |
+|Check if the title|Privacyinstellingen  |with heading|h2|is visible|
+
+|storyboard        |
+|Logout Mijn Mobiel|

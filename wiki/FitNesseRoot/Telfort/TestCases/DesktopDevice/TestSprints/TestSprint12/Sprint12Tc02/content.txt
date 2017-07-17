@@ -1,0 +1,129 @@
+!*> Local scenarios
+|scenario           |Click on carrousel      |subject      |
+|Click on the button|xpath=//span[.="@subject"]/parent::div|
+
+|scenario          |Check if the text                                                                      |text|with value|value|is visible in the accordeon|
+|is visible on page|xpath=//*[normalize-space(.)="@text"]/following-sibling::*[normalize-space(.)="@value"]|in  |xpath=//div[@class='accordeon_content']     |
+
+|scenario          |Check if the text                    |text|is present within section           |section           |
+|is visible on page|xpath=//*[normalize-space(.)="@text"]|in  |xpath=//*[normalize-space(text())="@section"]/parent::*|
+
+|scenario|Check if bundel   |bundelName                |with               |text               |is visible               |
+|ensure  |is visible on page|xpath=//*[normalize-space(.)="@bundelName"]/following-sibling::*[normalize-space(.)="@text"]|
+
+|scenario|Check if bundel   |bundelName                               |has days remaining                               |text                              |
+|ensure  |is visible on page|xpath=//*[normalize-space(.)="@bundelName"]/ancestor::div[@class="progressBar_bundles"]/descendant::div[@data-content="@text"]|
+
+|scenario          |Check 1ste text in tariefplanbox                      |text                     |
+|is visible on page|xpath=//span[@class='ratesPlanText' and starts-with(normalize-space(.),'@text')]|
+
+|scenario          |Check 2de text in tariefplanbox          |text         |
+|is visible on page|xpath=//span[@class='ratesPlanText' and text()='@text']|
+
+|scenario|Check if section  |section                               |has a 'Bestel' button                                     |
+|ensure  |is visible on page|xpath=//a[normalize-space(.)="Bestel"]|in|xpath=//*[normalize-space(text())="@section"]/parent::*|
+*!
+
+|storyboard                                                                                               |
+|Note                           |step 1                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc02_login}|and password|${accountSprint12Tc02_password}|
+
+
+|storyboard                                                                      |
+|Set stubhub cookie                                                              |
+|Note              |step 2                                                       |
+|Click on          |Tegoed               |in the navigation menu                 |
+|Note              |step 3 (is not visible)                                      |
+|Note              |step 4 (is not visible, hidden)                              |
+|Note              |step 5 ('Basis tegoed'is not visible, tested with 'Beltegoed'|
+|Check if the title|Beltegoed            |with heading             |h2|is visible|
+|Check if the text |€ 84,50              |is present within section|Beltegoed    |
+|Check if the text |Vervalt op 2017-06-15|is present within section|Beltegoed    |
+
+
+|storyboard                                                                                                       |
+|Note              |step 8                                                                                        |
+|Check if the text |Hoe is mijn beltegoed opgebouwd?|is present within section|Beltegoed                          |
+|Note              |step 9                                                                                        |
+|Click on carrousel|Hoe is mijn beltegoed opgebouwd?                                                              |
+|Check if the text |Tegoed                          |with value               |€ 84,50|is visible in the accordeon|
+|Check if the text |Totaal                          |with value               |€ 84,50|is visible in the accordeon|
+
+
+|storyboard                                                                                                           |
+|Note                            |step 10                                                                             |
+|Check if the text               |Wil je je tegoed opwaarderen? Bekijk het aanbod:|is present within section|Beltegoed|
+|Note                            |step 11                                                                             |
+|Check if href button            |Opwaarderen                                     |is visible                         |
+|Click on href button            |Opwaarderen                                                                         |
+|Check if the page title contains|Opwaarderen                                                                         |
+|note                            |Go back to the Tegoed page                                                          |
+|back                                                                                                                 |
+
+
+|storyboard                                                                                                                         |
+|Note              |step 12                                                                                                         |
+|Check if the title|Bonustegoed                                                             |with heading             |h2|is visible|
+|Note              |step 13                                                                                                         |
+|Check if the text |Het bonustegoed kun je niet gebruiken voor het kopen van prepaidbundels.|is present within section|Bonustegoed  |
+|Note              |step 14                                                                                                         |
+|Check if the text |Starttegoed                                                             |is present within section|Bonustegoed  |
+|Note              |step 15                                                                                                         |
+|Check if the text |Vervalt op: 2017-06-15                                                  |is present within section|Bonustegoed  |
+|Note              |step 16                                                                                                         |
+|Check if the text |€ 5,00                                                                  |is present within section|Bonustegoed  |
+
+
+!|comment                                                                             |
+|Note              |step 17                                                           |
+|Check if the title|Bundels Details        |with heading      |h2          |is visible|
+|Note              |step 18 does not work                                             |
+|Check if bundel   |Internetbundel         |with              |50 MB over  |is visible|
+|Check if bundel   |Sms-bundel             |with              |100 sms over|is visible|
+|Check if bundel   |TelfortOnderling bundel|with              |250 min over|is visible|
+|Check if bundel   |Belbundel              |with              |75 min over |is visible|
+|Check if bundel   |Internetbundel         |has days remaining|2 dagen resterend      |
+|Check if bundel   |TelfortOnderling bundel|has days remaining|Alleen nog vandaag     |
+|Check if bundel   |Belbundel              |has days remaining|31 dagen resterend     |
+
+
+!|storyboard                                                                                                       |
+|Note                            |step 23                                                                          |
+|Check if the text               |Wil je bundels bijbestellen? Bekijk het aanbod:|is present within section|Bundels|
+|Note                            |step 24                                                                          |
+|Check if href button            |Bundels bestellen                              |is visible                       |
+|Click on href button            |Bundels bestellen                                                                |
+|Check if the page title contains|Bundels bestellen                                                                |
+|note                            |Go back to the Tegoed page                                                       |
+|back                                                                                                              |
+|Note                            |step 25a                                                                         |
+|Check 1ste text in tariefplanbox|Tarievenplan: Telfort Prepaid !-|-! Wijzig                                       |
+|Note                            |step 25b                                                                         |
+|Check 2de text in tariefplanbox |Wijzig hier je tarievenplan voor bellen en internetten                           |
+|Click on the link               |Wijzig                                                                           |
+|Check if the page title contains|Instellingen                                                                     |
+|note                            |Go back to the Tegoed page                                                       |
+|back                                                                                                              |
+
+
+|storyboard                                                                                                      |
+|Note              |step 26                                                                                      |
+|Check if the title|Buitenlandbundels                                |with heading             |h2  |is visible  |
+|Note              |step 27                                                                                      |
+|Check if the text |Je hebt momenteel geen actieve buitenlandbundels.|is present within section|Buitenlandbundels|
+
+
+|storyboard                                                                                                                                 |
+|Note             |step 28                                                                                                                  |
+|Check if the text|Buitenlandbundel bestellen                                          |is present within section|Buitenlandbundels         |
+|Note             |step 30                                                                                                                  |
+|Check if the text|Internetbundel EU                                                   |is present within section|Buitenlandbundel bestellen|
+|Check if the text|Mobiel internetten in landen uit zone 1(onder andere alle EU-landen)|is present within section|Buitenlandbundel bestellen|
+|Check if section |Internetbundel EU                                                   |has a 'Bestel' button                               |
+|Note             |step 31                                                                                                                  |
+|Check if the text|Internetbundel Wereld                                               |is present within section|Buitenlandbundel bestellen|
+|Check if the text|Mobiel internetten in landen uit zone 2, 3 en 4.                    |is present within section|Buitenlandbundel bestellen|
+|Check if section |Internetbundel Wereld                                               |has a 'Bestel' button                               |
+
+

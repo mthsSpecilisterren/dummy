@@ -1,0 +1,40 @@
+<test page>
+|scenario           |Click on Main button     |mainbutton     |
+|Click on the button|xpath=//a[@title="@mainbutton"]/parent::*|
+
+|scenario          |Check if text        |text        |is present within group        |group       |
+|is visible on page|xpath=//*[normalize-space(.)="@group"]/parent::*//*[normalize-space(.)="@text"]|
+
+|scenario|Click pincode herstellen                  |
+|click   |xpath=//button[@type='submit']/i/parent::*|
+
+
+|script                                                                                                              |
+|Note                           |algemen beginstappen                                                                |
+|Note                           |step 1                                                                              |
+|Open the Telfort website and agree with cookie message                                                              |
+|Login Mijn Mobiel with username|${accountSprint12Tc05_login}|and password|${accountSprint12Tc05_password}|          |
+|Note                           |eerst tabblad "Thuis" selecteren                                                    |
+|Click on navigation tab        |Thuis                                                                               |
+|Note                           |step 2                                                                              |
+|Click on                       |Instellingen                |in the navigation menu                                 |
+|Note                           |step 3                                                                              |
+|Check if the title             |Instellingen                |with heading|h1                             |is visible|
+
+|storyboard                                                                                                                                     |
+|Note                |hier begint TC05b                                                                                                         |
+|Note                |step 29                                                                                                                   |
+|Click on Main button|TV pincodes                                                                                                               |
+|Note                |step 30                                                                                                                   |
+|Check if the title  |TV pincodes                                                            |with heading           |h2       |is visible      |
+|Note                |step 31                                                                                                                   |
+|Check if the title  |Gegevens voor TV instellen                                             |with heading           |h3       |is visible      |
+|Note                |step xxxx (not in scipt, text based on website                                                                            |
+|Check if text       |Abonnenmentsnummer                                                     |is present within group|Gegevens voor TV instellen|
+|Check if text       |1000096566                                                             |is present within group|Gegevens voor TV instellen|
+|Check if text       |Pincode                                                                |is present within group|Gegevens voor TV instellen|
+|Check if text       |****                                                                   |is present within group|Gegevens voor TV instellen|
+|Check if the title  |Pincode vergeten                                                       |with heading           |h3       |is visible      |
+|Check if text       |Klik hieronder op pincode aanvragen en je ziet meteen je nieuwe pincode|is present within group|Pincode vergeten          |                                                                                  |
+|Click pincode herstellen |                                                                                    |
+

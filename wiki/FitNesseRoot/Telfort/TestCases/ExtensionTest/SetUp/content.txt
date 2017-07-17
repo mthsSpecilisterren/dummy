@@ -1,0 +1,37 @@
+Start 
+
+!*> Define $mobileEmulation device attributes
+
+|script|test fixture|
+|$link=|get current |
+
+|script|list fixture                                           |
+|note|add   |load-extension=C:\Automatisering\Telfort\AdBlock_v3.9.2|
+|add   |load-extension=$link\AdBlock_v3.9.2                    |
+|$args=|copy list                                              |
+
+|script           |map fixture   |
+|set value        |$args|for|args|
+|$mobileEmulation=|copy map      |
+*!
+
+|script          |selenium driver setup               |
+|start driver for|chrome|with profile|$mobileEmulation|
+|show            |driver description                  |
+
+|script|browser test        |
+|open  |http://www.google.nl|
+
+|script|browser test|
+|wait  |30 |seconds |
+
+
+!***> Libraries
+|Library     |
+|telfort test|
+*!
+
+|script                             |
+|clear all cookies                  |
+|seconds before page load timeout|30|
+|seconds before timeout          |30|

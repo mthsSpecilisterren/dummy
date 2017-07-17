@@ -1,0 +1,60 @@
+!*> Local variables
+
+*!
+
+!*> Local scenarios
+|scenario|Check if the tab  |tabName                                           |is active                                           |
+|ensure  |is visible on page|xpath=//a[contains(@class,"subnavMT_tab")][contains(@class,"is_active")][normalize-space(.)="@tabName"]|
+
+|scenario|Check if the tab  |tabName                                             |is not active                                            |
+|ensure  |is visible on page|xpath=//a[contains(@class,"subnavMT_tab")][ not (contains(@class,"is_active"))][normalize-space(.)="@tabName"]|
+
+|scenario|Check if navigation item|navItem |is visible in the navigation menu      |
+|ensure  |is visible on page      |@navItem|in|xpath=//div[@class="subnavMT_items"]|
+
+|scenario|Check if navigation item|navItem                                            |is active                                           |
+|ensure  |is visible on page      |xpath=//a[contains(@class,"subnavMT_item")][contains(@class,"is_active")][normalize-space(.)="@navItem"]|
+
+*!
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint3Tc01_login}|and password|${accountSprint3Tc01_password}|
+
+|storyboard                           |
+|Check if the tab|Mobiel|is active    |
+|Check if the tab|Thuis |is not active|
+
+|storyboard                                  |
+|Click on navigation tab|Thuis               |
+|Check if the tab       |Thuis |is active    |
+|Check if the tab       |Mobiel|is not active|
+
+|storyboard                                  |
+|Click on navigation tab|Mobiel              |
+|Check if the tab       |Mobiel|is active    |
+|Check if the tab       |Thuis |is not active|
+
+
+!|storyboard                                                             |
+|Check if navigation item|Verbruik     |is visible in the navigation menu|
+|Check if navigation item|Abonnement   |is visible in the navigation menu|
+|Check if navigation item|Factuur      |is visible in the navigation menu|
+|Check if navigation item|Mijn gegevens|is visible in the navigation menu|
+|Check if navigation item|Bestelstatus |is visible in the navigation menu|
+|Check if navigation item|CombiVoordeel|is visible in the navigation menu|
+
+!|storyboard                                                                           |
+|Click on                |Verbruik                |in the navigation menu              |
+|Check if navigation item|Verbruik                |is active                           |
+|Click on                |Abonnement              |in the navigation menu              |
+|Check if navigation item|Abonnement              |is active                           |
+|Click on                |Factuur                 |in the navigation menu              |
+|Check if navigation item|Factuur                 |is active                           |
+|Click on                |Mijn gegevens           |in the navigation menu              |
+|Check if navigation item|Mijn gegevens           |is active                           |
+|Click on                |Bestelstatus            |in the navigation menu              |
+|Check if navigation item|Bestelstatus            |is active                           |
+|note                    |Combivoordeel link gives a 404 error                         |
+|note                    |Click on                |CombiVoordeel|in the navigation menu|
+|note                    |Check if navigation item|CombiVoordeel|is active             |

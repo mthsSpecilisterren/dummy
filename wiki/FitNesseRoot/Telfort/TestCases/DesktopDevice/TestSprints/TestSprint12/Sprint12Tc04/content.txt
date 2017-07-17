@@ -1,0 +1,97 @@
+!*> Local scenarios
+!define xpathSectionBelowThuis {//h1/following-sibling::div[@class="layoutContainer"][1]}
+
+|scenario|Check if the section below 'Thuis" contains an image on the left site|
+|ensure  |is visible on page    |xpath=${xpathSectionBelowThuis}/div[1]//img   |
+
+|scenario|Check if the section below 'Thuis" contains the title|titleText      |with tag     |tag     |on the left site     |
+|ensure  |is visible on page                                   |xpath=${xpathSectionBelowThuis}/div[2]//@tag[.="@titleText"]|
+
+|scenario|Check if column title|title                    |is visible in column                    |columnNumber                   |
+|ensure  |is visible on page   |xpath=//div[contains(@class,"productSummary")]/div[@columnNumber]//h3[normalize-space(.)="@title"]|
+
+|scenario             |Check if the table "Extra kosten' contains the columns _|col1,col2,col3        |
+|Check if column title|@col1                                                   |is visible in column|1|
+|Check if column title|@col2                                                   |is visible in column|2|
+|Check if column title|@col3                                                   |is visible in column|3|
+
+|scenario|Check if content of cel with row number|rowNumber            |and column number            |columnNumber            |equals           |content           |
+|ensure  |is visible on page                     |xpath=(//div[contains(@class,"productSummary")]/div[@columnNumber]//p)[@rowNumber][normalize-space(.)="@content"]|
+
+|scenario                               |Check if row|rowNumber        |of table 'Extra kosten' equals|col1  ||col2||col3|
+|Check if content of cel with row number|@rowNumber  |and column number|1                             |equals|@col1      |
+|Check if content of cel with row number|@rowNumber  |and column number|2                             |equals|@col2      |
+|Check if content of cel with row number|@rowNumber  |and column number|3                             |equals|@col3      |
+
+|scenario|Check if button   |buttonTitle                          |is visible                          |
+|ensure  |is visible on page|xpath=//a[contains(@class,"button") and normalize-space(.)="@buttonTitle"]|
+
+|scenario|Check if carousel with images is visible                                                                            |
+|ensure  |is visible on page|xpath=//div[starts-with(@class,"carousel ")]//img[contains(@src,".png") or contains(@src,".jpg")]|
+
+|scenario|Check if the section 'Storingen Thuis' contains the link|linkText                                                                                                  |
+|ensure  |is visible on page                                      |xpath=//*[normalize-space(.)="Storingen Thuis"]//following-sibling::div//a[normalize-space(.)="@linkText"]|
+
+|scenario|Check if the section 'Storingen Thuis' contains bullet links that opens as a lightbox                                                |
+|ensure  |is visible on page|xpath=//*[normalize-space(.)="Storingen Thuis"]/following-sibling::div//li//a[starts-with(@class,"lightbox_open")]|
+
+|scenario|Check if the section 'Wist je dat' contains the text|text                                                                                         |
+|ensure  |is visible on page                                  |xpath=//*[normalize-space(.)="Wist je dat?"]/ancestor::section//*[normalize-space(.)="@text"]|
+
+|scenario|Check if the section 'Wist je dat' contains the button|buttonText                                                                                                                       |
+|ensure  |is visible on page                                    |xpath=//*[normalize-space(.)="Wist je dat?"]/ancestor::section//a[contains(@class,"button") and normalize-space(.)="@buttonText"]|
+
+|scenario|Check if the section 'Wist je dat' contains an image                                                                                |
+|ensure  |is visible on page|xpath=//*[normalize-space(.)="Wist je dat?"]/ancestor::section//img[contains(@src,"jpg") or contains(@src,"png")]|
+
+|scenario|Check if the section 'Instellingen' contains the clickable icon|iconText                                                                                                                                                                            |
+|ensure  |is visible on page                                             |xpath=//h2[normalize-space(.)="Instellingen"]/following-sibling::*[1]//a/span[starts-with(@class,"settings-tabs_item_icon")]/following-sibling::span[normalize-space(.)="@iconText"]|
+
+*!
+
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc04_login}|and password|${accountSprint12Tc04_password}|
+
+|script                                             |
+|Check if the title|Thuis|with heading|h1|is visible|
+
+|script                                                                                                         |
+|Check if the section below 'Thuis" contains an image on the left site                                          |
+|Check if the section below 'Thuis" contains the title|Voordelig Mobiel van Telfort|with tag|h2|on the left site|
+
+|script                                                                                                                                                                                                                        |
+|Check if the title                                     |Extra kosten                                                                          |with heading                  |h2             |is visible                      |
+|Check if the table "Extra kosten' contains the columns;|Product                                                                               |Verbruik                      |Totaal                                          |
+|Check if row                                           |1                                                                                     |of table 'Extra kosten' equals|Vast Bellen    ||0 minuten en 0 seconden||€ 0,00|
+|Check if row                                           |2                                                                                     |of table 'Extra kosten' equals|Interactieve TV||0 Videos               ||€ 0,00|
+|Check if the following text                            |Dit verbruik is nog niet in rekening gebracht en vind je terug op je volgende factuur.|is visible                                                                     |
+|Check if button                                        |Bekijk al je verbruik                                                                 |is visible                                                                     |
+
+|script                                                             |
+|Check if the title|Facturen             |with heading|h2|is visible|
+|Check if button   |Bekijk al je facturen|is visible                |
+
+|script                                                  |
+|Check if the title|Uitgelicht|with heading|h2|is visible|
+|Check if carousel with images is visible                |
+
+|script                                                                                             |
+|Check if the title                                      |Storingen Thuis|with heading|h2|is visible|
+|Check if the section 'Storingen Thuis' contains the link|probleemoplosser                          |
+|Check if the section 'Storingen Thuis' contains bullet links that opens as a lightbox              |
+
+|script                                                                                                                                                                                                                                               |
+|Check if the title                                    |Wist je dat?                                      |with heading                                      |h2                                      |is visible                                     |
+|Check if the section 'Wist je dat' contains the text  |Met de Mijn Telfort app kun je je verbruik bekijken, je facturen bekijken, en nog veel meer. Je kunt de app gratis downloaden. Je logt in met je 06-nummer en je wachtwoord voor Mijn Telfort.|
+|Check if the section 'Wist je dat' contains the button|Download de app                                                                                                                                                                               |
+|Check if the section 'Wist je dat' contains an image                                                                                                                                                                                                 |
+
+|script                                                                                                 |
+|Check if the title                                             |Instellingen|with heading|h2|is visible|
+|Check if the section 'Instellingen' contains the clickable icon|Factuur                                |
+|Check if the section 'Instellingen' contains the clickable icon|Voicemail & oproepen                   |
+|Check if the section 'Instellingen' contains the clickable icon|TV pincodes                            |
+|Check if the section 'Instellingen' contains the clickable icon|Privacy                                |
+

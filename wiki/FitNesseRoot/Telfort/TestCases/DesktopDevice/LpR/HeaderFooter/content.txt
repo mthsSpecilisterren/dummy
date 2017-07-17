@@ -1,0 +1,149 @@
+!4 Wacht op input van Telfort, om dit script af te kunnen maken
+
+#(//*[(self::h1 or (self::*[string-length(text())>0] and parent::h1) or (self::h2 and not(preceding::h1[string-length(text())>0])) or (self::h3 and not(preceding::h2[string-length(text())>0]))) and string-length(text())>0])
+
+|table template  |telfort.menu Click trough header menu and return title                                                                                                                                                |
+|open            |https://www.telfort.nl/                                                                                                                                                                               |
+|hover over      |xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@{level1}"]                                                                                                               |
+|click           |xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@{level1}"]/../../descendant::*[normalize-space(text())="@{level2}"]/../descendant::*[normalize-space(text())="@{level3}"]|
+|wait for visible|xpath=//*[contains(@class,'container') or contains(@id,'container')]                                                                                                                                  |
+|$title=         |value of                        |xpath=(//*[(self::h1 or (self::*[string-length(text())>0] and parent::h1[string-length(text())=0]) or self::h2) and string-length(text())>0])                        |
+
+|storyboard                      |
+|telfort.general Open Telfort|
+
+|telfort.menu Click trough header menu and return title                      |
+|level1|level2        |level3                |title?                         |
+|Shop  |Telfort Mobiel|Sim Only              |Sim Only abonnement            |
+|Shop  |Telfort Mobiel|Telefoon en abonnement|Telefoon + abonnement          |
+|Shop  |Telfort Mobiel|Prepaid               |Telfort Prepaid                |
+|Shop  |Telfort Mobiel|Verlengen             |Verlengen                      |
+|Shop  |Telfort Mobiel|iPhone 5s             |Apple iPhone 5s 16GB space gray|
+|Shop  |Telfort Mobiel|Samsung telefoons     |Samsung telefoons              |
+|Shop  |Telfort Mobiel|Huawei P8 Lite        |Huawei P8 Lite zwart           |
+|Shop  |Telfort Mobiel|Telfort Mobiel bestellen                              |!-Mobiel
+bellen-!                 |
+
+|telfort.menu Click trough header menu and return title                                                  |
+|level1|level2       |level3                      |title?                                                |
+|Shop  |Telfort Thuis|Beschikbaarheidscheck       |Telfort Thuis                                         |
+|Shop  |Telfort Thuis|Alles-in-1 pakket           |Alles-in-1 pakket: voordelig internet, TV én bellen   |
+|Shop  |Telfort Thuis|Internet en TV              |Internet en TV pakket: de voordelige combinatie       |
+|Shop  |Telfort Thuis|Internet en Bellen          |Internet en Bellen: ook via Glasvezel                 |
+|Shop  |Telfort Thuis|Internet                    |Internet abonnement: snel én goedkoop bij Telfort     |
+|Shop  |Telfort Thuis|Alles-in-1 Glasvezel        |Alles-in-1 Glasvezel: supersnel internet, TV én bellen|
+|Shop  |Telfort Thuis|Internet en Bellen Glasvezel|Glasvezel Internet en Bellen: supersnel én voordelig  |
+|Shop  |Telfort Thuis|Telfort Thuis bestellen     |Telfort Thuis                                         |
+
+|telfort.menu Click trough header menu and return title                                    |
+|level1|level2 |level3                        |title?                                      |
+|Shop  |Service|Overstappen naar Telfort      |Zorgeloos overstappen naar Telfort          |
+|Shop  |Service|Status bestelling             |Wil je weten hoe het met je bestelling gaat?|
+|Shop  |Service|Mobiel abonnement verlengen   |Vind het antwoord op je vraag               |
+|Shop  |Service|Levering Glasvezel            |Vind het antwoord op je vraag               |
+|Shop  |Service|Levering Internet, TV & Bellen|Vind het antwoord op je vraag               |
+|Shop  |Service|Snel naar je antwoord         |Vind het antwoord op je vraag               |
+
+|telfort.menu Click trough header menu and return title          |
+|level1|level2      |level3                |title?               |
+|Mobiel|Abonnementen|Sim Only              |Sim Only abonnement  |
+|Mobiel|Abonnementen|Telefoon en abonnement|Telefoon + abonnement|
+|Mobiel|Abonnementen|Prepaid               |Telfort Prepaid      |
+|Mobiel|Abonnementen|Verlengen             |Verlengen            |
+|Mobiel|Abonnementen|Telfort Mobiel bestellen                    |!-Mobiel
+bellen-!       |
+
+|telfort.menu Click trough header menu and return title|
+|level1   |level2       |level3         |title?        |
+|Mobiel   |Informatie   |Abonnementen   |Abonnementen  |
+|Mobiel   |Informatie   |Prepaid                       |!-Prepaid:
+Betaal alleen voor wat je nodig hebt-!        |
+|Mobiel|Informatie|Mobiel Internet  |Mobiel Internet                                       |
+|Mobiel|Informatie|4G               |4G: Supersnel mobiel internet                         |
+|Mobiel|Informatie|Buitenlandbundels|Buitenlandbundels van Telfort: goed voorbereid op reis|
+|Mobiel|Informatie|Meer over        |Mobiel                                                |
+
+|telfort.menu Click trough header menu and return title                                |
+|level1|level2 |level3                       |title?                                   |
+|Mobiel|Service|Toestelhulp mobiel           |Toestelhulp mobiel                       |
+|Mobiel|Service|Simkaart activeren           |Vind het antwoord op je vraag            |
+|Mobiel|Service|Verbruik inzien              |Informatie over je factuur               |
+|Mobiel|Service|Telefoon beveiligen          |Maak je smartphone waardeloos voor dieven|
+|Mobiel|Service|Nummerbehoud                 |Vind het antwoord op je vraag            |
+|Mobiel|Service|Opwaarderen Prepaid beltegoed|Vind het antwoord op je vraag            |
+|Mobiel|Service|Snel naar je antwoord        |Vind het antwoord op je vraag            |
+
+|telfort.menu Click trough header menu and return title                                                             |
+|level1               |level2   |level3                      |title?                                                |
+|Internet, TV & Bellen|Pakketten|Beschikbaarheidscheck       |Telfort Thuis                                         |
+|Internet, TV & Bellen|Pakketten|Alles-in-1 pakket           |Alles-in-1 pakket: voordelig internet, TV én bellen   |
+|Internet, TV & Bellen|Pakketten|Internet en TV              |Internet en TV pakket: de voordelige combinatie       |
+|Internet, TV & Bellen|Pakketten|Internet en Bellen          |Internet en Bellen: ook via Glasvezel                 |
+|Internet, TV & Bellen|Pakketten|Internet                    |Internet abonnement: snel én goedkoop bij Telfort     |
+|Internet, TV & Bellen|Pakketten|Alles-in-1 Glasvezel        |Alles-in-1 Glasvezel: supersnel internet, TV én bellen|
+|Internet, TV & Bellen|Pakketten|Internet en Bellen Glasvezel|Glasvezel Internet en Bellen: supersnel én voordelig  |
+|Internet, TV & Bellen|Pakketten|Telfort Thuis bestellen     |Telfort Thuis                                         |
+
+|telfort.menu Click trough header menu and return title                                           |
+|level1               |level2    |level3         |title?                                          |
+|Internet, TV & Bellen|Informatie|Internet       |Kies voor supersnel en voordelig internet       |
+|Internet, TV & Bellen|Informatie|Interactieve TV|Interactieve TV van Telfort                     |
+|Internet, TV & Bellen|Informatie|Vast Bellen    |Voordelig bellen van Telfort naar vast en mobiel|
+|Internet, TV & Bellen|Informatie|Glasvezel      |Voordelen van glasvezel                         |
+|Internet, TV & Bellen|Informatie|Zenderpakketten|Heel veel extra zenderpakketten                 |
+|Internet, TV & Bellen|Informatie|Meer over      |Internet, TV & Bellen                           |
+
+|telfort.menu Click trough header menu and return title                                                           |
+|level1               |level2 |level3                         |title?                                             |
+|Internet, TV & Bellen|Service|!-WiFi van Telfort-!           |!-WiFi van Telfort: alles over draadloos internet-!|
+|Internet, TV & Bellen|Service|Zenders Interactieve TV        |Vind het antwoord op je vraag                      |
+|Internet, TV & Bellen|Service|TV-ontvanger installeren       |Vind het antwoord op je vraag                      |
+|Internet, TV & Bellen|Service|Alles over de tv-verbindingsset|Alles over de TV-verbindingsset                    |
+|Internet, TV & Bellen|Service|Online tv kijken               |Vind het antwoord op je vraag                      |
+|Internet, TV & Bellen|Service|Factuur en verbruik            |Informatie over je factuur                         |
+|Internet, TV & Bellen|Service|Snel naar je antwoord          |Vind het antwoord op je vraag                      |
+
+|telfort.menu Click trough header menu and return title                 |
+|level1           |level2           |level3   |title?                   |
+|!-CombiVoordeel-!|!-CombiVoordeel-!|Voordelen|Voordelen                |
+|!-CombiVoordeel-!|!-CombiVoordeel-!|Aanvragen|!-Wat is CombiVoordeel?-!|
+|!-CombiVoordeel-!|!-CombiVoordeel-!|Meer over|!-Wat is CombiVoordeel?-!|
+
+|telfort.menu Click trough header menu and return title                                    |
+|level1           |level2 |level3                    |title?                               |
+|!-CombiVoordeel-!|Service|Voorwaarden               |Vind het antwoord op je vraag        |
+|!-CombiVoordeel-!|Service|!-CombiVoordeel wijzigen-!|Vind het antwoord op je vraag        |
+|!-CombiVoordeel-!|Service|Veelgestelde vragen       |!-CombiVoordeel veelgestelde vragen-!|
+|!-CombiVoordeel-!|Service|Snel naar je antwoord     |Vind het antwoord op je vraag        |
+
+|telfort.menu Click trough header menu and return title                           |
+|level1 |level2               |level3               |title?                       |
+|Service|Online klantenservice|Alle antwoorden      |Vind het antwoord op je vraag|
+|Service|Online klantenservice|Online klantenservice|Welkom bij Telfort           |
+
+|telfort.menu Click trough header menu and return title                                     |
+|level1 |level2   |level3               |title?                                             |
+|Service|Snel naar|Status bestelling    |Wil je weten hoe het met je bestelling gaat?       |
+|Service|Snel naar|Factuur en verbruik  |Informatie over je factuur                         |
+|Service|Snel naar|Toestelhulp          |Toestelhulp mobiel                                 |
+|Service|Snel naar|!-Alles over WiFi-!  |!-WiFi van Telfort: alles over draadloos internet-!|
+|Service|Snel naar|Opzeggen             |Waarom bij Telfort blijven                         |
+|Service|Snel naar|Storingen & Onderhoud|Storingen en Onderhoud                             |
+|Service|Snel naar|Mededelingen         |Mededelingen                                       |
+|Service|Snel naar|Snel naar je antwoord|Vind het antwoord op je vraag                      |
+
+|telfort.menu Click trough header menu and return title             |
+|level1 |level2 |level3             |title?                         |
+|Service|Contact|Forum              |Over het forum                 |
+|Service|Contact|Contact            |Welkom bij Telfort             |
+|Service|Contact|Direct naar contact|Bezoek de online klantenservice|
+
+|telfort.menu Click trough header menu and return title                                              |
+|level1         |level2      |level3                            |title?                              |
+|!-MijnTelfort-!|Mijn Telfort|Mijn Telfort Mobiel               |Inloggen Mijn Telfort Mobiel        |
+|!-MijnTelfort-!|Mijn Telfort|Mijn Telfort Internet, TV & Bellen|Inloggen Mijn Internet, TV en Bellen|
+|!-MijnTelfort-!|Mijn Telfort|Mijn Telfort                      |Welkom bij Telfort                  |
+
+|telfort.menu Click trough header menu and return title                                           |
+|level1         |level2          |level3                 |title?                                  |
+|!-MijnTelfort-!|Mijn Telfort app|Mijn Telfort Mobiel app|!-Mogelijkheden van de MijnTelfort app-!|

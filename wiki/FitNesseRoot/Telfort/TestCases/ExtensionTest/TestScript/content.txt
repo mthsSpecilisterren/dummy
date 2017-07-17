@@ -1,0 +1,5 @@
+!|script                  |
+|open|http://www.google.nl|
+
+|script| test fixture|
+|get li count|xpath=ul[contains(@class,"userGuidedSearch_menu userGuidedSearch_menu--level1")|

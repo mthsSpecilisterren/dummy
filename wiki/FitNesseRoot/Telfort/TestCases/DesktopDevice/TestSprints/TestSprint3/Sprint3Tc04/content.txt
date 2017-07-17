@@ -1,0 +1,23 @@
+!*> Local scenarios
+|scenario|Click Eenmalig extra MB's                                                           |
+|click   |xpath=//*[contains(text(),"Eenmalig extra MB's")]/following-sibling::*/descendant::a|
+*!
+!3 requires mocked account to finish step 14,15,16
+
+|script                                                           |
+|Open the Telfort website and agree with cookie message           |
+|Login Mijn Mobiel with username|0612697132|and password|Telfort20|
+|Click on                       |Abonnement|in the navigation menu|
+|Click Eenmalig extra MB's                                        |
+
+|script                                                                                                                                                 |
+|Check if there is a lightbox visible                                                                                                                   |
+|Check if visible on page|Eenmalig extra MB's                                                                                                           |
+|Check if visible on page|Wanneer je alle MB’s uit de bundel hebt verbruikt, kun je tot de volgende factuurmaand geen gebruik maken van mobiel internet.|
+|Check if visible on page|Je kunt voor de lopende factuurmaand extra MB’s kopen (maximaal 4 keer per factuurperiode).                                   |
+|Check if visible on page|De extra MB’s gaan direct in. Je kunt na de aanvraag direct weer van mobiel internet gebruik maken.                           |
+|Check if visible on page|Bestellingen worden direct verwerkt en kun je niet annuleren.                                                                 |
+|Check if visible on page|Je bundel is geldig tot het einde van de huidige factuurmaand.                                                                |
+|Check if visible on page|Klik op ’Bestellen' om je bestelling definitief te maken. Hiermee gaat u een betalingsverplichting aan.                       |
+|Check if visible on page|Extra Internet 500 MB                                                                                                         |
+|Check if visible on page|500MB voor € 5,00                                                                                                             |

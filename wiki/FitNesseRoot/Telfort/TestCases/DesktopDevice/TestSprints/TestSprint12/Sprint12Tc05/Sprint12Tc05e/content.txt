@@ -1,0 +1,61 @@
+!*> Local scenarios
+
+|scenario|Click on settings tab                 |text                 |
+|click   |xpath=//ul[@class='settings-tabs']/li/a/span[text()='@text']|
+
+|scenario                |Check if the title |titleText|with heading|headingTag|is visible in|sectionName|
+|Check if visible on page|xpath=//div[contains(@class, '@sectionName')]//@headingTag[text()='@titleText']|
+
+|scenario                |Check if row          |row          |and column          |col          |of title          |title          |has text         |text         |
+|Check if visible on page|xpath=//div[@class='layoutContainer']//h3[text()='Gegevens voor TV instellen']/following-sibling::div/div[@row]/span[@col][text()='@text']|
+
+|scenario                |Check if button         |buttonText         |is visible in main section         |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario|Click button              |buttonText              |in main section             |
+|click   |xpath=//div[contains(@class, 'mainSection')]//button[contains(., '@buttonText')]|
+
+|scenario                |Check if message        |messageText        |is visible in main section        |
+|Check if visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+|scenario                    |Check if message       |messageText       |is not visible in main section      |
+|Check if not visible on page|xpath=//div[contains(@class, 'mainSection')]//span[contains(., '@messageText')]|
+
+*!
+
+|script                                                                                                               |
+|Open the Telfort website and agree with cookie message                                                               |
+|Login Mijn Mobiel with username|${accountSprint12Tc05_part2_login}|and password|${accountSprint12Tc05_part2_password}|
+|Click on navigation tab        |Thuis                                                                                |
+|Click on                       |Instellingen                      |in the navigation menu                            |
+
+|script                           |
+|Click on settings tab|TV pincodes|
+
+|script                                                                                     |
+|Check if the title|TV pincodes               |with heading|h2|is visible in|layoutContainer|
+|Check if the title|Gegevens voor TV instellen|with heading|h3|is visible in|layoutContainer|
+
+|script                                                                                     |
+|Check if row|1|and column|1|of title|Gegevens voor TV instellen|has text|Abonnenmentsnummer|
+|Check if row|1|and column|2|of title|Gegevens voor TV instellen|has text|1000086619        |
+|Check if row|2|and column|1|of title|Gegevens voor TV instellen|has text|Pincode           |
+|Check if row|2|and column|2|of title|Gegevens voor TV instellen|has text|****              |
+NOTE: 'Abonnenmentsnummer' is deliberately misspelled.
+
+|script                                                                       |
+|Check if the title|Pincode vergeten|with heading|h3|is visible in|mainSection|
+
+|script                                                                                                                             |
+|Check if the title|Klik hieronder op pincode aanvragen en je ziet meteen je nieuwe pincode|with heading|p|is visible in|mainSection|
+
+|script                                                                |
+|Check if button |Pincode herstellen    |is visible in main section    |
+|Click button    |Pincode herstellen    |in main section               |
+|Check if message|Er is iets fout gegaan|is visible in main section    |
+|wait            |3                     |seconds                       |
+|Check if message|Er is iets fout gegaan|is not visible in main section|
+
+
+|script            |
+|Logout Mijn Mobiel|

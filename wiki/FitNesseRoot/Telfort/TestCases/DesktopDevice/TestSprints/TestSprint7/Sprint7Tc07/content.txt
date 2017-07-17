@@ -1,0 +1,92 @@
+!*> Local scenarios
+!define newMijnTelfortPassword {Telfort99}
+
+|scenario |Fill in current password|password            |
+|scroll to|huidig wachtwoord                            |
+|enter    |@password               |as|huidig wachtwoord|
+
+
+|scenario |Fill in input field|placeholderText|with password|password|
+|scroll to|@placeholderText                                          |
+|enter    |@password          |as             |@placeholderText      |
+
+
+|scenario                |Check if password requirement         |requirement         |has passed         |
+|Check if visible on page|xpath=//*[@class="password-checklist"]/li[text()="@requirement"][@class="pass"]|
+
+|scenario                |Check if password requirement         |requirement         |has failed         |
+|Check if visible on page|xpath=//*[@class="password-checklist"]/li[text()="@requirement"][@class="fail"]|
+
+|scenario                          |Change Password         |oldPassword   |to|newPassword|
+|Click on                          |Mijn gegevens           |in the navigation menu       |
+|Click on the button 'Wijzigen' for|Mijn Telfort wachtwoord |within the page Mijn gegevens|
+|Fill in input field               |Huidig wachtwoord       |with password |@oldPassword  |
+|Click on the button               |Volgende                                              |
+|Fill in input field               |Nieuw wachtwoord        |with password |@newPassword  |
+|Fill in input field               |Herhaal nieuw wachtwoord|with password |@newPassword  |
+|Click on the button               |Volgende                                              |
+|Check if flow step                |Bevestiging             |is active                    |
+
+
+*!
+
+|script                                                                                                    |
+|Open the Telfort website and agree with cookie message                                                    |
+|Login Mijn Mobiel with username   |${accountSprint7Tc07_login}|and password|${accountSprint7Tc07_password}|
+|Click on                          |Mijn gegevens              |in the navigation menu                     |
+|Click on the button 'Wijzigen' for|Mijn Telfort wachtwoord    |within the page Mijn gegevens              |
+
+|script                                                             |
+|Check if the title|Wachtwoord wijzigen  |with heading|H1|is visible|
+|Check if flow step|Je huidige wachtwoord|is visible                |
+|Check if flow step|Je nieuwe wachtwoord |is visible                |
+|Check if flow step|Bevestiging          |is visible                |
+|Check if flow step|Je huidige wachtwoord|is active                 |
+
+|script                                                                                |
+|Check if the title|Wachtwoord wijzigen                     |with heading|H2|is visible|
+|Check if the title|Voer hieronder je huidige wachtwoord in.|with heading|p |is visible|
+
+|script                                                                                                                   |
+|Fill in input field                 |Huidig wachtwoord                      |with password|${accountSprint7Tc07_password}|
+|Click on the button                 |Volgende                                                                            |
+|Check if flow step                  |Je nieuwe wachtwoord                   |is active                                   |
+|Check if the title                  |Wachtwoord vergeten                    |with heading |H2         |is visible        |
+|Check if the title                  |Voer hieronder je nieuwe wachtwoord in.|with heading |p          |is visible        |
+|Check if textbox with prefilled text|Nieuw wachtwoord                       |is visible                                  |
+|Check if textbox with prefilled text|Herhaal nieuw wachtwoord               |is visible                                  |
+|Check if the title                  |Waaraan moet het wachtwoord voldoen?   |with heading |H3         |is visible        |
+
+|script                                                                                                              |
+|Fill in input field          |Nieuw wachtwoord                                                     |with password|22|
+|Check if password requirement|Geen leestekens                                                      |has passed      |
+|Check if password requirement|Minimaal 2 cijfers                                                   |has passed      |
+|Check if password requirement|Een combinatie van minimaal 8 en maximaal 15 letters en cijfers      |has failed      |
+|Check if password requirement|Minimaal 6 letters, waarvan minimaal 1 hoofdletter en 1 kleine letter|has failed      |
+
+|script                                                                                                                                     |
+|Fill in input field          |Nieuw wachtwoord                                                     |with password|${newMijnTelfortPassword}|
+|Check if password requirement|Geen leestekens                                                      |has passed                             |
+|Check if password requirement|Minimaal 2 cijfers                                                   |has passed                             |
+|Check if password requirement|Een combinatie van minimaal 8 en maximaal 15 letters en cijfers      |has passed                             |
+|Check if password requirement|Minimaal 6 letters, waarvan minimaal 1 hoofdletter en 1 kleine letter|has passed                             |
+|Check if visible on page     |Het wachtwoord komt niet overeen.                                                                            |
+
+|script                                                                                                                                     |
+|Fill in input field          |Herhaal nieuw wachtwoord                                             |with password|${newMijnTelfortPassword}|
+|Check if password requirement|Geen leestekens                                                      |has passed                             |
+|Check if password requirement|Minimaal 2 cijfers                                                   |has passed                             |
+|Check if password requirement|Een combinatie van minimaal 8 en maximaal 15 letters en cijfers      |has passed                             |
+|Check if password requirement|Minimaal 6 letters, waarvan minimaal 1 hoofdletter en 1 kleine letter|has passed                             |
+|Check if not visible on page |Het wachtwoord komt niet overeen.                                                                            |
+
+|script                                                                              |
+|Click on the button     |Volgende                                                   |
+|Check if flow step      |Bevestiging              |is active                        |
+|Check if visible on page|Je wachtwoord is succesvol gewijzigd                       |
+|Click on the button     |Terug naar mijn gegevens                                   |
+|note                    |Change back the password                                   |
+|Change Password         |${newMijnTelfortPassword}|to|${accountSprint7Tc07_password}|
+
+|script            |
+|Logout Mijn Mobiel|

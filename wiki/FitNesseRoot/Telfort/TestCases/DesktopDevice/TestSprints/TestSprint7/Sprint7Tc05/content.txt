@@ -1,0 +1,69 @@
+!*> Local scenarios
+!define newIBANnummer {NL08INGB0000000555}
+
+
+|scenario |Fill in field IBAN nummer with number|nummer          |
+|scroll to|id=Ibannumber                                         |
+|enter    |@nummer                              |as|id=Ibannumber|
+
+
+|scenario       |Store IBAN nummer                          |
+|$oldIBANnummer=|value of|xpath=//*[contains(@ng-if,"iban")]|
+
+|scenario                             |Set IBAN nummmer to|nummer                                                |
+|Click on                             |Mijn gegevens      |in the navigation menu                                |
+|Click on the button 'Wijzigen' for   |Betaalgegevens     |within the page Mijn gegevens                         |
+|Fill in field IBAN nummer with number|@nummer                                                                   |
+|Click on the button                  |Wijzigingen doorvoeren                                                    |
+|Check if change                      |Betaalgegevens     |with situation|Oud  |corresponds with|${newIBANnummer}|
+|Check if change                      |Betaalgegevens     |with situation|Nieuw|corresponds with|@nummer         |
+*!
+
+
+|script                                                                                                    |
+|Open the Telfort website and agree with cookie message                                                    |
+|Login Mijn Mobiel with username   |${accountSprint7Tc05_login}|and password|${accountSprint7Tc05_password}|
+|Click on                          |Mijn gegevens              |in the navigation menu                     |
+|note                              |store the IBAN nummer for later use                                    |
+|Store IBAN nummer                                                                                         |
+|Click on the button 'Wijzigen' for|Betaalgegevens             |within the page Mijn gegevens              |
+
+|script                                                               |
+|Check if the title|Mijn gegevens wijzigen |with heading|H1|is visible|
+|Check if flow step|Betaalgegevens wijzigen|is visible                |
+|Check if flow step|Wijzigingen doorgevoerd|is visible                |
+|Check if flow step|Betaalgegevens wijzigen|is active                 |
+
+|script                                                                                     |
+|Check if the title  |Betaalgegevens    |with heading       |H3                  |is visible|
+|Check if the textbox|Betaalwijze       |with prefilled text|Automatische incasso|is visible|
+|Check if the textbox|Machtigingskenmerk|with prefilled text|M10015144943        |is visible|
+|Check if the textbox|IBAN nummer       |with prefilled text|$oldIBANnummer      |is visible|
+
+
+|script                                                                      |
+|note                                 |Fill in wrong IBAN and check for error|
+|Fill in field IBAN nummer with number|NL08INGB0000000                       |
+|Click on the button                  |Wijzigingen doorvoeren                |
+|Check if visible on page             |Let op!                               |
+|Check if visible on page             |IBAN ongeldig                         |
+
+|script                                                                                                              |
+|note                                 |Fill in correct IBAN                                                          |
+|Fill in field IBAN nummer with number|${newIBANnummer}                                                              |
+|Click on the button                  |Wijzigingen doorvoeren                                                        |
+|Check if flow step                   |Wijzigingen doorgevoerd|is active                                             |
+|Check if the title                   |Wijzigingen doorgevoerd|with heading  |H3   |is visible                       |
+|Check if visible on page             |Je hebt de volgende gegevens gewijzigd                                        |
+|Check if visible on page             |Betaalgegevens                                                                |
+|Check if change                      |Betaalgegevens         |with situation|Oud  |corresponds with|$oldIBANnummer  |
+|Check if change                      |Betaalgegevens         |with situation|Nieuw|corresponds with|${newIBANnummer}|
+|note                                 |button Terug naar mijn gegevens  doesn't work yet                             |
+|note                                 |Click on the button    |Terug naar mijn gegevens                              |
+
+|storyboard                        |
+|Set IBAN nummmer to|$oldIBANnummer|
+
+
+|script            |
+|Logout Mijn Mobiel|

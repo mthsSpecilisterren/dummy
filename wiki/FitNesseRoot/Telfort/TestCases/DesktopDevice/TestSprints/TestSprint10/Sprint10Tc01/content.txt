@@ -1,0 +1,108 @@
+!4 Changing 'tariefplan' does not work properly so this is disabled
+
+!*> Local scenarios
+
+|scenario          |Check if option no             |optionNo             |of 'Tarievenplan' is            |option            |
+|is visible on page|xpath=//*[text()='Tarievenplan']/following-sibling::*//div[@optionNo]/label[normalize-space(.)='@option']|
+
+|scenario          |Check if 'Tarievenplan' has option                           |option                          |
+|is visible on page|xpath=//*[text()='Tarievenplan']/following-sibling::*//div/label[normalize-space(.)='@option']|
+
+
+|scenario|Set 'Tarievenplan' to                                 |option                                 |
+|click   |xpath=//*[text()='Tarievenplan']/following-sibling::*//div/label[normalize-space(.)='@option']|
+|wait    |1                                                     |seconds                                |
+
+|scenario          |Check if the input box     |description     |is visible    |
+|is visible on page|xpath=//p[text()='@description']/following-sibling::*/input|
+
+|scenario|Type |text|in input box                  |description                 |
+|enter   |@text|as  |xpath=//p[text()='@description']/following-sibling::*/input|
+
+
+|scenario                |Check if button          |buttonText          |within          |scope          |is visible         |
+|Check if visible on page|xpath=//*[normalize-space(text())='@scope']/following-sibling::*//button[contains(.,'@buttonText')]|
+
+|scenario                |Check if button              |buttonText              |within             |scope             |is active             |
+|Check if visible on page|xpath=//*[normalize-space(text())='@scope']/following-sibling::*//button[not (@disabled)][contains(.,'@buttonText')]|
+|wait                    |1                            |seconds                                                                               |
+
+|scenario                |Check if button            |buttonText            |within            |scope            |is inactive           |
+|Check if visible on page|xpath=//*[normalize-space(text())='@scope']/following-sibling::*//button[@disabled][contains(.,'@buttonText')]|
+|wait                    |1                          |seconds                                                                           |
+
+|scenario|Click button                |buttonText                |within                |scope               |
+|click   |xpath=//*[normalize-space(text())='@scope']/following-sibling::*//button[contains(.,'@buttonText')]|
+
+|scenario               |Undo change 'Tarievenplan'                                                         |
+|Click on navigation tab|Mobiel                                                                             |
+|Click on               |Instellingen                   |in the navigation menu                             |
+|Click on icon          |Verbruik & factuur                                                                 |
+|Set 'Tarievenplan' to  |Prepaid standard                                                                   |
+|Type                   |${accountSprint10Tc01_password}|in input box|Voer ter verificatie je wachtwoord in:|
+|Click button           |Wijzigen                       |within      |Tarievenplan                          |
+|wait                   |10                             |seconds                                            |
+
+
+|scenario|Check if column title|title                                 |is visible                                |
+|ensure  |is visible on page   |xpath=//div[@class="dataoverview-table-header"]/span[normalize-space(.)="@title"]|
+
+|scenario             |Check if the table contains the colomns _|col1,col2,col3|
+|Check if column title|@col1                                    |is visible    |
+|Check if column title|@col2                                    |is visible    |
+|Check if column title|@col3                                    |is visible    |
+
+
+|scenario|check if table cel with row number|rowNumber           |and column number           |columnNumber           |contains           |text           |
+|ensure  |is visible on page                |xpath=//div[@class='dataoverview-table-rows']/div[@rowNumber]/span[@columnNumber][normalize-space(.)="@text"]|
+
+|scenario                          |Check if table row|rowNumber        |contains the text|col1    ||col2||col3|
+|check if table cel with row number|@rowNumber        |and column number|1                |contains|@col1      |
+|check if table cel with row number|@rowNumber        |and column number|2                |contains|@col2      |
+|check if table cel with row number|@rowNumber        |and column number|3                |contains|@col3      |
+
+*!
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint10Tc01_login}|and password|${accountSprint10Tc01_password}|
+|note                           |Click on navigation tab     |Mobiel                                      |
+|Click on                       |Instellingen                |in the navigation menu                      |
+|Click on icon                  |Verbruik & factuur                                                       |
+
+|script                                                                                          |
+|Check if the title                |Instellingen                      |with heading|h1|is visible|
+|Check if the title                |Verbruik & factuur                |with heading|h2|is visible|
+|Check if the title                |Tarievenplan                      |with heading|h3|is visible|
+|Check if 'Tarievenplan' has option|Telfort 15                                                   |
+|note                              |Check if 'Tarievenplan' has option|Prepaid standard          |
+|Check if 'Tarievenplan' has option|Prepaid                                                      |
+
+|script                                                                                                           |
+|Set 'Tarievenplan' to |Telfort 15                                                                                |
+|Check if the title    |Voer ter verificatie je wachtwoord in:|with heading|p             |is visible             |
+|Check if the input box|Voer ter verificatie je wachtwoord in:|is visible                                         |
+|Type                  |${accountSprint10Tc01_password}       |in input box|Voer ter verificatie je wachtwoord in:|
+
+|script                                                         |
+|Check if button|Wijzigen    |within  |Tarievenplan|is visible  |
+|Check if button|Wijzigen    |within  |Tarievenplan|is active   |
+|note           |Click button|Wijzigen|within      |Tarievenplan|
+|note           |wait        |10      |seconds                  |
+
+|script                                                          |
+|Check if the title|Tarieven overzicht|with heading|h3|is visible|
+
+|script                                                                                                               |
+|Check if the table contains the colomns;|Tariefplan|Bellen           |Sms                                            |
+|Check if table row                      |2         |contains the text|Prepaid   ||36 cent per minuut||36 cent per sms|
+|Check if table row                      |1         |contains the text|Telfort 15||15 cent per minuut||15 cent per sms|
+
+|script                                                           |
+|Check if visible on page|xpath=//a[text()='Bekijk alle tarieven']|
+
+|script                         |
+|note|Undo change 'Tarievenplan'|
+
+|script            |
+|Logout Mijn Mobiel|

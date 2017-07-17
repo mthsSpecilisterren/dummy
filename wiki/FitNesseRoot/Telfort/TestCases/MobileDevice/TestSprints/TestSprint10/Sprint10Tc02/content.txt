@@ -1,0 +1,73 @@
+!*> Local scenarios
+
+|scenario          |Check if mainSection      |sectionNumber      |contains an image     |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//img|
+
+|scenario          |Check if mainSection            |sectionNumber            |contains the text            |text            |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//p[contains(normalize-space(.),"@text")]|
+
+|scenario          |Check if mainSection          |sectionNumber          |contains the link         |text         |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//a[normalize-space(.)="@text"]|
+
+|scenario          |Check if mainSection    |sectionNumber    |contains the title    |text    |with tag   |tag   |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//@tag[normalize-space(.)="@text"]|
+
+|scenario          |Check if mainSection      |sectionNumber      |contains a bullet link that opens as a lightbox      |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//div//li//a[contains(@class,"lightbox")]|
+
+
+|scenario          |Check if mainSection             |sectionNumber            |contains            |daysRemaining            |dagen over            |
+|is visible on page|xpath=//div[contains(@class,"mainSection")][@sectionNumber]//*[.="dagen over"]/preceding-sibling::*[contains(.,"@daysRemaining")]|
+
+|scenario          |Check if              |bundleName              |bundle equals             |bundleContent             |
+|is visible on page|xpath=//*[normalize-space(.)="@bundleName"]/following-sibling::*[normalize-space(.)="@bundleContent"]|
+
+*!
+
+
+|script                                                                                                   |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint10Tc02_login}|and password|${accountSprint10Tc02_password}|
+|note                           |Click on navigation tab     |Mobiel                                      |
+
+|script                                              |
+|Check if the title|Mobiel|with heading|h1|is visible|
+
+
+|script                                                                     |
+|Check if mainSection|1            |contains the title|Verbruik |with tag|h2|
+|Check if mainSection|1            |contains          |14       |dagen over |
+|Check if            |Internet     |bundle equals     |2900 MB over         |
+|Check if            |Bellen       |bundle equals     |1500 min over        |
+|Check if            |Onbeperkt sms|bundle equals     |0 sms'jes verstuurd  |
+|Check if mainSection|1            |contains the link |Bekijk al je verbruik|
+
+|comment                                                        |
+|Check if mainSection|1|contains the title|Beltegoed|with tag|h2|
+|Check if mainSection|1|contains the link |Opwaarderen          |
+|Check if mainSection|1|contains the link |Bundels bestellen    |
+
+|script                                                                                                                                                                                                                                                                                                                              |
+|Check if mainSection|3|contains the title|Wist je dat?                                                                                      |with tag                                                                                      |h2                                                                                      |
+|Check if mainSection|3|contains an image                                                                                                                                                                                                                                                                                            |
+|Check if mainSection|3|contains the text |Met de Mijn Telfort app pas je zelf eenvoudig je abonnement aan zoals jij wilt. Je kunt altijd bij je facturen. En je hebt inzicht in je verbruik, zodat je precies weet wat je nog hebt. Zo weet je altijd waar je aan toe bent. Je kunt de app gratis downloaden voor Android en iPhone.|
+|Check if mainSection|3|contains the link |Download voor iPhone                                                                                                                                                                                                                                                                      |
+|Check if mainSection|3|contains the link |Download voor Android                                                                                                                                                                                                                                                                     |
+
+|script                                                                                                                                                                                                                               |
+|Check if mainSection|4                   |contains the title|Storingen Mobiel                                               |with tag                                               |h2                                              |
+|Check if mainSection|4                   |contains the text |Storingen Mobiel Heb je problemen met mobiel? Bekijk welke storingen er op dit moment bekend zijn in jouw omgeving. Ook houden we je op de hoogte van gepland onderhoud.|
+|note                |Check if mainSection|4                 |contains a bullet link that opens as a lightbox                                                                                                                         |
+
+
+|script                                                                               |
+|Check if mainSection|5                   |contains the title|Instellingen|with tag|h2|
+|Check if icon       |Simkaart            |is visible                                 |
+|Check if icon       |Verbruik & Factuur  |is visible                                 |
+|Check if icon       |Voicemail & oproepen|is visible                                 |
+|Check if icon       |Blokkades           |is visible                                 |
+|Check if icon       |Privacy             |is visible                                 |
+
+
+|script            |
+|Logout Mijn Mobiel|

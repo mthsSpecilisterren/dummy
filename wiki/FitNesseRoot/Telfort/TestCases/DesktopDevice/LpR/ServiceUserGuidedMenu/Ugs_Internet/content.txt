@@ -1,0 +1,137 @@
+|storyboard                       |
+|telfort.general Open Telfort |
+|telfort.general Go to Service|
+
+|telfort.service Click trough guided menu and return title                                                                                                                     |
+|maxlvl|level1  |level2                |level3                    |level4                                            |level5|title?                                            |
+|4     |Internet|Bestellen en ontvangen|Bestellen                 |Veilig op het internet met Telfort Veilig         |      |Veilig op het internet met Telfort Veilig         |
+|4     |Internet|Bestellen en ontvangen|Bestellen                 |!-CombiVoordeel aanzetten-!                       |      |!-CombiVoordeel aanzetten-!                       |
+|4     |Internet|Bestellen en ontvangen|Bestellen                 |Bestelling annuleren                              |      |Bestelling Internet, TV en Bellen annuleren       |
+|4     |Internet|Bestellen en ontvangen|Bestellen                 |!-WiFi versterker kopen-!                         |      |!-WiFi versterker kopen-!                         |
+|4     |Internet|Bestellen en ontvangen|Overstappen               |Overstappen naar Telfort                          |      |Overstappen naar Telfort Internet, TV en Bellen   |
+|4     |Internet|Bestellen en ontvangen|Overstappen               |Overstappen van Telfort internet naar glasvezel   |      |Overstappen van Telfort internet naar glasvezel   |
+|4     |Internet|Bestellen en ontvangen|Overstappen               |Contractnummer vinden                             |      |Contractnummer vinden                             |
+|4     |Internet|Bestellen en ontvangen|Levering                  |Levering van Glasvezel                            |      |Levering van Glasvezel                            |
+|4     |Internet|Bestellen en ontvangen|Levering                  |Levering van Internet, TV & Bellen                |      |Levering van Internet, TV & Bellen                |
+|4     |Internet|Bestellen en ontvangen|!-CombiVoordeel-!         |!-CombiVoordeel aanzetten-!                       |      |!-CombiVoordeel aanzetten-!                       |
+|4     |Internet|Bestellen en ontvangen|!-CombiVoordeel-!         |!-Voorwaarden voor het krijgen van CombiVoordeel-!|      |!-Voorwaarden voor het krijgen van CombiVoordeel-!|
+|4     |Internet|Bestellen en ontvangen|!-CombiVoordeel-!         |!-Status CombiVoordeel aanmelding-!               |      |!-Status CombiVoordeel aanmelding-!               |
+|3     |Internet|Bestellen en ontvangen|Status bestelling bekijken|                                                  |      |Status bestelling bekijken                        |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                 |
+|maxlvl|level1  |level2     |level3                    |level4                                       |level5                                            |title?                                            |
+|4     |Internet|Installeren|Hulp bij installeren      |Internet installeren                         |                                                  |Internet installeren                              |
+|4     |Internet|Installeren|Hulp bij installeren      |Hoofdaansluiting (ISRA-punt) vinden          |                                                  |Hoofdaansluiting (ISRA-punt) vinden               |
+|4     |Internet|Installeren|Hulp bij installeren      |Installatie door een monteur                 |                                                  |Installatie door een monteur                      |
+|4     |Internet|Installeren|Hulp bij installeren      |Monteur bestellen                            |                                                  |Monteur bestellen                                 |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen op laptop of pc-!                |!-WiFi instellen op laptop of pc-!                |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Windows 10-!                     |!-WiFi instellen Windows 10-!                     |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Windows 8-!                      |!-WiFi instellen Windows 8-!                      |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Windows 7-!                      |!-WiFi instellen Windows 7-!                      |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Windows Vista-!                  |!-WiFi instellen Windows Vista-!                  |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Windows XP-!                     |!-WiFi instellen Windows XP-!                     |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je computer / laptop                      |!-WiFi instellen Mac OS X-!                       |!-WiFi instellen Mac OS X-!                       |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je tablet                                 |!-WiFi instellen op je tablet-!                   |!-WiFi instellen op je tablet-!                   |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je tablet                                 |!-WiFi instellen iPad-!                           |!-WiFi instellen iPad-!                           |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je tablet                                 |!-WiFi instellen Android tablet-!                 |!-WiFi instellen Android tablet-!                 |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je mobiel                                 |!-WiFi instellen op je mobiel-!                   |!-WiFi instellen op je mobiel-!                   |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je mobiel                                 |!-WiFi instellen iPhone-!                         |!-WiFi instellen iPhone-!                         |
+|5     |Internet|Installeren|!-WiFi instellen-!        |Op je mobiel                                 |!-WiFi instellen Android telefoon-!               |!-WiFi instellen Android telefoon-!               |
+|4     |Internet|Installeren|!-WiFi instellen-!        |!-WiFi beveiligen-!                          |                                                  |!-WiFi beveiligen: zo doe je dat-!                |
+|4     |Internet|Installeren|!-WiFi instellen-!        |!-WiFi versterker instellen-!                |                                                  |!-WiFi versterker instellen-!                     |
+|4     |Internet|Installeren|Bedraad netwerk instellen |Bedraad netwerk instellen onder Windows 7    |                                                  |Bedraad netwerk instellen onder Windows 7         |
+|4     |Internet|Installeren|Bedraad netwerk instellen |Bedraad netwerk instellen onder Windows Vista|                                                  |Bedraad netwerk instellen onder Windows Vista     |
+|4     |Internet|Installeren|Bedraad netwerk instellen |Bedraad netwerk instellen onder Windows XP   |                                                  |Bedraad netwerk instellen onder Windows XP        |
+|4     |Internet|Installeren|Bedraad netwerk instellen |Bedraad netwerk instellen onder Mac OS X     |                                                  |Bedraad netwerk instellen onder Mac OS X          |
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Outlook 2013 (Windows)        |E-mail instellen in Outlook 2013 (Windows)        |
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Outlook 2003 of 2010 (Windows)|E-mail instellen in Outlook 2003 of 2010 (Windows)|
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Outlook Express 6 (Windows XP)|E-mail instellen in Outlook Express 6 (Windows XP)|
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Windows e-mail (Windows Vista)|E-mail instellen in Windows e-mail (Windows Vista)|
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Mail (Mac OS X)               |E-mail instellen in Mail (Mac OS X)               |
+|5     |Internet|Installeren|E-mail instellen          |Op computer / laptop                         |E-mail instellen in Mail (Windows 10)             |E-mail instellen in Mail (Windows 10)             |
+|4     |Internet|Installeren|E-mail instellen          |E-mail instellen op je tablet                |                                                  |E-mail instellen op je tablet                     |
+|4     |Internet|Installeren|E-mail instellen          |E-mail instellen op je mobiel                |                                                  |E-mail instellen op je mobiel                     |
+|3     |Internet|Installeren|Telfort Veilig installeren|                                             |                                                  |Telfort Veilig installeren                        |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                                                     |
+|maxlvl|level1  |level2   |level3                       |level4                                          |level5                                                    |title?                                                    |
+|4     |Internet|Gebruiken|Modem en routers             |Handleidingen en specificaties modems en routers|                                                          |Handleidingen en specificaties modems en routers          |
+|4     |Internet|Gebruiken|Modem en routers             |Router resetten                                 |                                                          |Router resetten                                           |
+|4     |Internet|Gebruiken|Modem en routers             |Modem resetten                                  |                                                          |Modem resetten                                            |
+|4     |Internet|Gebruiken|Modem en routers             |!-WiFi-instellingen-!                           |                                                          |!-WiFi-instellingen: zo haal je het beste uit WiFi-!      |
+|4     |Internet|Gebruiken|Modem en routers             |Modem in bruikleen                              |                                                          |Modem in bruikleen                                        |
+|4     |Internet|Gebruiken|Modem en routers             |Modems en andere apparatuur terugsturen         |                                                          |Modems en andere apparatuur terugsturen                   |
+|4     |Internet|Gebruiken|Modem en routers             |Plaatsing glasvezelmodem                        |                                                          |Plaatsing glasvezelmodem                                  |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-Snelheid en bereik van WiFi-!                 |!-WiFi snelheid testen-!                                  |!-WiFi snelheid testen-!                                  |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-Snelheid en bereik van WiFi-!                 |!-WiFi snelheid verbeteren-!                              |!-WiFi snelheid verbeteren-!                              |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-Snelheid en bereik van WiFi-!                 |!-Signaal WiFi uitbreiden en versterken-!                 |!-Signaal WiFi uitbreiden en versterken-!                 |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi versterker-!                             |!-WiFi versterker instellen-!                             |!-WiFi versterker instellen-!                             |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi versterker-!                             |!-WiFi versterker werkt niet-!                            |!-WiFi versterker werkt niet-!                            |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi versterker-!                             |!-Gebruikerstips WiFi versterker-!                        |!-Gebruikerstips WiFi versterker-!                        |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi versterker-!                             |!-WiFi versterker kopen-!                                 |!-WiFi versterker kopen-!                                 |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi-kanaal-!                                 |!-WiFi kanaal kiezen-!                                    |!-WiFi kanaal kiezen-!                                    |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi-kanaal-!                                 |!-WiFi kanaal veranderen-!                                |!-WiFi kanaal veranderen-!                                |
+|5     |Internet|Gebruiken|Internetsnelheid             |!-WiFi-kanaal-!                                 |!-WiFi kanaal scanner-!                                   |!-WiFi kanaal scanner-!                                   |
+|4     |Internet|Gebruiken|Internetsnelheid             |Internetsnelheid testen                         |                                                          |Internetsnelheid testen                                   |
+|4     |Internet|Gebruiken|Internetsnelheid             |Invloed van televisie op internetsnelheid       |                                                          |Invloed van televisie op internetsnelheid                 |
+|4     |Internet|Gebruiken|Internetsnelheid             |Snelheid abonnement verhogen                    |                                                          |Snelheid abonnement verhogen                              |
+|5     |Internet|Gebruiken|Veilig internetten           |!-WiFi-wachtwoord-!                             |!-WiFi wachtwoord wijzigen-!                              |!-WiFi wachtwoord wijzigen-!                              |
+|5     |Internet|Gebruiken|Veilig internetten           |!-WiFi-wachtwoord-!                             |!-WiFi wachtwoord achterhalen-!                           |!-WiFi wachtwoord achterhalen-!                           |
+|5     |Internet|Gebruiken|Veilig internetten           |!-WiFi-wachtwoord-!                             |Netwerknaam en wachtwoord van het Arcadyan modem instellen|Netwerknaam en wachtwoord van het Arcadyan modem instellen|
+|5     |Internet|Gebruiken|Veilig internetten           |!-WiFi-wachtwoord-!                             |Netwerknaam en wachtwoord van het Zyxel modem instellen   |Netwerknaam en wachtwoord van het Zyxel modem instellen   |
+|5     |Internet|Gebruiken|Veilig internetten           |!-WiFi-wachtwoord-!                             |Wachtwoord van de Sitecom router instellen                |Wachtwoord van de Sitecom router instellen                |
+|4     |Internet|Gebruiken|Veilig internetten           |Veiligheidsrisico's op internet                 |                                                          |Veiligheidsrisico's op internet                           |
+|4     |Internet|Gebruiken|Veilig internetten           |Veiligheidsmaatregelen nemen                    |                                                          |Veiligheidsmaatregelen nemen                              |
+|4     |Internet|Gebruiken|Veilig internetten           |!-WiFi beveiligen-!                             |                                                          |!-WiFi beveiligen: zo doe je dat-!                        |
+|4     |Internet|Gebruiken|Veilig internetten           |Veilig op het internet met Telfort Veilig       |                                                          |Veilig op het internet met Telfort Veilig                 |
+|4     |Internet|Gebruiken|Veilig internetten           |Telfort Veilig installeren                      |                                                          |Telfort Veilig installeren                                |
+|5     |Internet|Gebruiken|Hulp bij technische problemen|!-Met WiFi-!                                    |!-WiFi doet het niet-!                                    |!-WiFi doet het niet-!                                    |
+|5     |Internet|Gebruiken|Hulp bij technische problemen|!-Met WiFi-!                                    |!-WiFi op laptop werkt niet-!                             |!-WiFi op laptop werkt niet-!                             |
+|5     |Internet|Gebruiken|Hulp bij technische problemen|Met e-mail                                      |Webmail doet het niet                                     |Webmail doet het niet                                     |
+|5     |Internet|Gebruiken|Hulp bij technische problemen|Met e-mail                                      |Inloggen webmail lukt niet                                |Inloggen webmail lukt niet                                |
+|4     |Internet|Gebruiken|Hulp bij technische problemen|Bekabeld internet doet het niet                 |                                                          |Bekabeld internet doet het niet                           |
+|4     |Internet|Gebruiken|Hulp bij technische problemen|!-WiFi versterker werkt niet-!                  |                                                          |!-WiFi versterker werkt niet-!                            |
+|4     |Internet|Gebruiken|Mijn Telfort                 |Mogelijkheden van Mijn Telfort                  |                                                          |Mogelijkheden van Mijn Telfort                            |
+|4     |Internet|Gebruiken|Mijn Telfort                 |Hulp bij inloggen Mijn Telfort                  |                                                          |Hulp bij inloggen Mijn Telfort                            |
+|3     |Internet|Gebruiken|IPv6 bij Telfort             |                                                |                                                          |IPv6 bij Telfort                                          |
+|4     |Internet|Gebruiken|Webmail                      |Inloggen webmail                                |                                                          |Inloggen webmail                                          |
+|4     |Internet|Gebruiken|Webmail                      |Instellingen webmail wijzigen                   |                                                          |Instellingen webmail wijzigen                             |
+|3     |Internet|Gebruiken|Storingen en onderhoud       |                                                |                                                          |Storingen en onderhoudsmeldingen                          |
+
+|telfort.service Click trough guided menu and return title                                                                                                                                               |
+|maxlvl|level1  |level2  |level3                                         |level4                                         |level5                         |title?                                         |
+|4     |Internet|Wijzigen|Persoonlijke gegevens wijzigen                 |E-mailadres wijzigen                           |                               |E-mailadres wijzigen                           |
+|4     |Internet|Wijzigen|Persoonlijke gegevens wijzigen                 |Rekeningnummer wijzigen                        |                               |Rekeningnummer Internet, TV en Bellen wijzigen |
+|4     |Internet|Wijzigen|Persoonlijke gegevens wijzigen                 |Wachtwoord Mijn Telfort wijzigen               |                               |Wachtwoord Mijn Telfort wijzigen               |
+|4     |Internet|Wijzigen|Persoonlijke gegevens wijzigen                 |Wachtwoord Telfort e-mail wijzigen             |                               |Wachtwoord Telfort e-mail wijzigen             |
+|5     |Internet|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland                     |Verhuizen Internet, TV & bellen|Verhuizen Internet, TV & bellen                |
+|5     |Internet|Wijzigen|Verhuizen                                      |Verhuizen binnen Nederland                     |Verhuizen glasvezel abonnement |Verhuizen glasvezel abonnement                 |
+|4     |Internet|Wijzigen|Verhuizen                                      |Verhuizen naar het buitenland                  |                               |Verhuizen naar het buitenland                  |
+|4     |Internet|Wijzigen|Verhuizen                                      |Kosteloos verhuizen                            |                               |Kosteloos verhuizen                            |
+|4     |Internet|Wijzigen|Mijn Telfort                                   |Inloggen Mijn Telfort                          |                               |Inloggen op Mijn Telfort                       |
+|4     |Internet|Wijzigen|Mijn Telfort                                   |Wachtwoord Mijn Telfort wijzigen               |                               |Wachtwoord Mijn Telfort wijzigen               |
+|4     |Internet|Wijzigen|Abonnement wijzigen                            |Overstappen van Telfort internet naar glasvezel|                               |Overstappen van Telfort internet naar glasvezel|
+|4     |Internet|Wijzigen|Abonnement wijzigen                            |Snelheid abonnement verhogen                   |                               |Snelheid abonnement verhogen                   |
+|4     |Internet|Wijzigen|Abonnement wijzigen                            |Bestelling annuleren                           |                               |Bestelling annuleren                           |
+|3     |Internet|Wijzigen|Overstappen van Telfort internet naar glasvezel|                                               |                               |Overstappen van Telfort internet naar glasvezel|
+|3     |Internet|Wijzigen|Contract overnemen                             |                                               |                               |Contract overnemen Internet, TV en Bellen      |
+
+|telfort.service Click trough guided menu and return title                                                                                                                      |
+|maxlvl|level1  |level2             |level3                          |level4                                     |level5|title?                                                 |
+|4     |Internet|Betalen en facturen|Uitleg over je factuur          |Eerste factuur                             |      |Eerste factuur Internet, TV en Bellen                  |
+|4     |Internet|Betalen en facturen|Uitleg over je factuur          |Maandelijkse factuur                       |      |Maandelijkse factuur Internet, TV en Bellen            |
+|4     |Internet|Betalen en facturen|Uitleg over je factuur          |Factuur na wijziging                       |      |Factuur na wijziging Internet, TV en Bellen            |
+|4     |Internet|Betalen en facturen|Uitleg over je factuur          |!-CombiVoordeel terugvinden op je factuur-!|      |!-CombiVoordeel terugvinden op je factuur-!            |
+|3     |Internet|Betalen en facturen|Factuur bekijken in Mijn Telfort|                                           |      |Factuur Internet, TV en Bellen bekijken in Mijn Telfort|
+|3     |Internet|Betalen en facturen|Factuur hoger dan verwacht      |                                           |      |Factuur Internet, TV en Bellen hoger dan verwacht      |
+|3     |Internet|Betalen en facturen|Factuur betalen                 |                                           |      |Openstaande factuur betalen                            |
+|3     |Internet|Betalen en facturen|Automatische incasso mislukt    |                                           |      |Automatische incasso mislukt                           |
+
+|telfort.service Click trough guided menu and return title                                                                  |
+|maxlvl|level1  |level2  |level3                                  |level4|level5|title?                                     |
+|3     |Internet|Opzeggen|Internet, TV & Bellen opzeggen          |      |      |Internet, TV & Bellen opzeggen             |
+|3     |Internet|Opzeggen|Glasvezel opzeggen                      |      |      |Glasvezel opzeggen                         |
+|3     |Internet|Opzeggen|!-Afmelden of stopzetten CombiVoordeel-!|      |      |!-Afmelden of stopzetten CombiVoordeel-!   |
+|3     |Internet|Opzeggen|Opzegtermijn                            |      |      |Opzegtermijn Internet, TV en Bellen        |
+|3     |Internet|Opzeggen|Bestelling annuleren                    |      |      |Bestelling Internet, TV en Bellen annuleren|
+|3     |Internet|Opzeggen|Modems en andere apparatuur terugsturen |      |      |Modems en andere apparatuur terugsturen    |

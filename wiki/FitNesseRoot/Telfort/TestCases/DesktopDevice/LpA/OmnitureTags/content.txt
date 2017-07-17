@@ -1,0 +1,108 @@
+!*> Local scenarios
+|scenario  |Get Omniture url                                 |
+|$omniture=|get attribute|src|of jsselector|s_i_kpncomtftprod|
+
+|scenario|Omniture contains|search                    |
+|ensure  |text             |$omniture|contains|@search|
+
+|scenario|Go to Contact page         |
+|open    |${URL}/algemeen/contact.htm|
+
+|scenario|Go to |surl|
+|open    |${URL}@surl|
+
+|scenario  |Click in header menu                         |l1                         |-                         |l2                        |-                        |l3                        |
+|hover over|xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@l1"]                                                                                                   |
+|click     |xpath=//ul[@class='mainNavigation_list']/li/span/*[normalize-space(text())="@l1"]/../../descendant::*[normalize-space(text())="@l2"]/../descendant::*[normalize-space(text())="@l3"]|
+
+|scenario|Click on the product option          |optionText          |
+|click   |xpath=//*[normalize-space(text())='@optionText']/..//label|
+*!
+
+|script                                                |
+|Open the Telfort website and agree with cookie message|
+
+a
+|storyboard                                    |
+|Open the Telfort website                      |
+|Go to Contact page                            |
+|wait for visible |!-MijnTelfort-!             |
+|click            |Bel de klantenservice       |
+|Get Omniture url                              |
+|Omniture contains|events=event1,event61       |
+|Omniture contains|v12=bel-de-klantenservice-dl|
+|click            |Sluiten                     |
+
+b
+|storyboard                                                    |
+|Open the Telfort website                                      |
+|Go to            |/persoonlijk/service/wifi-instellen-ipad.htm|
+|Get Omniture url                                              |
+|Omniture contains|events=event10,event1                       |
+|Omniture contains|v56=wifi-instellen-ipad:service:persoonlijk |
+
+c
+|storyboard                                                                         |
+|Open the Telfort website                                                           |
+|Go to            |/persoonlijk/zoeken.htm?q=iphone+5s&con_type_suggestie=telfort_sb|
+|Check if there are search results                                                  |
+|Get Omniture url                                                                   |
+|Omniture contains|events=event2,event1                                             |
+|Omniture contains|v16=iphone 5s                                                    |
+
+d 
+|storyboard                                                                                                 |
+|Open the Telfort website                                                                                   |
+|Click in header menu|Internet, TV & Bellen|–                    |Pakketten|–        |Alles-in-1 Glasvezel  |
+|note                |Click in header menu |Internet, TV & Bellen|–        |Pakketten|–|Alles-in-1 Glasvezel|
+|Get Omniture url                                                                                           |
+|Omniture contains   |events=prodView,event55,event1                                                        |
+|Omniture contains   |v59=navigation-header                                                                 |
+|Omniture contains   |v58=Internet, TV & Bellen : Pakketten : Alles-in-1 Glasvezel                          |
+
+e (Wachten op account)
+|storyboard              |
+|Open the Telfort website|
+
+f
+|storyboard                                                                                 |
+|Open the Telfort website                                                                   |
+|Go to Combivoordeel page                                                                   |
+|click            |Ja, ik heb Telfort producten                                             |
+|Get Omniture url                                                                           |
+|Omniture contains|events=event14,event16                                                   |
+|Omniture contains|v1=10-ja-ik-heb-telfort-producten:combivoordeel:combivoordeel:persoonlijk|
+|Omniture contains|v6=combivoordeel                                                         |
+|Omniture contains|v19=10-ja-ik-heb-telfort-producten                                       |
+
+g
+|storyboard                                                                           |
+|Click on the product option|Mobiel                                                   |
+|Click on the product option|Internet                                                 |
+|click                      |Volgende stap                                            |
+|Click on the product option|2x zoveel                                                |
+|click                      |Aanmelden                                                |
+|enter                      |A                     |as        |Voorletters            |
+|enter                      |Tester                |as        |Achternaam             |
+|enter                      |9999ZZ                |as        |Postcode               |
+|enter                      |999                   |as        |Huisnummer             |
+|enter                      |Autotester            |as        |Straat                 |
+|enter                      |New York              |as        |Woonplaats             |
+|enter                      |0626758650            |as        |Telefoonnummer         |
+|enter                      |fake@email.com        |as        |E-mailadres            |
+|enter                      |0626758650            |as        |Telefoonnummer 1       |
+|click                      |Volgende stap                                            |
+|click                      |Ik ga akkoord met de voorwaarden                         |
+|click                      |Voltooien                                                |
+|Get Omniture url                                                                     |
+|Omniture contains          |events=event17,event1                                    |
+|Omniture contains          |v1=40-Bevestiging:combivoordeel:combivoordeel:persoonlijk|
+|Omniture contains          |v6=combivoordeel                                         |
+|Omniture contains          |v19=40-Bevestiging                                       |
+
+
+
+
+
+
+

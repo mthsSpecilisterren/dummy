@@ -1,0 +1,84 @@
+!*> Local scenarios
+
+|scenario                |Check if the element|element|with text|elementText|is visible|
+|Check if visible on page|xpath=//@element[contains(.,"@elementText")]                 |
+
+
+|scenario                    |Check if the element|element|with text|elementText|is not visible|
+|Check if not visible on page|xpath=//@element[contains(.,"@elementText")]                     |
+
+
+|scenario            |Check if the link|linkText |is visible          |
+|Check if the element|a                |with text|@linkText|is visible|
+
+
+|scenario            |Check if a tooltip is visible                   |
+|Check if the element|div[@class="tooltip_icon"]|with text||is visible|
+
+
+|scenario            |Check if a messsenger icon is visible            |
+|Check if the element|i[@class="icon login-icon"]|with text||is visible|
+
+
+|scenario            |Check if a lock icon is visible                       |
+|Check if the element|i[@class="icon wachtwoord-icon"]|with text||is visible|
+
+
+
+|scenario|Enter username|username        |
+|enter   |@username     |as|name=username|
+
+|scenario|Enter password|password        |
+|enter   |@password     |as|name=password|
+
+
+|scenario            |Check if a messsenger icon is not visible            |
+|Check if the element|i[@class="icon login-icon"]|with text||is not visible|
+
+
+|scenario            |Check if a lock icon is not visible                       |
+|Check if the element|i[@class="icon wachtwoord-icon"]|with text||is not visible|
+
+
+
+|scenario        |Check if Login spinner is visible|
+|wait for visible|xpath=//i[@class="login_spinner"]|
+
+|scenario        |Check if the message         |msgTxt        |is visible        |
+|wait for visible|xpath=//div[@class="state-overlay"]/span[contains(.,"@msgTxt")]|
+
+*!
+
+
+|storyboard                                            |
+|Open the Telfort website and agree with cookie message|
+
+
+!|storyboard                                                                                |
+|Open the MijnTelfort login page                                                            |
+|Check if the title                  |Inloggen Mijn Telfort      |with heading|H2|is visible|
+|Check if textbox with prefilled text|Gebruikersnaam of 06-nummer|is visible                |
+|Check if textbox with prefilled text|Wachtwoord                 |is visible                |
+|Check if the link                   |Wachtwoord vergeten?       |is visible                |
+|Check if button                     |Inloggen                   |is visible                |
+|Check if a tooltip is visible                                                              |
+|Enter username                      |0612345678                                            |
+|Check if a messsenger icon is visible                                                      |
+|note                                |Fill in a wrong password                              |
+|Enter password                      |123                                                   |
+|Check if a lock icon is visible                                                            |
+|Click on the link                   |Inloggen Mijn Telfort                                 |
+|Check if a messsenger icon is not visible                                                  |
+|Check if a lock icon is not visible                                                        |
+|Click on the button Inloggen                                                               |
+|Check if Login spinner is visible                                                          |
+|Check if the message                |Inloggen                   |is visible                |
+|Check if the message                |Inloggen mislukt           |is visible                |
+
+|script                                          |
+|Enter username  |${accountSprint6Tc02_login}    |
+|Enter password  |${accountSprint6Tc02_password} |
+|Click on the button Inloggen                    |
+|Check if the Mijn Telfort environment is visible|
+|Logout Mijn Mobiel                              |
+

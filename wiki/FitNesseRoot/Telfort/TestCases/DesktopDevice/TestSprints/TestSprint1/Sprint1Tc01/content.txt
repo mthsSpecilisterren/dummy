@@ -1,0 +1,72 @@
+!*> Local scenarios
+!|scenario|Error Login Mijn Mobiel with username|username|and password|password|
+|open     |${URL}                                                              |
+|Open the MijnTelfort login page                                               |
+|enter    |@username                            |as      |name=username        |
+|enter    |@password                            |as      |name=password        |
+|Click on the button Inloggen                                                  |
+
+
+!|scenario|Error Login Mijn Mobiel with username|username|and password|password|and press enter|
+|open     |${URL}                                                                              |
+|Open the MijnTelfort login page                                                               |
+|enter    |@username                            |as      |name=username                        |
+|enter    |@password                            |as      |name=password                        |
+|press    |enter                                                                               |
+
+
+
+|scenario  |Check for Username field                  |status                  |
+|is visible|xpath=//input[@name='username' and contains(@class,'input@status')]|
+
+|scenario  |Check for Password field                  |status                  |
+|is visible|xpath=//input[@name='password' and contains(@class,'input@status')]|
+
+*!
+
+
+|storyboard                                                       |
+|note                                 |Login with invalid username|
+|Error Login Mijn Mobiel with username|123 |and password|Telfort20|
+|wait for visible                     |Inloggen mislukt           |
+
+|storyboard                                                                    |
+|note                                 |Login with invalid username and password|
+|Error Login Mijn Mobiel with username|123       |and password      |fout      |
+|wait for visible                     |Inloggen mislukt                        |
+
+|storyboard                                                                              |
+|note                                 |Login with username and invalid password          |
+|Error Login Mijn Mobiel with username|${accountSprint1Tc01_login}|and password|Telfort29|
+|wait for visible                     |Inloggen mislukt                                  |
+
+|comment                                                                           |
+|note                                 |Login with empty username and empty password|
+|note                                 |Deze test werkt niet meer                   |
+|Error Login Mijn Mobiel with username|          |and password          |          |
+|Check for Username field             |error                                       |
+|Check for Password field             |error                                       |
+
+|comment                                                                                           |
+|note                                 |Login with empty username and empty password and press enter|
+|note                                 |Deze test werkt niet meer                                   |
+|Error Login Mijn Mobiel with username|        |and password        |       |and press enter       |
+|Check for Username field             |error                                                       |
+|Check for Password field             |error                                                       |
+
+|storyboard                                                                                                             |
+|note                                 |Login with valid username and valid password                                     |
+|Error Login Mijn Mobiel with username|${accountSprint1Tc01_login}          |and password|${accountSprint1Tc01_password}|
+|note                                 |Error Login Mijn Mobiel with username|0619604190  |and password    |Telfort20    |
+|Check if the Mijn Telfort environment is visible                                                                       |
+
+
+|storyboard                                                                                                                             |
+|note                                 |Login with valid username and valid password and press enter                                     |
+|Error Login Mijn Mobiel with username|${accountSprint1Tc01_login}          |and password|${accountSprint1Tc01_password}|and press enter|
+|note                                 |Error Login Mijn Mobiel with username|0619604190  |and password                  |Telfort20      |
+|Check if the Mijn Telfort environment is visible                                                                                       |
+
+
+
+

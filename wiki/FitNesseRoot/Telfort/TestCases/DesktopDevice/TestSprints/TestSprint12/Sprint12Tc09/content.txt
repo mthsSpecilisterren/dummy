@@ -1,0 +1,119 @@
+!*> Local scenarios
+
+|scenario          |Check if the text                    |text|is present within section           |section           |
+|is visible on page|xpath=//*[normalize-space(.)="@text"]|in  |xpath=//*[normalize-space(text())="@section"]/parent::*|
+
+|scenario|Check if section  |section                               |has a 'Bestel' button                                     |
+|ensure  |is visible on page|xpath=//a[normalize-space(.)="Bestel"]|in|xpath=//*[normalize-space(text())="@section"]/parent::*|
+
+|scenario|Click on|element|in section                   |section                  |
+|click   |@element|in     |xpath=//*[normalize-space(text())="@section"]/parent::*|
+
+|scenario          |Check if the title                                  |titleText|with heading|headingTag|is present within the lightbox|
+|is visible on page|xpath=//@headingTag[normalize-space(.)="@titleText"]|in       |xpath=//div[@class="lightbox_content"]                |
+
+*!
+
+|storyboard                                                                                               |
+|Open the Telfort website and agree with cookie message                                                   |
+|Login Mijn Mobiel with username|${accountSprint12Tc09_login}|and password|${accountSprint12Tc09_password}|
+|Click on                       |Tegoed                      |in the navigation menu                      |
+
+|storyboard                                                                                                      |
+|Check if the title|Buitenlandbundels                                |with heading             |h2  |is visible  |
+|Check if the text |Je hebt momenteel geen actieve buitenlandbundels.|is present within section|Buitenlandbundels|
+|Check if the text |Buitenlandbundel bestellen                       |is present within section|Buitenlandbundels|
+
+|storyboard                                                                                                                                 |
+|Check if the text|Internetbundel EU                                                   |is present within section|Buitenlandbundel bestellen|
+|Check if the text|Mobiel internetten in landen uit zone 1(onder andere alle EU-landen)|is present within section|Internetbundel EU         |
+|Check if section |Internetbundel EU                                                   |has a 'Bestel' button                               |
+
+|storyboard                                                                                                             |
+|Check if the text|Internetbundel Wereld                           |is present within section|Buitenlandbundel bestellen|
+|Check if the text|Mobiel internetten in landen uit zone 2, 3 en 4.|is present within section|Internetbundel Wereld     |
+|Check if section |Internetbundel Wereld                           |has a 'Bestel' button                               |
+
+|storyboard                                                                                                                                                                                                                                                          |
+|Click on          |Bestel                                                                                                                                                                               |in section               |Internetbundel EU                |
+|Check if there is a lightbox visible                                                                                                                                                                                                                                |
+|Check if the title|Internetbundel EU                                                                                                                                                                    |with heading             |h2|is present within the lightbox|
+|Check if the text |Hier kun je dag- en weekbundels bestellen voor mobiel internetten in zone 1 (onder andere alle EU-landen). Je ontvangt altijd een sms als je 80% en 100% van je tegoed hebt gebruikt.|is present within section|Internetbundel EU                |
+
+|storyboard                                                                                                   |
+|Check if the title|Roaming Data Bundle Zone 1 Day|with heading             |h3|is present within the lightbox|
+|Check if the text |50MB voor € 2,50              |is present within section|Roaming Data Bundle Zone 1 Day   |
+|Check if the text |Selecteer                     |is present within section|Roaming Data Bundle Zone 1 Day   |
+
+|storyboard                                                                                           |
+|Check if the title|Internet weekbundel EU|with heading             |h3|is present within the lightbox|
+|Check if the text |100MB voor € 5,00     |is present within section|Internet weekbundel EU           |
+|Check if the text |Selecteer             |is present within section|Internet weekbundel EU           |
+
+|storyboard                                                                                                                                                  |
+|Check if the text                   |Bestellingen worden direct verwerkt en kun je niet annuleren.|is present within section|Internetbundel EU              |
+|Click on                            |Selecteer                                                    |in section               |Internet weekbundel EU         |
+|Check if textbox with prefilled text|Password                                                     |is visible                                               |
+|Fill in input field                 |Password                                                     |with password            |${accountSprint12Tc09_password}|
+|Check if button                     |Bestelling bevestigen                                        |is active                                                |
+
+
+|comment                                                                            |
+|Note             |#ToDO when Mock is ready                                         |
+|Click on         |Bestelling bevestigen|in section               |Internetbundel EU|
+|Check if the text|Wijziging gelukt     |is present within section|Internetbundel EU|
+
+|script                   |
+|Click on the link|Sluiten|
+
+|comment                                                                                             |
+|Note                                    |ToDO when Mock is ready                                    |
+|refresh page                                                                                        |
+|check The title is being shown with the description: 'Je hebt momenteel 1 actieve buitenlandbundel.'|
+|check Usage bar is being shown with a title: 'Internet weekbundel EU'                               |
+
+
+|storyboard                                                                                                                                                                                                                                    |
+|Click on          |Bestel                                                                                                                                                         |in section               |Internetbundel Wereld            |
+|Check if there is a lightbox visible                                                                                                                                                                                                          |
+|Check if the title|Internetbundel Wereld                                                                                                                                          |with heading             |h2|is present within the lightbox|
+|Check if the text |Hier kun je dag- en weekbundels bestellen voor mobiel internetten in zone 2, 3 en 4. Je ontvangt altijd een sms als je 80% en 100% van je tegoed hebt gebruikt.|is present within section|Internetbundel Wereld            |
+
+
+#Optie Internet dagbundel Wereld is niet meer anwezig
+|comment                                                                                                 |
+|Check if the title|Internet dagbundel Wereld|with heading             |h3|is present within the lightbox|
+|Check if the text |4MB voor € 5,00          |is present within section|Internet dagbundel Wereld        |
+|Check if the text |Selecteer                |is present within section|Internet dagbundel Wereld        |
+
+|storyboard                                                                                               |
+|Check if the title|Internet weekbundel Wereld|with heading             |h3|is present within the lightbox|
+|Check if the text |10MB voor € 10,00         |is present within section|Internet weekbundel Wereld       |
+|Check if the text |Selecteer                 |is present within section|Internet weekbundel Wereld       |
+
+|storyboard                                                                                                                                                  |
+|Check if the text                   |Bestellingen worden direct verwerkt en kun je niet annuleren.|is present within section|Internetbundel Wereld          |
+|Click on                            |Selecteer                                                    |in section               |dagbundel Wereld               |
+|Check if textbox with prefilled text|Password                                                     |is visible                                               |
+|Fill in input field                 |Password                                                     |with password            |${accountSprint12Tc09_password}|
+|Check if button                     |Bestelling bevestigen                                        |is active                                                |
+
+|comment                                                                                |
+|Note             |ToDO when Mock is ready                                              |
+|Click on         |Bestelling bevestigen|in section               |Internetbundel Wereld|
+|Check if the text|Wijziging gelukt     |is present within section|Internetbundel Wereld|
+
+|script                   |
+|Click on the link|Sluiten|
+
+
+|comment                                                                                             |
+|note                                    |ToDo when Mock is ready                                    |
+|refresh page                                                                                        |
+|check The title is being shown with the description: 'Je hebt momenteel 2 actieve buitenlandbundel.'|
+|check Usage bar is being shown with a title: 'dagbundel Wereld '                                    |
+
+
+
+
+

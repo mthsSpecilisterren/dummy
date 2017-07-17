@@ -1,0 +1,57 @@
+!*> Local variables
+
+*!
+
+!*> Local scenarios
+
+
+*!
+
+|script                                                |
+|Open the Telfort website and agree with cookie message|
+
+!|script                                                                                      |
+|Open the MijnTelfort login page                                                              |
+|Click on the link                     |Wachtwoord vergeten?                                  |
+|Check if the title                    |Wachtwoord vergeten        |with heading|h2|is visible|
+|Check if the following text is visible|Gebruikersnaam (Thuis) of 06-nummer (Mobiel)          |
+|Check if textbox with prefilled text  |Gebruikersnaam of 06-nummer|is visible                |
+|Check if href button                  |Vorige                     |is visible                |
+|Check if button                       |Volgende                   |is visible                |
+
+!4 Change password mobile account via e-mail
+|script                                                              |
+|note               |Following phone number is temporary             |
+|Fill in input field|Gebruikersnaam of 06-nummer|with text|0611111111|
+|Click on the button|Volgende                                        |
+
+|script                                                                                                                   |
+|Check if the following text is visible|Je ontvangt een e-mail of sms-code waarmee je een nieuw wachtwoord kunt instellen.|
+|Check if the following text is visible|Wil je een e-mail of sms ontvangen?                                               |
+|Check if option                       |Via e-mail                               |is visible                              |
+|Check if option                       |Via sms                                  |is visible                              |
+|Click on the option                   |Via e-mail                                                                        |
+
+
+
+
+
+
+!4 Change password mobile account via SMS
+
+
+
+!4 Change password residential account via e-mail
+!|script                                                                 |
+|Open the Telfort website and agree with cookie message                  |
+|Open the MijnTelfort login page                                         |
+|Click on the link  |Wachtwoord vergeten?                                |
+|Fill in input field|Gebruikersnaam of 06-nummer|with text|api-codetest14|
+|Click on the button|Volgende                                            |
+
+|script                                                                                                                           |
+|Check if the following text is visible|Voer ter controle de laatste drie cijfers van je bankrekening in zoals bekend bij Telfort.|
+|Check if textbox with prefilled text  |3 laatste cijfers                    |is visible                                          |
+|Fill in input field                   |3 laatste cijfers                    |with text                    |300                   |
+
+

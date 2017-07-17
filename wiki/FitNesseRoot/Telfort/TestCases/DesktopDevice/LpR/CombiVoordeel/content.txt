@@ -1,0 +1,51 @@
+!*> Local scenarios
+
+|scenario|Click on the option       |optionText       |
+|click   |xpath=//*[text()[contains(.,'@optionText')]]|
+
+|scenario|Click on the product option          |optionText          |
+|click   |xpath=//*[normalize-space(text())='@optionText']/..//label|
+
+|scenario|Check if the lightbox contains a video                                                        |
+|ensure  |is visible on page|xpath=//div[contains(@class,'lightboxOverlay')]//div[@id="pingVpOverlay-1"]|
+*!
+
+|storyboard                                            |
+|Open the Telfort website and agree with cookie message|
+|Go to Combivoordeel page                              |
+
+!3 apperntly check voordelen is no longer a lightbox
+|storyboard                                 |
+|note|Click on the button  |Bekijk de video |
+|note|Check if there is a lightbox visible  |
+|note|Check if the lightbox contains a video|
+|note|Click on the link    |Sluiten         |
+
+!3 apperntly check voordelen is no longer a lightbox
+|storyboard                                                                                       |
+|note|Click on the button|Lees meer over alle voordelen                                           |
+|note|Check if there is a lightbox visible                                                        |
+|note|check              |value of|xpath=//*[@id='lightboxcontent']/h2|!-Voordelen CombiVoordeel-!|
+|note|Click on the link  |Sluiten                                                                 |
+
+|storyboard                                             |
+|Click on the option|Nee, ik heb geen Telfort producten |
+|Check if the link  |Bekijk het aanbod|works and go back|
+
+|storyboard                                                                   |
+|Click on the option        |Ja, ik heb Telfort producten                     |
+|Click on the product option|Mobiel                                           |
+|Click on the button        |Volgende stap                                    |
+|Check if the link          |Bekijk het Telfort Thuis aanbod|works and go back|
+
+|storyboard                                                         |
+|Click on the option                   |Ja, ik heb Telfort producten|
+|Click on the product option           |Mobiel                      |
+|Click on the product option           |Internet                    |
+|Click on the button                   |Volgende stap               |
+|Click on the button                   |Meer informatie             |
+|Check if there is a lightbox visible                               |
+|Check if the following text is visible|!-Voordelen CombiVoordeel-! |
+|Click on the link                     |Sluiten                     |
+|Click on the product option           |2x zoveel                   |
+|Check if the link                     |Aanmelden |works and go back|

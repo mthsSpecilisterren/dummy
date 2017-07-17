@@ -1,0 +1,39 @@
+!*> Local scenarios
+
+!define accordionLocator {//*[@class="accordeon_item"]}
+
+
+|scenario |Scroll down to|part1||part2|
+|scroll to|@part1                     |
+|scroll to|@part2                     |
+
+|scenario |Check if there are 2 accordions|
+|scroll to|xpath=${accordionLocator}[1]   |
+|scroll to|xpath=${accordionLocator}[2]   |
+
+|scenario          |Check if accordion  |number  |has a euro sign on the right site  |
+|scroll to         |xpath=${accordionLocator}[@number]                               |
+|is visible on page|xpath=${accordionLocator}[@number]//span[2][contains(text(),"€")]|
+
+|scenario|Click on accordion     |number    |
+|click   |xpath=${accordionLocator}[@number]|
+
+|scenario          |Check if the content of accordion     |number    |is visible    |
+|is visible on page|xpath=${accordionLocator}[@number]/*[@class="accordeon_content"]|
+*!
+
+
+|storyboard                                            |
+|Open the Telfort website and agree with cookie message|
+
+|storyboard                                                       |
+|Login Mijn Mobiel with username|0612696293|and password|Telfort20|
+
+|storyboard                                                                                 |
+|set cookie name|SH-COLLECTION|value|CI-TO-Telfort-Fitnesse-Mobile|path|/|domain|.telfort.nl|
+|Click on       |Mijn gegevens|in the navigation menu                                       |
+|wait           |10           |seconds                                                      |
+|set cookie name|SH-COLLECTION|value|CI-TO-Telfort-Fitnesse-Mobile|path|/|domain|.telfort.nl|
+|refresh                                                                                    |
+|wait           |20           |seconds                                                      |
+

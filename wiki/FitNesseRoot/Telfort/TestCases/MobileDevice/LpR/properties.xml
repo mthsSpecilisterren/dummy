@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+<Edit>true</Edit>
+<Files>true</Files>
+<Help/>
+<Properties>true</Properties>
+<RecentChanges>true</RecentChanges>
+<Refactor>true</Refactor>
+<Search>true</Search>
+<Suite>true</Suite>
+<Suites/>
+<SymbolicLinks>
+<CombiVoordeel>&lt;TestCases.DesktopDevice.LpR.CombiVoordeel</CombiVoordeel>
+<CookiePopup>&lt;TestCases.DesktopDevice.LpR.CookiePopup</CookiePopup>
+<HeaderFooter>&lt;TestCases.DesktopDevice.LpR.HeaderFooter</HeaderFooter>
+<ScenarioLibrary>&lt;TestCases.DesktopDevice.LpR.ScenarioLibrary</ScenarioLibrary>
+<ServiceUserGuidedMenu>&lt;TestCases.DesktopDevice.LpR.ServiceUserGuidedMenu</ServiceUserGuidedMenu>
+<StoreLocator>&lt;TestCases.DesktopDevice.LpR.StoreLocator</StoreLocator>
+</SymbolicLinks>
+<Versions>true</Versions>
+<WhereUsed>true</WhereUsed>
+</properties>

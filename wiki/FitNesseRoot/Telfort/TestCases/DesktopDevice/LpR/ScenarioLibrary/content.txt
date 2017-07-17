@@ -1,0 +1,16 @@
+!define COOKIE2 {!-http://kpn.blueconic.net/DG/DEFAULT-!}
+
+|scenario|clear all cookies|
+|open    |${URL}           |
+|delete all cookies        |
+|clear local storage       |
+|open    |${COOKIE2}       |
+|delete all cookies        |
+|clear local storage       |
+
+
+|scenario         |Open the Telfort website and agree with cookie message|
+|open             |${URL}                                                |
+|Check if the cookie message appears                                     |
+|Click on the link|Ja, ik ga akkoord                                     |
+|Check if the cookie message has disappeared                             |

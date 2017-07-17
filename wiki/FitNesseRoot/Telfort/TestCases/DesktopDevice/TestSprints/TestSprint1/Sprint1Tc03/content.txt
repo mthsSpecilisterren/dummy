@@ -1,0 +1,75 @@
+!*> Local scenarios
+|scenario |Scroll down to 'Overzicht laatste'|number|maanden|
+|scroll to|Overzicht                                        |
+
+|scenario                |Check column title                     |title                    |
+|Check if visible on page|xpath=//div[@class="invoices-table-header"]/span[text()="@title"]|
+
+|scenario          |Check if the table 'Overzicht' contains the columns _|col1,col2,col3,col4|
+|Check column title|@col1                                                                    |
+|Check column title|@col2                                                                    |
+|Check column title|@col3                                                                    |
+|Check column title|@col4                                                                    |
+
+|scenario                |Check the text on row   |row   |and column  |column  |with the text  |text  |
+|Check if visible on page|xpath=//div[@class="invoices-table-row"][@row]/span[@column][text()="@text"]|
+
+|scenario             |Check if the text in the column 'Maand' and on row|row       |equals|text               |
+|Check the text on row|@row                                              |and column|1     |with the text|@text|
+
+|scenario             |Check if the text in the column 'Betaald' and on row|row       |equals|text               |
+|Check the text on row|@row                                                |and column|3     |with the text|@text|
+
+|scenario                |Check if the date in the column 'Download PDF' and on row|row|equals|date|
+|Check if visible on page|xpath=//div[@class="invoices-table-row"][@row]/span[4]//a[text()="@date"]|
+
+
+|scenario                |Check if there is an image in the column 'Download PDF' and on row|row|
+|Check if visible on page|xpath=//div[@class="invoices-table-row"][@row]/span[4]//img           |
+
+*!
+
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Note                           |Login with account that has a subscription for more than 2 months      |
+|Login Mijn Mobiel with username|${accountSprint1Tc03_login}|and password|${accountSprint1Tc03_password}|
+|note                           |Set cookie for the Stubhub                                             |
+|Set stubhub cookie                                                                                     |
+|Click on                       |Factuur                    |in the navigation menu                     |
+
+|storyboard                                                                            |
+|note                                                |Check the table header           |
+|Scroll down to 'Overzicht laatste'                  |12   |maanden                    |
+|Check if the table 'Overzicht' contains the columns;|Maand|Bedrag|Betaald|Download pdf|
+
+|storyboard                                                                                                 |
+|note                                              |Check if the months in the column 'Maand' are descending|
+|Check if the text in the column 'Maand' and on row|1             |equals             |december             |
+|Check if the text in the column 'Maand' and on row|2             |equals             |november             |
+
+
+|storyboard                                                                    |
+|note                                                |Check for unpaid invoices|
+|Check if the text in the column 'Betaald' and on row|1 |equals |Wordt verwerkt|
+|Check if the text in the column 'Betaald' and on row|2 |equals |Wordt verwerkt|
+
+
+|storyboard                                                                               |
+|note                                                     |Check for downloadable invoices|
+|Check if the date in the column 'Download PDF' and on row|1    |equals    |2016-12-04    |
+|Check if the date in the column 'Download PDF' and on row|2    |equals    |2016-11-08    |
+
+
+
+|script                                           |
+|note|Check for overdue invoices                  |
+|note|Check for red cross icon in column 'Betaald'|
+
+
+|script                                              |
+|note|Check for paid invoices                        |
+|note|Check for a green checkmark in column 'Betaald'|
+
+
+

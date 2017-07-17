@@ -1,0 +1,41 @@
+!*> Local scenarios
+
+|scenario                |Check if within      |scope      |the title      |titleText      |is visible     |
+|Check if visible on page|xpath=//*[text()="@scope"]/following-sibling::*/span[starts-with(.,"@titleText")]|
+
+|scenario                |Check if within     |scope     |the text    |text    |is visible    |
+|Check if visible on page|xpath=//*[text()="@scope"]/following-sibling::*[contains(.,"@text")]|
+
+|scenario                |Check if within    |scope    |the button   |buttonText   |is visible   |
+|Check if visible on page|xpath=//*[text()="@scope"]/following-sibling::*/a[text()="@buttonText"]|
+
+*!
+
+
+|script                                                                                                 |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint9Tc05_login}|and password|${accountSprint9Tc05_password}|
+|Click on                       |Mijn gegevens              |in the navigation menu                     |
+
+
+|script                                                                                                    |
+|Check if the title|Mijn gegevens                      |with heading|h1                         |is visible|
+|scroll to         |Samengevoegde Mijn Telfort accounts                                                    |
+|Check if within   |Samengevoegde Mijn Telfort accounts|the title   |Mobiel                     |is visible|
+|Check if within   |Samengevoegde Mijn Telfort accounts|the title   |Thuis                      |is visible|
+|note              |The following 2 checks have to be modified for a different account                     |
+|Check if within   |Samengevoegde Mijn Telfort accounts|the title   |${accountSprint9Tc05_login}|is visible|
+|Check if within   |Samengevoegde Mijn Telfort accounts|the title   |1051137                    |is visible|
+|Check if within   |Samengevoegde Mijn Telfort accounts|the button  |Loskoppelen                |is visible|
+
+|script                                                                                                                                                                                        |
+|Click on the button|Loskoppelen                                                                                                                                                               |
+|Check if within    |Samengevoegde Mijn Telfort accounts|the button|Loskoppelen bevestigen                                                                                          |is visible|
+|Check if within    |Samengevoegde Mijn Telfort accounts|the text  |Na het loskoppelen kun je Mijn Telfort Mobiel en Mijn Telfort Thuis niet meer tegelijk bekijken in Mijn Telfort.|is visible|
+
+|script                                                                           |
+|note|Continue with script, when there is mocked account available                |
+|Note|Click on the button|                                                        |
+|note|check if section   |Samengevoegde Mijn Telfort accounts|is no longer present|
+
+

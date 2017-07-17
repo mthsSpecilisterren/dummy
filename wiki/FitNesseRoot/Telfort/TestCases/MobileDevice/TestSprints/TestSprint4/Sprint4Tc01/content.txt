@@ -1,0 +1,64 @@
+!*> Local scenarios
+|scenario|Check shoppingbasket is present                          |
+|ensure  |is visible on page|xpath=//sticky-basket-component-mobile|
+
+|scenario|Check shoppingbasket contains text|text                                                                          |
+|ensure  |is visible on page                |xpath=//sticky-basket-component-mobile/descendant::*[contains(text(),'@text')]|
+
+
+|scenario|Check shoppingbasket title equals|text                                                            |
+|ensure  |is visible on page               |xpath=//*[@class="stickyBasket_title"][contains(text(),'@text')]|
+
+|scenario|Check shoppingbasket button text equals|text                                                                                      |
+|ensure  |is visible on page                     |xpath=//sticky-basket-component-mobile/descendant::a[contains(@class,'button')][.="@text"]|
+
+
+!|scenario |Click 4G InternetVersneller     |
+|Set option|Supersnel mobiel internet|to|AAN|
+
+|scenario|Open mobile sticky basket                    |
+|click   |xpath=//div[@class="stickyBasket _is_closed"]|
+
+*!
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Login Mijn Mobiel with username|${accountSprint4Tc01_login}|and password|${accountSprint4Tc01_password}|
+|Click on                       |Abonnement                 |in the navigation menu                     |
+|click                          |Abonnement wijzigen                                                    |
+
+
+
+|storyboard               |
+|wait    |2    |seconds   |
+|Open mobile sticky basket|
+
+
+!|storyboard                                                             |
+|Check if flow step                |Bundel wijzigen      |is active      |
+|Check shoppingbasket is present                                         |
+|Check shoppingbasket contains text|Je hebt nog geen wijzigingen gemaakt.|
+|scroll to                         |Minuten                              |
+|click                             |1000 MB                              |
+|scroll to                         |Toestel                              |
+|click                             |500 minuten                          |
+|scroll to                         |Sms                                  |
+|Click 4G InternetVersneller                                             |
+
+
+!|storyboard                                                                          |
+|Check shoppingbasket is present                                                      |
+|note                                   |Check shoppingbasket title equals|Wijzigingen|
+|Check shoppingbasket button text equals|Controleer je wijzigingen                    |
+|Check shoppingbasket contains text     |Oud                                          |
+|Check shoppingbasket contains text     |Nieuw                                        |
+|Check shoppingbasket contains text     |4G InternetVersneller                        |
+|Check shoppingbasket contains text     |1000 MB                                      |
+|Check shoppingbasket contains text     |500 minuten                                  |
+|Check shoppingbasket contains text     |Maandbedrag oud                              |
+|Check shoppingbasket contains text     |Maandbedrag nieuw                            |
+|Check shoppingbasket contains text     |inflatiecorrectie)                           |
+
+|storyboard                                          |
+|click             |Controleer je wijzigingen        |
+|Check if flow step|Wijzigingen controleren|is active|

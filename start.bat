@@ -1,0 +1,1 @@
+java -jar wiki\fitnesse-standalone.jar -p 8020

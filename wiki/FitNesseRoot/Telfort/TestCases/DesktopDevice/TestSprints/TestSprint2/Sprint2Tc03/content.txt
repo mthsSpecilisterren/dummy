@@ -1,0 +1,73 @@
+!*> Local scenarios
+|scenario|Click on Wijzigen                 |section                |
+|click   |xpath=//*[text()="@section"]//following-sibling::*//button|
+
+
+|scenario          |Check if the text|text|is visible|
+|is visible on page|xpath=//span[contains(.,"@text")]|
+
+
+|scenario         |Restore Aanbiedingen settings back to initial state and save|
+|Set option       |Sms                     |to               |JA               |
+|Set option       |Telefoon                |to               |JA               |
+|Set option       |E-mail                  |to               |JA               |
+|Set option       |Post                    |to               |JA               |
+|Click on Wijzigen|Aanbiedingen                                                |
+
+
+|scenario         |Restore Analyse settings back to initial state and save |
+|Set option       |Telfort mag mijn persoonlijke gegevens analyseren|to|AAN|
+|Set option       |Telfort mag mijn verkeersgegevens analyseren     |to|AAN|
+|Click on Wijzigen|Gebruik van mijn gegevens                               |
+
+
+|scenario          |Check if the link       |linkText      |is visible below the title: Gebruik van mijn gegevens      |
+|is visible on page|xpath=//*[text()="Gebruik van mijn gegevens"]//following-sibling::p/a[contains(text(),"@linkText")]|
+
+|scenario|Click on Privacy                                                    |
+|click   |xpath=//*[contains(@class,'settings-tabs_item')]/a[@title='Privacy']|
+
+*!
+
+|storyboard                                                                                             |
+|Open the Telfort website and agree with cookie message                                                 |
+|Note                           |Login with account, that has all the privacy settings set to AAN/JA    |
+|Login Mijn Mobiel with username|${accountSprint2Tc03_login}|and password|${accountSprint2Tc03_password}|
+|Click on                       |Instellingen               |in the navigation menu                     |
+|Click on icon                  |Privacy                                                                |
+
+|storyboard                                        |
+|Check if visible on page|Aanbiedingen             |
+|Check if visible on page|Gebruik van mijn gegevens|
+
+|storyboard                                   |
+|Set option       |Sms             |to  |NEE  |
+|Set option       |Telefoon        |to  |NEE  |
+|Set option       |E-mail          |to  |NEE  |
+|Set option       |Post            |to  |NEE  |
+|Click on Wijzigen|Aanbiedingen               |
+|Check if the text|Wijzigen..      |is visible|
+|Check if the text|Wijziging gelukt|is visible|
+
+|storyboard                                         |
+|Click on Wijzigen|Aanbiedingen                     |
+|Check if the text|Er is iets fout gegaan|is visible|
+
+|script                                                                        |
+|Set option       |Telfort mag mijn persoonlijke gegevens analyseren|to  |UIT  |
+|Set option       |Telfort mag mijn verkeersgegevens analyseren     |to  |UIT  |
+|Click on Wijzigen|Gebruik van mijn gegevens                                   |
+|Check if the text|Wijzigen..                                       |is visible|
+|Check if the text|Wijziging gelukt                                 |is visible|
+
+|storyboard                                         |
+|Click on Wijzigen|Gebruik van mijn gegevens        |
+|Check if the text|Er is iets fout gegaan|is visible|
+
+|storyboard                                                                               |
+|Check if the link|Privacy Statement|is visible below the title: Gebruik van mijn gegevens|
+
+|storyboard                                                  |
+|note   |Restore privacy settings back to the initial state  |
+|Restore Aanbiedingen settings back to initial state and save|
+|Restore Analyse settings back to initial state and save     |

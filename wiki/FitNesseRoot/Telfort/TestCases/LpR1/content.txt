@@ -1,0 +1,2 @@
+!see DesktopDevice.LpR.StoreLocator
+!see MobileDevice.LpR.StoreLocator

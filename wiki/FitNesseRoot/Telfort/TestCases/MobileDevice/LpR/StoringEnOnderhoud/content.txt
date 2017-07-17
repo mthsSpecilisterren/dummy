@@ -1,0 +1,32 @@
+!*> Local scenarios
+
+|scenario         |Search for the zipcode|zipcode   |
+|enter            |@zipcode              |as|1234 AB|
+|Click on the link|Zoek                             |
+
+|scenario                              |Check if there are no storingen for category|categoryName|
+|Check if the following text is visible|Er zijn geen storingen bekend voor @categoryName.        |
+
+|scenario         |Select the option|optionName|from drop-down menu|menuName|
+|Click on the link|@optionName                                              |
+
+|scenario         |Open first storing                                                                                                                                                   |
+|Click on the link|xpath=//*[contains(@class,'storingOnderhoud_titelMobiel') and ./following-sibling::div[1]/descendant::*[contains(@class,storingOnderwerp) and contains(@class,'ok')]]|
+|Click on the link|xpath=//*[contains(@class,storingOnderwerp) and contains(@class,'ok')][1]/a                                                                                          |
+#|click on the link|xpath=//*[contains(@class,'storingOnderhoud_titelMobiel') and ./following-sibling::div[1]/descendant::*[contains(@class,storingOnderwerp) and contains(@class,'ok')]][1]/following-sibling::div[1]/descendant::*[contains(@class,storingOnderwerp) and contains(@class,'ok')][1]/a|
+
+*!
+
+|storyboard                                                |
+|Open the Telfort website and agree with cookie message|
+|Go to Storingen & Onderhoud page                      |
+
+
+|storyboard                                                                                                         |
+|Search for the zipcode                      |9999 ZZ                                                           |
+|Select the option                           |Internet, TV & Bellen|from drop-down menu|css=.maintenanceProducts|
+|Check if there are no storingen for category|Internet, TV & Bellen                                             |
+|Click on the link                           |Klik hier voor alle storingen                                     |
+|Open first storing                                                                                             |
+|Check if there is a lightbox visible                                                                           |
+

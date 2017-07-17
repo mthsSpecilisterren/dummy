@@ -1,0 +1,47 @@
+!*> Local scenarios
+
+|scenario                |Check if within      |scope      |the title      |titleText      |is visible     |
+|Check if visible on page|xpath=//*[text()="@scope"]/following-sibling::*/span[starts-with(.,"@titleText")]|
+
+|scenario                |Check if within    |scope    |the button   |buttonText   |is visible   |
+|Check if visible on page|xpath=//*[text()="@scope"]/following-sibling::*/a[text()="@buttonText"]|
+
+|scenario                |Check if on the right of            |titleText            |the text            |text            |is visible           |
+|Check if visible on page|xpath=//span[starts-with(.,"@titleText")]/parent::*/following-sibling::*[1]/span[contains(normalize-space(.),"@text")]|
+
+*!
+
+|storyboard                                                                                                             |
+|Open the Telfort website and agree with cookie message                                                                 |
+|note|Login Mijn Mobiel with username|${accountSeePersonalSettings_telnr}|and password|${accountSeePersonalSettings_password}|
+|Login Mijn Mobiel with username|0619604190|and password|Telfort20|
+|Click on                       |Mijn gegevens                      |in the navigation menu                             |
+
+|storyboard                                                                         |
+|note              |Check if the title     |Mijn gegevens|with heading|H1|is visible|
+|Check if the title|Mijn Telfort wachtwoord|with heading |H3          |is visible   |
+|Check if the title|Persoonsgegevens       |with heading |H3          |is visible   |
+|Check if the title|Betaalgegevens         |with heading |H3          |is visible   |
+|Check if the title|Klantenservice         |with heading |H3          |is visible   |
+
+|storyboard                                                                       |
+|Check if within         |Mijn Telfort wachtwoord|the title |Wachtwoord|is visible|
+|Check if on the right of|Wachtwoord             |the text  |*****     |is visible|
+|Check if within         |Mijn Telfort wachtwoord|the button|Wijzigen  |is visible|
+
+|storyboard                                                           |
+|Check if within|Persoonsgegevens|the title |Naam          |is visible|
+|Check if within|Persoonsgegevens|the title |Adres         |is visible|
+|Check if within|Persoonsgegevens|the title |Telefoonnummer|is visible|
+|Check if within|Persoonsgegevens|the title |E-mail        |is visible|
+|Check if within|Persoonsgegevens|the button|Wijzigen      |is visible|
+
+|storyboard                                                             |
+|Check if within|Betaalgegevens|the title |Betaalwijze       |is visible|
+|Check if within|Betaalgegevens|the title |Machtigingskenmerk|is visible|
+|Check if within|Betaalgegevens|the title |IBAN nummer       |is visible|
+|Check if within|Betaalgegevens|the button|Wijzigen          |is visible|
+
+|storyboard                                                     |
+|Check if within|Klantenservice|the title |Wachtwoord|is visible|
+|Check if within|Klantenservice|the button|Wijzigen  |is visible|

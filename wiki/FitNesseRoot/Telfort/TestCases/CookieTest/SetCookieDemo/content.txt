@@ -1,0 +1,23 @@
+!-|set cookie name||value||path||domain||-!
+!-|set cookie name||value||-!
+
+Als path leeg is dan wordt dit automatisch '/'
+Als domain leeg is dan wordt dit automatisch 'current-domain'
+isHttpOnly is standaard false
+isSecure is standaard false
+expiresOn is Sessie-only
+
+|script                                                                                               |
+|Open the Telfort website                                                                             |
+|note           |Dit omzeilt de cookie wall, dmv zetten van een cookie                                |
+|set cookie name|BCPermissionLevel|value          |PERSONAL         |path |/       |domain|.telfort.nl|
+|note           |andere optie is:                                                                     |
+|note           |                 |set cookie name|BCPermissionLevel|value|PERSONAL                   |
+|note           |wat gelijk is aan                                                                    |
+|note           |                 |set cookie name|BCPermissionLevel|value|PERSONAL|path  | |domain | |
+|note           |een refresh is nodig om wall te laten zien dat het niet langer nodig is              |
+|refresh                                                                                              |
+
+|script         |
+|wait|10|seconds|
+

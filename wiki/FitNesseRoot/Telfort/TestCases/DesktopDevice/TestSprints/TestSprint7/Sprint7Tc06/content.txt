@@ -1,0 +1,78 @@
+!*> Local scenarios
+
+|scenario|Check if 'Wachtwoord' is set to|value                                                    |
+|ensure  |is visible on page             |@value|in|//*[normalize-space(text())="Wachtwoord"]/../..|
+
+
+|scenario|Check if the section|sectionName      |contains  HTML element     |htmlElement     |with name     |elementName     |
+|ensure  |is visible on page  |xpath=//*[normalize-space(.)="@sectionName"]/../descendant::@htmlElement[@name="@elementName"]|
+
+|scenario|Check if situation|situation|corresponds with|text                                                                                           |
+|ensure  |is visible on page|@text    |in              |xpath=//*[normalize-space(text())="@situation"]/ancestor::div[contains(@class,"row")][1]/div[3]|
+
+|scenario|Enter password|password                    |
+|enter   |@password     |as|name=customerCarePassword|
+
+
+*!
+
+|script                                                                                                    |
+|Open the Telfort website and agree with cookie message                                                    |
+|Login Mijn Mobiel with username   |${accountSprint7Tc06_login}|and password|${accountSprint7Tc06_password}|
+|Click on                          |Mijn gegevens              |in the navigation menu                     |
+|Click on the button 'Wijzigen' for|Klantenservice             |within the page Mijn gegevens              |
+
+|script                                                               |
+|Check if the title|Mijn gegevens wijzigen |with heading|H1|is visible|
+|Check if flow step|Gegevens wijzigen      |is visible                |
+|Check if flow step|Wijzigingen doorgevoerd|is visible                |
+|Check if flow step|Gegevens wijzigen      |is active                 |
+
+|script                                                                   |
+|Check if the title             |Klantenservice|with heading|H2|is visible|
+|Check if 'Wachtwoord' is set to|Niet ingesteld                           |
+
+|script                                              |
+|Check if option|Geen wachtwoord instellen|is visible|
+|Check if option|Wachtwoord wijzigen      |is visible|
+
+|script                                                                                                              |
+|Click on the option                   |Wachtwoord wijzigen                                                          |
+|Check if the following text is visible|Wijzig wachtwoord                                                            |
+|Check if the section                  |Klantenservice |contains  HTML element |input |with name|customerCarePassword|
+|Check if the following text is visible|Gebruik minimaal 4 en maximaal 7 cijfers. Andere tekens zijn niet toegestaan.|
+
+|script                                              |
+|Click on the option|Geen wachtwoord instellen       |
+|Check if button    |Wijzigingen doorvoeren|is active|
+
+
+|script                                                                          |
+|wait                    |1                      |seconds                        |
+|Click on the option     |Wachtwoord wijzigen                                    |
+|Enter password          |1234                                                   |
+|Click on the button     |Wijzigingen doorvoeren                                 |
+|Check if flow step      |Wijzigingen doorgevoerd|is active                      |
+|Check if the title      |Wijzigingen doorgevoerd|with heading    |H2 |is visible|
+|Check if visible on page|Je hebt de volgende gegevens gewijzigd                 |
+|Check if visible on page|Wachtwoord klantenservice                              |
+|Check if situation      |Oud                    |corresponds with|Niet ingesteld|
+|Check if situation      |Nieuw                  |corresponds with|1234          |
+
+
+|script                                                                                     |
+|note                              |Since the 'Terug naar mijn gegevens' button doesn't work|
+|Click on                          |Mijn gegevens       |in the navigation menu             |
+|Click on the button 'Wijzigen' for|Klantenservice      |within the page Mijn gegevens      |
+
+
+|script                                                                          |
+|Click on the option     |Geen wachtwoord instellen                              |
+|Click on the button     |Wijzigingen doorvoeren                                 |
+|Check if flow step      |Wijzigingen doorgevoerd|is active                      |
+|Check if the title      |Wijzigingen doorgevoerd|with heading    |H2 |is visible|
+|Check if visible on page|Je hebt de volgende gegevens gewijzigd                 |
+|Check if visible on page|Wachtwoord klantenservice                              |
+|Check if situation      |Oud                    |corresponds with|1234          |
+|Check if situation      |Nieuw                  |corresponds with|Niet ingesteld|
+|Click on the button     |Terug naar mijn gegevens                               |
